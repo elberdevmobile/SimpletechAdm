@@ -216,15 +216,9 @@ class _ScheduleState extends SampleViewState {
   /// required information.
   List<Appointment> _getAppointments() {
     final List<String> subjectCollection = <String>[];
-    subjectCollection.add('General Meeting');
-    subjectCollection.add('Plan Execution');
-    subjectCollection.add('Project Plan');
-    subjectCollection.add('Consulting');
-    subjectCollection.add('Support');
-    subjectCollection.add('Development Meeting');
-    subjectCollection.add('Project Completion');
-    subjectCollection.add('Release updates');
-    subjectCollection.add('Performance Check');
+    subjectCollection.add('Jefferson');
+    subjectCollection.add('Elber');
+    subjectCollection.add('Christopher');
 
     final List<Color> colorCollection = <Color>[];
     colorCollection.add(const Color(0xFF0F8644));
