@@ -43,9 +43,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: SafeArea(
-          top: false,
-          child: Column(
+        body: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               wrapWithModel(
@@ -100,15 +98,15 @@ class _HomeWidgetState extends State<HomeWidget> {
               ),
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.6,
+                height: MediaQuery.sizeOf(context).height * 0.5567,
                 child: custom_widgets.Schedule(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: MediaQuery.sizeOf(context).height * 0.6,
+                  height: MediaQuery.sizeOf(context).height * 0.5567,
                 ),
               ),
             ],
           ),
-        ),
+
       ),
     );
   }

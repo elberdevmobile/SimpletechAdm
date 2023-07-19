@@ -219,6 +219,14 @@ class _ScheduleState extends SampleViewState {
     subjectCollection.add('Jefferson');
     subjectCollection.add('Elber');
     subjectCollection.add('Christopher');
+    subjectCollection.add('Christopher');
+    subjectCollection.add('Christopher');
+    subjectCollection.add('Christopher');
+    subjectCollection.add('Consulting');
+    subjectCollection.add('Elber');
+    subjectCollection.add('Elber');
+    subjectCollection.add('Jefferson');
+    subjectCollection.add('Jefferson');
 
     final List<Color> colorCollection = <Color>[];
     colorCollection.add(const Color(0xFF0F8644));
