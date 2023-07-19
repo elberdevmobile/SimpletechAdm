@@ -8,3 +8,4 @@ export '/home/home_widget.dart' show HomeWidget;
 export '/schedule/schedule_widget.dart' show ScheduleWidget;
 export '/profile/profile_widget.dart' show ProfileWidget;
 export '/qrcode/qrcode_widget.dart' show QrcodeWidget;
+export '/forgotpass/forgotpass_widget.dart' show ForgotpassWidget;

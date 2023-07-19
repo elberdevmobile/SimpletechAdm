@@ -35,6 +35,8 @@ class _QrcodeWidgetState extends State<QrcodeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
@@ -50,7 +52,7 @@ class _QrcodeWidgetState extends State<QrcodeWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'e8dojxzn' /* Leitura de QR Code */,
+                    'e6zysb4k' /* Leitura de QR Code */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Poppins',
@@ -85,7 +87,7 @@ class _QrcodeWidgetState extends State<QrcodeWidget> {
                     print('Button pressed ...');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'zbwbz3y4' /* Ler QR Code */,
+                    '6kqftcam' /* Ler QR Code */,
                   ),
                   options: FFButtonOptions(
                     width: 200.0,

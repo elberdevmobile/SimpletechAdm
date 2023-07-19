@@ -1,8 +1,11 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/actions/actions.dart' as action_blocks;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +29,20 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     super.initState();
     _model = createModel(context, () => LoginPageModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.agendamentos =
+          await SimpleTechCopyGroup.obterAgendamentosParceiroCall.call(
+        bearerAuth: FFAppState().token,
+        inicial: '2023-05-21',
+        finaldate: '2023-07-30',
+        filial: 4,
+      );
+      if ((_model.agendamentos?.succeeded ?? true)) {
+        return;
+      }
+    });
+
     _model.emailAddressController ??= TextEditingController();
     _model.passwordController ??= TextEditingController();
   }
@@ -39,6 +56,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
@@ -226,8 +245,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               child: Align(
                                 alignment: AlignmentDirectional(1.0, 0.0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button-ForgotPassword pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      'forgotpass',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.leftToRight,
+                                        ),
+                                      },
+                                    );
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '7g4lk0sl' /* Esqueci minha senha */,
@@ -354,13 +382,42 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               Expanded(
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    context.pushNamed('Home');
+                                    _model.auth = await action_blocks.auth(
+                                      context,
+                                      login: _model.emailAddressController.text,
+                                      senha: _model.passwordController.text,
+                                    );
+                                    if (getJsonField(
+                                          _model.auth,
+                                          r'''$.sucesso''',
+                                        ) ==
+                                        true) {
+                                      FFAppState().token = getJsonField(
+                                        _model.auth,
+                                        r'''$.data.accessToken''',
+                                      ).toString();
+                                      FFAppState().user = _model.auth!;
+
+                                      context.pushNamed(
+                                        'Home',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.scale,
+                                            alignment: Alignment.bottomCenter,
+                                          ),
+                                        },
+                                      );
+                                    }
+
+                                    setState(() {});
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '2dhzla7x' /* Entrar */,
                                   ),
                                   options: FFButtonOptions(
-                                    height: 44.0,
+                                    height: 60.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
