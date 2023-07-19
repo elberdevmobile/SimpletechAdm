@@ -1,36 +1,30 @@
-import '/components/bar_home_widget.dart';
-import '/flutter_flow/flutter_flow_calendar.dart';
+import '/auth/firebase_auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class HomeModel extends FlutterFlowModel {
+class ProfileModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // Model for bar_home component.
-  late BarHomeModel barHomeModel;
-  // State field(s) for Calendar widget.
-  DateTimeRange? calendarSelectedDay;
+  // State field(s) for SwitchListTile widget.
+  bool? switchListTileValue;
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {
-    barHomeModel = createModel(context, () => BarHomeModel());
-    calendarSelectedDay = DateTimeRange(
-      start: DateTime.now().startOfDay,
-      end: DateTime.now().endOfDay,
-    );
-  }
+  void initState(BuildContext context) {}
 
   void dispose() {
     unfocusNode.dispose();
-    barHomeModel.dispose();
   }
 
   /// Action blocks are added here.

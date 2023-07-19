@@ -298,6 +298,72 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
+  // profile
+  {
+    'qv6i2jxr': {
+      'pt': 'Andrea Davis',
+      'en': '',
+      'es': '',
+    },
+    'o75cqadt': {
+      'pt': '\$24,421',
+      'en': '',
+      'es': '',
+    },
+    'i3d0q0ub': {
+      'pt': 'Wallet Balance',
+      'en': '',
+      'es': '',
+    },
+    'd79bs3xg': {
+      'pt': 'Power User',
+      'en': '',
+      'es': '',
+    },
+    '884gslai': {
+      'pt': 'Trade Assets',
+      'en': '',
+      'es': '',
+    },
+    'cru2x5qo': {
+      'pt': 'Buy Assets',
+      'en': '',
+      'es': '',
+    },
+    'kcmyijfe': {
+      'pt': 'Account Settings',
+      'en': '',
+      'es': '',
+    },
+    'o6fp0dwb': {
+      'pt': 'Log Out',
+      'en': '',
+      'es': '',
+    },
+    'dkj8w7nb': {
+      'pt': 'Perfil',
+      'en': '',
+      'es': '',
+    },
+  },
+  // qrcode
+  {
+    'qfbeahnh': {
+      'pt': 'Leitura de QR Code',
+      'en': '',
+      'es': '',
+    },
+    'aaoldd2w': {
+      'pt': 'Ler QR Code',
+      'en': '',
+      'es': '',
+    },
+    'awtd8o63': {
+      'pt': 'Leitor',
+      'en': '',
+      'es': '',
+    },
+  },
   // bar_home
   {
     'ti52udw3': {
