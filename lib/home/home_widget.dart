@@ -43,7 +43,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
-          top: true,
+          top: false,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -77,21 +77,21 @@ class _HomeWidgetState extends State<HomeWidget> {
                       rowHeight: 80.0,
                       onChange: (DateTimeRange? newSelectedDate) {
                         setState(
-                            () => _model.calendarSelectedDay = newSelectedDate);
+                                () => _model.calendarSelectedDay = newSelectedDate);
                       },
                       titleStyle: FlutterFlowTheme.of(context).titleMedium,
                       dayOfWeekStyle: FlutterFlowTheme.of(context).bodySmall,
                       dateStyle: FlutterFlowTheme.of(context).bodyMedium,
                       selectedDateStyle:
-                          FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Poppins',
-                                color: Colors.white,
-                              ),
+                      FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                      ),
                       inactiveDateStyle:
-                          FlutterFlowTheme.of(context).bodySmall.override(
-                                fontFamily: 'Poppins',
-                                color: Color(0x6B57636C),
-                              ),
+                      FlutterFlowTheme.of(context).bodySmall.override(
+                        fontFamily: 'Poppins',
+                        color: Color(0x6B57636C),
+                      ),
                       locale: FFLocalizations.of(context).languageCode,
                     ),
                   ),
