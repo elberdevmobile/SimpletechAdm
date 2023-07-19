@@ -130,6 +130,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'qrcode')
                   : QrcodeWidget(),
+            ),
+            FFRoute(
+              name: 'forgotpass',
+              path: 'forgotpass',
+              builder: (context, params) => ForgotpassWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

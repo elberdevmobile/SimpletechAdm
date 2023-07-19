@@ -38,6 +38,8 @@ class _HourWidgetState extends State<HourWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container();
   }
 }

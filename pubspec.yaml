@@ -29,6 +29,7 @@ dependencies:
   badges: 2.0.2
   cached_network_image: 3.2.1
   easy_debounce: 2.0.1
+  equatable: 2.0.5
   firebase_auth: 4.6.2
   firebase_auth_platform_interface: 6.15.2
   firebase_auth_web: 5.5.2
@@ -50,6 +51,7 @@ dependencies:
   google_sign_in_web: 0.11.0+2
   intl: 0.18.0
   json_path: 0.4.1
+  mime_type: 1.0.0
   page_transition: 2.0.4
   path_provider: 2.0.14
   path_provider_android: 2.0.25

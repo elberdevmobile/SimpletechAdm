@@ -1,3 +1,4 @@
+import 'package:provider/provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,13 @@ void main() async {
 
   await FFLocalizations.initialize();
 
-  runApp(MyApp());
+  final appState = FFAppState(); // Initialize FFAppState
+  await appState.initializePersistedState();
+
+  runApp(ChangeNotifierProvider(
+    create: (context) => appState,
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -155,7 +162,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.qr_code_scanner_outlined,
             ),
             label: FFLocalizations.of(context).getText(
-              'bqneklwx' /* Leitor */,
+              'njwrd4cq' /* Leitor */,
             ),
             tooltip: '',
           ),
@@ -165,7 +172,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
-              'vziwhqgi' /* Perfil */,
+              'cxnlz2u4' /* Perfil */,
             ),
             tooltip: '',
           )

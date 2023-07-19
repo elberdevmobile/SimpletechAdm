@@ -40,6 +40,8 @@ class _BarHomeWidgetState extends State<BarHomeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       height: 128.0,
       child: Stack(

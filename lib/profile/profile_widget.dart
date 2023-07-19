@@ -245,6 +245,8 @@ class _ProfileWidgetState extends State<ProfileWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
@@ -306,7 +308,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'x0pl6skz' /* Andrea Davis */,
+                    'rrplmbei' /* Andrea Davis */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineSmall,
                 ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation1']!),
@@ -320,7 +322,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
               ).animateOnPageLoad(animationsMap['dividerOnPageLoadAnimation']!),
               Text(
                 FFLocalizations.of(context).getText(
-                  'zyz5m09m' /* $24,421 */,
+                  'rr1izbyz' /* $24,421 */,
                 ),
                 style: FlutterFlowTheme.of(context).displayMedium,
               ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation2']!),
@@ -328,7 +330,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '5jrp3bpk' /* Wallet Balance */,
+                    '33olkyn7' /* Wallet Balance */,
                   ),
                   style: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
@@ -371,7 +373,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             },
                             title: Text(
                               FFLocalizations.of(context).getText(
-                                '4mvyzk1x' /* Power User */,
+                                'j5fh5uwq' /* Power User */,
                               ),
                               style: FlutterFlowTheme.of(context).bodyLarge,
                             ),
@@ -423,7 +425,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '90j67ltb' /* Trade Assets */,
+                              'u1lt2aad' /* Trade Assets */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -466,7 +468,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'tm9nc8bx' /* Buy Assets */,
+                              'lpifue9y' /* Buy Assets */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -509,7 +511,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '5cxbamsd' /* Account Settings */,
+                              'jv5b2y04' /* Account Settings */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -531,7 +533,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                     context.goNamedAuth('HomePage', context.mounted);
                   },
                   text: FFLocalizations.of(context).getText(
-                    '9z3qnh55' /* Log Out */,
+                    'bp8h3nay' /* Log Out */,
                   ),
                   options: FFButtonOptions(
                     width: 150.0,
