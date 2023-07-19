@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "869866578550",
+    "project_id": "sipletechcliente",
+    "storage_bucket": "sipletechcliente.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869866578550:android:260c59d4563c2f80697557",
+        "android_client_info": {
+          "package_name": "com.simpletechclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869866578550-07vcgi5hgreaq5hlrpi3af5hud6f0pv4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.simpletechclient",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "869866578550-a368rc4krim1gk33kf1mmr6nlv2mtrag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm4jYV33PFv8CSGGLWWliAU09_dEb3aUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869866578550-a368rc4krim1gk33kf1mmr6nlv2mtrag.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "869866578550-1tmbiq9b2ogli0kv0e6ij5o3k0ds1i54.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.simpletechclient"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869866578550:android:d8232e8c61b2563b697557",
+        "android_client_info": {
+          "package_name": "simpletech.simpleadm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869866578550-t465csv0r0bpirjdi6nrimt02qsmn3cs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "simpletech.simpleadm",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "869866578550-a368rc4krim1gk33kf1mmr6nlv2mtrag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm4jYV33PFv8CSGGLWWliAU09_dEb3aUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869866578550-a368rc4krim1gk33kf1mmr6nlv2mtrag.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "869866578550-1tmbiq9b2ogli0kv0e6ij5o3k0ds1i54.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.simpletechclient"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

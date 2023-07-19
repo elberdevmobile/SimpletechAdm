@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>869866578550-c775v6a8kceee81jkt2tg23i6aaatpja.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.869866578550-c775v6a8kceee81jkt2tg23i6aaatpja</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>869866578550-07vcgi5hgreaq5hlrpi3af5hud6f0pv4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyByS5CLaN6yUg-fVAAvGfDFUO_GpGXuTls</string>
+	<key>GCM_SENDER_ID</key>
+	<string>869866578550</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>simpletech.simpleadm</string>
+	<key>PROJECT_ID</key>
+	<string>sipletechcliente</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sipletechcliente.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:869866578550:ios:1f1a6002d4a543fa697557</string>
+</dict>
+</plist>
