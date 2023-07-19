@@ -300,47 +300,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // profile
   {
-    'qv6i2jxr': {
+    'x0pl6skz': {
       'pt': 'Andrea Davis',
       'en': '',
       'es': '',
     },
-    'o75cqadt': {
+    'zyz5m09m': {
       'pt': '\$24,421',
       'en': '',
       'es': '',
     },
-    'i3d0q0ub': {
+    '5jrp3bpk': {
       'pt': 'Wallet Balance',
       'en': '',
       'es': '',
     },
-    'd79bs3xg': {
+    '4mvyzk1x': {
       'pt': 'Power User',
       'en': '',
       'es': '',
     },
-    '884gslai': {
+    '90j67ltb': {
       'pt': 'Trade Assets',
       'en': '',
       'es': '',
     },
-    'cru2x5qo': {
+    'tm9nc8bx': {
       'pt': 'Buy Assets',
       'en': '',
       'es': '',
     },
-    'kcmyijfe': {
+    '5cxbamsd': {
       'pt': 'Account Settings',
       'en': '',
       'es': '',
     },
-    'o6fp0dwb': {
+    '9z3qnh55': {
       'pt': 'Log Out',
       'en': '',
       'es': '',
     },
-    'dkj8w7nb': {
+    'vziwhqgi': {
       'pt': 'Perfil',
       'en': '',
       'es': '',
@@ -348,17 +348,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // qrcode
   {
-    'qfbeahnh': {
+    'e8dojxzn': {
       'pt': 'Leitura de QR Code',
       'en': '',
       'es': '',
     },
-    'aaoldd2w': {
+    'zbwbz3y4': {
       'pt': 'Ler QR Code',
       'en': '',
       'es': '',
     },
-    'awtd8o63': {
+    'bqneklwx': {
       'pt': 'Leitor',
       'en': '',
       'es': '',

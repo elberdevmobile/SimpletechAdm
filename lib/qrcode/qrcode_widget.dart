@@ -50,7 +50,7 @@ class _QrcodeWidgetState extends State<QrcodeWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'qfbeahnh' /* Leitura de QR Code */,
+                    'e8dojxzn' /* Leitura de QR Code */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Poppins',
@@ -85,7 +85,7 @@ class _QrcodeWidgetState extends State<QrcodeWidget> {
                     print('Button pressed ...');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'aaoldd2w' /* Ler QR Code */,
+                    'zbwbz3y4' /* Ler QR Code */,
                   ),
                   options: FFButtonOptions(
                     width: 200.0,
