@@ -70,9 +70,11 @@ dependencies:
   sign_in_with_apple_web: 1.0.1
   smooth_page_indicator: 1.0.1
   sqflite: 2.2.6
+  styled_divider: 1.0.4
   syncfusion_flutter_calendar: ^22.1.39
   syncfusion_localizations: ^22.1.39
   table_calendar: 3.0.9
+  ticket_material: ^0.3.1
   timeago: 3.2.2
   url_launcher: 6.1.10
   url_launcher_android: 6.0.27

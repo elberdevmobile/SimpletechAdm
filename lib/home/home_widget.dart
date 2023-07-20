@@ -54,6 +54,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 updateCallback: () => setState(() {}),
                 child: BarHomeWidget(),
               ),
+<<<<<<< HEAD
               // Column(
               //   mainAxisSize: MainAxisSize.max,
               //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,6 +106,68 @@ class _HomeWidgetState extends State<HomeWidget> {
                 child: custom_widgets.Schedule(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 0.7397,
+=======
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5.0,
+                          color: Color(0x230E151B),
+                          offset: Offset(0.0, 2.0),
+                        )
+                      ],
+                    ),
+                    child: FlutterFlowCalendar(
+                      color: Color(0xFF0A1033),
+                      iconColor: Colors.black,
+                      weekFormat: true,
+                      weekStartsMonday: true,
+                      initialDate: getCurrentTimestamp,
+                      rowHeight: 80.0,
+                      onChange: (DateTimeRange? newSelectedDate) {
+                        setState(
+                            () => _model.calendarSelectedDay = newSelectedDate);
+                      },
+                      titleStyle: FlutterFlowTheme.of(context).titleMedium,
+                      dayOfWeekStyle: FlutterFlowTheme.of(context).bodySmall,
+                      dateStyle: FlutterFlowTheme.of(context).bodyMedium,
+                      selectedDateStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                              ),
+                      inactiveDateStyle:
+                          FlutterFlowTheme.of(context).bodySmall.override(
+                                fontFamily: 'Poppins',
+                                color: Color(0x6B57636C),
+                              ),
+                      locale: FFLocalizations.of(context).languageCode,
+                    ),
+                  ),
+                ],
+              ),
+              InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('comanda');
+                },
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 0.6,
+                  child: custom_widgets.Schedule(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: MediaQuery.sizeOf(context).height * 0.6,
+                  ),
+>>>>>>> 885e53d (comanda)
                 ),
               ),
             ],
