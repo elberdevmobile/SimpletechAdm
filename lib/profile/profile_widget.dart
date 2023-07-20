@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -48,7 +47,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
         ),
       ],
     ),
-    'textOnPageLoadAnimation1': AnimationInfo(
+    'textOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         VisibilityEffect(duration: 1.ms),
@@ -84,46 +83,6 @@ class _ProfileWidgetState extends State<ProfileWidget>
           delay: 0.ms,
           duration: 600.ms,
           begin: Offset(0.0, 20.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'textOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 1.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 20.0),
-          end: Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'textOnPageLoadAnimation3': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 1.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, 40.0),
           end: Offset(0.0, 0.0),
         ),
       ],
@@ -286,7 +245,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                   color: FlutterFlowTheme.of(context).accent1,
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: FlutterFlowTheme.of(context).info,
                     width: 2.0,
                   ),
                 ),
@@ -308,36 +267,18 @@ class _ProfileWidgetState extends State<ProfileWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '8vwbsvss' /* Andrea Davis */,
+                    '9c1dgl3h' /* Nestor Nunes */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineSmall,
-                ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation1']!),
+                ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation']!),
               ),
               Divider(
                 height: 44.0,
                 thickness: 1.0,
                 indent: 24.0,
                 endIndent: 24.0,
-                color: FlutterFlowTheme.of(context).alternate,
+                color: FlutterFlowTheme.of(context).info,
               ).animateOnPageLoad(animationsMap['dividerOnPageLoadAnimation']!),
-              Text(
-                FFLocalizations.of(context).getText(
-                  '3u366sks' /* $24,421 */,
-                ),
-                style: FlutterFlowTheme.of(context).displayMedium,
-              ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation2']!),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'vo4n1kna' /* Wallet Balance */,
-                  ),
-                  style: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                      ),
-                ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation3']!),
-              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Container(
@@ -345,10 +286,6 @@ class _ProfileWidgetState extends State<ProfileWidget>
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
@@ -373,7 +310,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             },
                             title: Text(
                               FFLocalizations.of(context).getText(
-                                '9s83mir3' /* Power User */,
+                                'vrrhoa0g' /* Agenda ativa */,
                               ),
                               style: FlutterFlowTheme.of(context).bodyLarge,
                             ),
@@ -400,10 +337,6 @@ class _ProfileWidgetState extends State<ProfileWidget>
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
                   ),
                   child: Padding(
                     padding:
@@ -414,9 +347,9 @@ class _ProfileWidgetState extends State<ProfileWidget>
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
-                          child: Icon(
-                            Icons.repeat,
-                            color: FlutterFlowTheme.of(context).primaryText,
+                          child: FaIcon(
+                            FontAwesomeIcons.tag,
+                            color: Color(0xFF5C5C5C),
                             size: 24.0,
                           ),
                         ),
@@ -425,7 +358,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '7e9e90un' /* Trade Assets */,
+                              'n6fcbo6z' /* Seus Ganhos */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -443,10 +376,6 @@ class _ProfileWidgetState extends State<ProfileWidget>
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
                   ),
                   child: Padding(
                     padding:
@@ -457,9 +386,9 @@ class _ProfileWidgetState extends State<ProfileWidget>
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
-                          child: Icon(
-                            Icons.attach_money_rounded,
-                            color: FlutterFlowTheme.of(context).primaryText,
+                          child: FaIcon(
+                            FontAwesomeIcons.solidStar,
+                            color: Color(0xFF5C5C5C),
                             size: 24.0,
                           ),
                         ),
@@ -468,7 +397,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'dfeu36jn' /* Buy Assets */,
+                              '8lhylhf8' /* Especialidades */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -486,10 +415,6 @@ class _ProfileWidgetState extends State<ProfileWidget>
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(12.0),
-                    border: Border.all(
-                      color: FlutterFlowTheme.of(context).alternate,
-                      width: 2.0,
-                    ),
                   ),
                   child: Padding(
                     padding:
@@ -500,9 +425,9 @@ class _ProfileWidgetState extends State<ProfileWidget>
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
-                          child: Icon(
-                            Icons.settings_outlined,
-                            color: FlutterFlowTheme.of(context).primaryText,
+                          child: FaIcon(
+                            FontAwesomeIcons.solidCalendar,
+                            color: Color(0xFF5C5C5C),
                             size: 24.0,
                           ),
                         ),
@@ -511,7 +436,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '0l2y1ls6' /* Account Settings */,
+                              'b7ypumln' /* Horário de atendimentos */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -526,14 +451,18 @@ class _ProfileWidgetState extends State<ProfileWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    GoRouter.of(context).prepareAuthEvent();
-                    await authManager.signOut();
-                    GoRouter.of(context).clearRedirectLocation();
+                    setState(() {
+                      FFAppState().token = '';
+                      FFAppState().logged = false;
+                      FFAppState().login = '';
+                      FFAppState().senha = '';
+                      FFAppState().user = null;
+                    });
 
-                    context.goNamedAuth('HomePage', context.mounted);
+                    context.pushNamed('LoginPage');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'rb568qgn' /* Log Out */,
+                    'utpczqcr' /* Sair */,
                   ),
                   options: FFButtonOptions(
                     width: 150.0,
@@ -545,7 +474,6 @@ class _ProfileWidgetState extends State<ProfileWidget>
                     textStyle: FlutterFlowTheme.of(context).bodyLarge,
                     elevation: 0.0,
                     borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).alternate,
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(38.0),

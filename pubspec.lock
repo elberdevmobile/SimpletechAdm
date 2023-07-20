@@ -145,6 +145,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  dotted_decoration:
+    dependency: transitive
+    description:
+      name: dotted_decoration
+      sha256: a5c5771367690b4f64ebfa7911954ab472b9675f025c373f514e32ac4bb81d5e
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   easy_debounce:
     dependency: "direct main"
     description:
@@ -802,6 +810,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  styled_divider:
+    dependency: "direct main"
+    description:
+      name: styled_divider
+      sha256: "7ff552063112e8b35d5c02d078720b2355e3898038818945a69aced8e12a21ad"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.4"
   syncfusion_flutter_calendar:
     dependency: "direct main"
     description:
@@ -866,6 +882,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.1"
+  ticket_material:
+    dependency: "direct main"
+    description:
+      name: ticket_material
+      sha256: c1d3dbe6878ae9fa28d7da9234b0143f0d72ff49e971c28ef78146c58722f078
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.1"
   timeago:
     dependency: "direct main"
     description:

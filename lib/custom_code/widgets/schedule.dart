@@ -357,6 +357,9 @@ Random randon = Random();
       allowAppointmentResize:true,
       allowDragAndDrop:true,
       dataSource: events,
+      onLongPress: (CalendarLongPressDetails calendarTapDetails){
+        context.pushNamed('comanda');
+      },
     );
   }
 }
