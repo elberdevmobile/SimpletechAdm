@@ -116,9 +116,10 @@ class _BarHomeWidgetState extends State<BarHomeWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'f7s0kr3m' /* Nestor Júnior */,
-                                    ),
+                                    getJsonField(
+                                      FFAppState().user,
+                                      r'''$.data.usuarioToken.nome''',
+                                    ).toString(),
                                     style: TextStyle(
                                       fontFamily: ' SF Pro Display',
                                       color: Colors.white,

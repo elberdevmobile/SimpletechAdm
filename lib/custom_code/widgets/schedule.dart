@@ -48,6 +48,7 @@ class _ScheduleState extends SampleViewState {
   Color cardThemeColor = Colors.white;
   Color backgroundColor = const Color.fromRGBO(0, 116, 227, 1);
 
+var jsonencoded = jsonEncode("[{\"id\":123,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-20\",\"horaInicioDoAgendamento\":{\"ticks\":637987680000000000,\"days\":738738,\"hours\":11,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":30,\"seconds\":0,\"totalDays\":738738.4791666666,\"totalHours\":17729.715,\"totalMilliseconds\":63798768000000,\"totalMicroseconds\":63798768000000000,\"totalNanoseconds\":63798768000000000000,\"totalMinutes\":1063785,\"totalSeconds\":63827100},\"horaFimDoAgendamento\":{\"ticks\":637987680000000000,\"days\":738738,\"hours\":12,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":30,\"seconds\":0,\"totalDays\":738738.4791666666,\"totalHours\":17729.715,\"totalMilliseconds\":63798768000000,\"totalMicroseconds\":63798768000000000,\"totalNanoseconds\":63798768000000000000,\"totalMinutes\":1063785,\"totalSeconds\":63827100},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":false,\"agendamentoConfirmado\":true,\"comandaDoAtendimento\":789,\"valorServicos\":150.0,\"cliente\":\"JoãodaSilva\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"CortedeCabelo\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30},{\"id\":2,\"idDoServico\":102,\"descricaoServico\":\"Barba\",\"valor\":50.0,\"comissao\":10.0,\"tempo\":20}]}]Nestaversãoexpandida,foramadicionadosvaloresdeexemploparacadacampo,comoIDs,datas,horárioseinformaçõessobreosserviços.Notequeoscamposde\"ticks\"eoutraspropriedadesrelacionadasatemposãogeradosautomaticamentecombasenoexemplo,masnaprática,essesvaloresseriampreenchidoscorretamentedeacordocomocontextodasuaaplicação.Alémdisso,tambémforamincluídosexemplosdeserviços,poisoJSONoriginalsócontinhaumalistadeserviçosvazia.Comessasinformaçõesadicionais,oJSONestámaiscompletoepodeserusadocomoexemplodeestruturadedadosparaumaAPIououtrousorelevante.UsergeremaisChatGPTClaro!VoucontinuaragerarmaisinformaçõesparaoJSONfornecido:jsonCopycode[{\"id\":123,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-20\",\"horaInicioDoAgendamento\":{\"ticks\":637987680000000000,\"days\":738738,\"hours\":11,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":30,\"seconds\":0,\"totalDays\":738738.4791666666,\"totalHours\":17729.715,\"totalMilliseconds\":63798768000000,\"totalMicroseconds\":63798768000000000,\"totalNanoseconds\":63798768000000000000,\"totalMinutes\":1063785,\"totalSeconds\":63827100},\"horaFimDoAgendamento\":{\"ticks\":637987680000000000,\"days\":738738,\"hours\":12,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":30,\"seconds\":0,\"totalDays\":738738.4791666666,\"totalHours\":17729.715,\"totalMilliseconds\":63798768000000,\"totalMicroseconds\":63798768000000000,\"totalNanoseconds\":63798768000000000000,\"totalMinutes\":1063785,\"totalSeconds\":63827100},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":false,\"agendamentoConfirmado\":true,\"comandaDoAtendimento\":789,\"valorServicos\":150.0,\"cliente\":\"JoãodaSilva\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"CortedeCabelo\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30},{\"id\":2,\"idDoServico\":102,\"descricaoServico\":\"Barba\",\"valor\":50.0,\"comissao\":10.0,\"tempo\":20},{\"id\":3,\"idDoServico\":103,\"descricaoServico\":\"Manicure\",\"valor\":40.0,\"comissao\":15.0,\"tempo\":40}],\"observacoes\":\"Clientepreferiuumcaféexpressoenquantoaguardavaoatendimento.\",\"endereco\":{\"rua\":\"RuadasFlores,123\",\"cidade\":\"SãoPaulo\",\"estado\":\"SP\",\"cep\":\"01234-567\"}}]");
   /// holds light theme current palette color
   Color paletteColor = const Color.fromRGBO(0, 116, 227, 1);
 
@@ -267,7 +268,7 @@ class _ScheduleState extends SampleViewState {
     date = DateTime(date.year, date.month, date.day, 11);
     // added recurrence appointment
     appointments.add(Appointment(
-        subject: 'Scrum',
+        subject: 'Nestor',
         startTime: date,
         endTime: date.add(const Duration(hours: 1)),
         color: colorCollection[random.nextInt(9)],
@@ -287,7 +288,7 @@ class _ScheduleState extends SampleViewState {
             colorScheme:
                 themeData.colorScheme.copyWith(secondary: Colors.black)),
         child: Container(
-            color: Colors.black,
+            color: Colors.white,
             child: getScheduleViewCalendar(
                 events: events, scheduleViewBuilder: scheduleViewBuilder)));
   }
@@ -349,8 +350,17 @@ class _ScheduleState extends SampleViewState {
       {_DataSource? events, dynamic scheduleViewBuilder}) {
     return SfCalendar(
       showDatePickerButton: true,
+      headerHeight:80,
       scheduleViewMonthHeaderBuilder: scheduleViewBuilder,
       view: CalendarView.schedule,
+      monthViewSettings: MonthViewSettings(numberOfWeeksInView:1,showAgenda:true),
+      scheduleViewSettings: ScheduleViewSettings(hideEmptyScheduleWeek:false),
+      showNavigationArrow:true,
+      showTodayButton:true,
+      allowViewNavigation:true,
+      showWeekNumber:true,
+      allowAppointmentResize:true,
+      allowDragAndDrop:true,
       dataSource: events,
     );
   }

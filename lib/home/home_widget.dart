@@ -53,57 +53,57 @@ class _HomeWidgetState extends State<HomeWidget> {
                 updateCallback: () => setState(() {}),
                 child: BarHomeWidget(),
               ),
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 5.0,
-                          color: Color(0x230E151B),
-                          offset: Offset(0.0, 2.0),
-                        )
-                      ],
-                    ),
-                    child: FlutterFlowCalendar(
-                      color: Color(0xFF0A1033),
-                      iconColor: Colors.black,
-                      weekFormat: true,
-                      weekStartsMonday: true,
-                      initialDate: getCurrentTimestamp,
-                      rowHeight: 80.0,
-                      onChange: (DateTimeRange? newSelectedDate) {
-                        setState(
-                                () => _model.calendarSelectedDay = newSelectedDate);
-                      },
-                      titleStyle: FlutterFlowTheme.of(context).titleMedium,
-                      dayOfWeekStyle: FlutterFlowTheme.of(context).bodySmall,
-                      dateStyle: FlutterFlowTheme.of(context).bodyMedium,
-                      selectedDateStyle:
-                      FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Poppins',
-                        color: Colors.white,
-                      ),
-                      inactiveDateStyle:
-                      FlutterFlowTheme.of(context).bodySmall.override(
-                        fontFamily: 'Poppins',
-                        color: Color(0x6B57636C),
-                      ),
-                      locale: FFLocalizations.of(context).languageCode,
-                    ),
-                  ),
-                ],
-              ),
+              // Column(
+              //   mainAxisSize: MainAxisSize.max,
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   children: [
+              //     Container(
+              //       width: double.infinity,
+              //       decoration: BoxDecoration(
+              //         color: FlutterFlowTheme.of(context).secondaryBackground,
+              //         boxShadow: [
+              //           BoxShadow(
+              //             blurRadius: 5.0,
+              //             color: Color(0x230E151B),
+              //             offset: Offset(0.0, 2.0),
+              //           )
+              //         ],
+              //       ),
+              //       child: FlutterFlowCalendar(
+              //         color: Color(0xFF0A1033),
+              //         iconColor: Colors.black,
+              //         weekFormat: true,
+              //         weekStartsMonday: true,
+              //         initialDate: getCurrentTimestamp,
+              //         rowHeight: 80.0,
+              //         onChange: (DateTimeRange? newSelectedDate) {
+              //           setState(
+              //                   () => _model.calendarSelectedDay = newSelectedDate);
+              //         },
+              //         titleStyle: FlutterFlowTheme.of(context).titleMedium,
+              //         dayOfWeekStyle: FlutterFlowTheme.of(context).bodySmall,
+              //         dateStyle: FlutterFlowTheme.of(context).bodyMedium,
+              //         selectedDateStyle:
+              //         FlutterFlowTheme.of(context).titleSmall.override(
+              //           fontFamily: 'Poppins',
+              //           color: Colors.white,
+              //         ),
+              //         inactiveDateStyle:
+              //         FlutterFlowTheme.of(context).bodySmall.override(
+              //           fontFamily: 'Poppins',
+              //           color: Color(0x6B57636C),
+              //         ),
+              //         locale: FFLocalizations.of(context).languageCode,
+              //       ),
+              //     ),
+              //   ],
+              // ),
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.5567,
+                height: MediaQuery.sizeOf(context).height * 0.7397,
                 child: custom_widgets.Schedule(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: MediaQuery.sizeOf(context).height * 0.5567,
+                  height: MediaQuery.sizeOf(context).height * 0.7397,
                 ),
               ),
             ],

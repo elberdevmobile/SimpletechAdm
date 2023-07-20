@@ -389,7 +389,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     );
                                     if (getJsonField(
                                           _model.auth,
-                                          r'''$.sucesso''',
+                                          r'''$.success''',
                                         ) ==
                                         true) {
                                       FFAppState().token = getJsonField(
