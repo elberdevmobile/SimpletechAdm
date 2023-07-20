@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/actions/actions.dart' as action_blocks;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -29,18 +30,36 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(const Duration(milliseconds: 1000));
-      if (true) {
-        context.pushNamed(
-          'OnboardingLogin',
-          extra: <String, dynamic>{
-            kTransitionInfoKey: TransitionInfo(
-              hasTransition: true,
-              transitionType: PageTransitionType.fade,
-            ),
-          },
+      if (FFAppState().logged == true) {
+        _model.auth = await action_blocks.auth(
+          context,
+          login: FFAppState().login,
+          senha: FFAppState().senha,
         );
+        if (getJsonField(
+              _model.auth,
+              r'''$.success''',
+            ) ==
+            true) {
+          FFAppState().token = getJsonField(
+            _model.auth,
+            r'''$.data.accessToken''',
+          ).toString().toString();
+          FFAppState().user = _model.auth!;
+
+          context.pushNamed(
+            'Home',
+            extra: <String, dynamic>{
+              kTransitionInfoKey: TransitionInfo(
+                hasTransition: true,
+                transitionType: PageTransitionType.scale,
+                alignment: Alignment.bottomCenter,
+              ),
+            },
+          );
+        }
       } else {
-        context.pushNamed('LoginPage');
+        context.pushNamed('OnboardingLogin');
       }
     });
   }

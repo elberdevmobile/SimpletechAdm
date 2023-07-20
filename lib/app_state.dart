@@ -27,6 +27,15 @@ class FFAppState extends ChangeNotifier {
         }
       }
     });
+    _safeInit(() {
+      _logged = prefs.getBool('ff_logged') ?? _logged;
+    });
+    _safeInit(() {
+      _login = prefs.getString('ff_login') ?? _login;
+    });
+    _safeInit(() {
+      _senha = prefs.getString('ff_senha') ?? _senha;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -48,6 +57,27 @@ class FFAppState extends ChangeNotifier {
   set user(dynamic _value) {
     _user = _value;
     prefs.setString('ff_user', jsonEncode(_value));
+  }
+
+  bool _logged = false;
+  bool get logged => _logged;
+  set logged(bool _value) {
+    _logged = _value;
+    prefs.setBool('ff_logged', _value);
+  }
+
+  String _login = '';
+  String get login => _login;
+  set login(String _value) {
+    _login = _value;
+    prefs.setString('ff_login', _value);
+  }
+
+  String _senha = '';
+  String get senha => _senha;
+  set senha(String _value) {
+    _senha = _value;
+    prefs.setString('ff_senha', _value);
   }
 }
 

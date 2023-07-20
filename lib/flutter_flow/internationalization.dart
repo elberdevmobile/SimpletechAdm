@@ -300,47 +300,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // profile
   {
-    'rrplmbei': {
+    '3qrbovre': {
       'pt': 'Andrea Davis',
       'en': '',
       'es': '',
     },
-    'rr1izbyz': {
+    'auban70e': {
       'pt': '\$24,421',
       'en': '',
       'es': '',
     },
-    '33olkyn7': {
+    'xbwc5g1e': {
       'pt': 'Wallet Balance',
       'en': '',
       'es': '',
     },
-    'j5fh5uwq': {
+    'l33jnw0j': {
       'pt': 'Power User',
       'en': '',
       'es': '',
     },
-    'u1lt2aad': {
+    'lrg5nrn8': {
       'pt': 'Trade Assets',
       'en': '',
       'es': '',
     },
-    'lpifue9y': {
+    '93co056v': {
       'pt': 'Buy Assets',
       'en': '',
       'es': '',
     },
-    'jv5b2y04': {
+    'qse91pp1': {
       'pt': 'Account Settings',
       'en': '',
       'es': '',
     },
-    'bp8h3nay': {
+    'c7i4j256': {
       'pt': 'Log Out',
       'en': '',
       'es': '',
     },
-    'cxnlz2u4': {
+    'iygzwj1h': {
       'pt': 'Perfil',
       'en': '',
       'es': '',
@@ -348,17 +348,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // qrcode
   {
-    'e6zysb4k': {
+    'miyv4h8u': {
       'pt': 'Leitura de QR Code',
       'en': '',
       'es': '',
     },
-    '6kqftcam': {
+    'fkkvk4ii': {
       'pt': 'Ler QR Code',
       'en': '',
       'es': '',
     },
-    'njwrd4cq': {
+    'y73vcrnf': {
       'pt': 'Leitor',
       'en': '',
       'es': '',
@@ -366,67 +366,67 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // forgotpass
   {
-    'ct1uup7z': {
+    'pn7f0khe': {
       'pt': 'Crie a sua conta agora!',
       'en': '',
       'es': '',
     },
-    'iledw419': {
+    'je1pr010': {
       'pt': 'Informe o seus dados para cadastro',
       'en': '',
       'es': '',
     },
-    '2r9now3n': {
+    '1y1nyv0r': {
       'pt': 'Seu email',
       'en': '',
       'es': '',
     },
-    'n80eyt2g': {
+    'n0ok4x80': {
       'pt': 'Informe o seu email',
       'en': '',
       'es': '',
     },
-    'x8pn9zsh': {
+    '5ibhdz87': {
       'pt': 'Sua senha anterior',
       'en': '',
       'es': '',
     },
-    'yb132xfd': {
+    'jdinn7cf': {
       'pt': 'Informe o sua senha anterior',
       'en': '',
       'es': '',
     },
-    '1s52u3y2': {
+    'lhlgg2hm': {
       'pt': 'Senha',
       'en': '',
       'es': '',
     },
-    'kikv9szv': {
+    'ahl4odll': {
       'pt': 'Crie sua senha',
       'en': '',
       'es': '',
     },
-    '4lrunvkr': {
+    'jfaob6cf': {
       'pt': 'Confirme sua senha',
       'en': '',
       'es': '',
     },
-    'hvncfm0m': {
+    '7ymfakaj': {
       'pt': 'Resetar senha',
       'en': '',
       'es': '',
     },
-    '6r3dvsqx': {
+    '5kkvuqh7': {
       'pt': 'Lembrei minha senha!',
       'en': '',
       'es': '',
     },
-    '0maore9g': {
+    'iv25cgvq': {
       'pt': ' Entrar',
       'en': '',
       'es': '',
     },
-    '3yqrzn9c': {
+    'io9laajn': {
       'pt': 'Home',
       'en': '',
       'es': '',
