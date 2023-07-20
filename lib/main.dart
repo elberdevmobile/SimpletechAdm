@@ -162,7 +162,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.qr_code_scanner_outlined,
             ),
             label: FFLocalizations.of(context).getText(
-              'y73vcrnf' /* Leitor */,
+              'g4upu00i' /* Leitor */,
             ),
             tooltip: '',
           ),
@@ -172,7 +172,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
-              'iygzwj1h' /* Perfil */,
+              '4nc49txb' /* Perfil */,
             ),
             tooltip: '',
           )

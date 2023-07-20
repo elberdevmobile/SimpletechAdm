@@ -1,4 +1,5 @@
 // Automatic FlutterFlow imports
+import '../../models/Agendamento.dart';
 import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -48,7 +49,7 @@ class _ScheduleState extends SampleViewState {
   Color cardThemeColor = Colors.white;
   Color backgroundColor = const Color.fromRGBO(0, 116, 227, 1);
 
-var jsonencoded = jsonEncode("[{\"id\":123,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-20\",\"horaInicioDoAgendamento\":{\"ticks\":637987680000000000,\"days\":738738,\"hours\":11,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":30,\"seconds\":0,\"totalDays\":738738.4791666666,\"totalHours\":17729.715,\"totalMilliseconds\":63798768000000,\"totalMicroseconds\":63798768000000000,\"totalNanoseconds\":63798768000000000000,\"totalMinutes\":1063785,\"totalSeconds\":63827100},\"horaFimDoAgendamento\":{\"ticks\":637987680000000000,\"days\":738738,\"hours\":12,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":30,\"seconds\":0,\"totalDays\":738738.4791666666,\"totalHours\":17729.715,\"totalMilliseconds\":63798768000000,\"totalMicroseconds\":63798768000000000,\"totalNanoseconds\":63798768000000000000,\"totalMinutes\":1063785,\"totalSeconds\":63827100},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":false,\"agendamentoConfirmado\":true,\"comandaDoAtendimento\":789,\"valorServicos\":150.0,\"cliente\":\"JoãodaSilva\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"CortedeCabelo\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30},{\"id\":2,\"idDoServico\":102,\"descricaoServico\":\"Barba\",\"valor\":50.0,\"comissao\":10.0,\"tempo\":20}]}]Nestaversãoexpandida,foramadicionadosvaloresdeexemploparacadacampo,comoIDs,datas,horárioseinformaçõessobreosserviços.Notequeoscamposde\"ticks\"eoutraspropriedadesrelacionadasatemposãogeradosautomaticamentecombasenoexemplo,masnaprática,essesvaloresseriampreenchidoscorretamentedeacordocomocontextodasuaaplicação.Alémdisso,tambémforamincluídosexemplosdeserviços,poisoJSONoriginalsócontinhaumalistadeserviçosvazia.Comessasinformaçõesadicionais,oJSONestámaiscompletoepodeserusadocomoexemplodeestruturadedadosparaumaAPIououtrousorelevante.UsergeremaisChatGPTClaro!VoucontinuaragerarmaisinformaçõesparaoJSONfornecido:jsonCopycode[{\"id\":123,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-20\",\"horaInicioDoAgendamento\":{\"ticks\":637987680000000000,\"days\":738738,\"hours\":11,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":30,\"seconds\":0,\"totalDays\":738738.4791666666,\"totalHours\":17729.715,\"totalMilliseconds\":63798768000000,\"totalMicroseconds\":63798768000000000,\"totalNanoseconds\":63798768000000000000,\"totalMinutes\":1063785,\"totalSeconds\":63827100},\"horaFimDoAgendamento\":{\"ticks\":637987680000000000,\"days\":738738,\"hours\":12,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":30,\"seconds\":0,\"totalDays\":738738.4791666666,\"totalHours\":17729.715,\"totalMilliseconds\":63798768000000,\"totalMicroseconds\":63798768000000000,\"totalNanoseconds\":63798768000000000000,\"totalMinutes\":1063785,\"totalSeconds\":63827100},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":false,\"agendamentoConfirmado\":true,\"comandaDoAtendimento\":789,\"valorServicos\":150.0,\"cliente\":\"JoãodaSilva\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"CortedeCabelo\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30},{\"id\":2,\"idDoServico\":102,\"descricaoServico\":\"Barba\",\"valor\":50.0,\"comissao\":10.0,\"tempo\":20},{\"id\":3,\"idDoServico\":103,\"descricaoServico\":\"Manicure\",\"valor\":40.0,\"comissao\":15.0,\"tempo\":40}],\"observacoes\":\"Clientepreferiuumcaféexpressoenquantoaguardavaoatendimento.\",\"endereco\":{\"rua\":\"RuadasFlores,123\",\"cidade\":\"SãoPaulo\",\"estado\":\"SP\",\"cep\":\"01234-567\"}}]");
+var jsonencoded = jsonDecode("[{\"id\":1,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-21\",\"horaInicioDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":12,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"horaFimDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":13,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":false,\"agendamentoConfirmado\":true,\"comandaDoAtendimento\":789,\"valorServicos\":150.0,\"cliente\":\"João da Silva\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"Corte de Cabelo\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30},{\"id\":2,\"idDoServico\":102,\"descricaoServico\":\"Barba\",\"valor\":50.0,\"comissao\":10.0,\"tempo\":20}]},{\"id\":2,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-21\",\"horaInicioDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":14,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"horaFimDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":15,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":true,\"agendamentoConfirmado\":false,\"comandaDoAtendimento\":456,\"valorServicos\":80.0,\"cliente\":\"Maria Souza\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"Progressiva\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30}]},{\"id\":3,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-22\",\"horaInicioDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":16,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"horaFimDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":18,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":2,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.08333333333333333,\"totalHours\":2,\"totalMilliseconds\":7200000,\"totalMicroseconds\":7200000000,\"totalNanoseconds\":7200000000000,\"totalMinutes\":120,\"totalSeconds\":7200},\"agendamentoCancelado\":false,\"agendamentoConfirmado\":true,\"comandaDoAtendimento\":321,\"valorServicos\":100.0,\"cliente\":\"Carlos Rodrigues\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"Barba\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30},{\"id\":2,\"idDoServico\":102,\"descricaoServico\":\"Barba\",\"valor\":50.0,\"comissao\":10.0,\"tempo\":20}]},{\"id\":4,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-22\",\"horaInicioDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":15,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"horaFimDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":17,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":2,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.08333333333333333,\"totalHours\":2,\"totalMilliseconds\":7200000,\"totalMicroseconds\":7200000000,\"totalNanoseconds\":7200000000000,\"totalMinutes\":120,\"totalSeconds\":7200},\"agendamentoCancelado\":true,\"agendamentoConfirmado\":false,\"comandaDoAtendimento\":654,\"valorServicos\":130.0,\"cliente\":\"Ana Pereira\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"Barba e Corte\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30}]},{\"id\":5,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-23\",\"horaInicioDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":10,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"horaFimDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":11,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":false,\"agendamentoConfirmado\":true,\"comandaDoAtendimento\":987,\"valorServicos\":60.0,\"cliente\":\"Pedro Santos\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"Sombrancelha\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30}]},{\"id\":6,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-23\",\"horaInicioDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":14,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"horaFimDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":15,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":false,\"agendamentoConfirmado\":true,\"comandaDoAtendimento\":741,\"valorServicos\":90.0,\"cliente\":\"Laura Mendes\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"Corte\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30}]},{\"id\":7,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-24\",\"horaInicioDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":16,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"horaFimDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":18,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":2,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.08333333333333333,\"totalHours\":2,\"totalMilliseconds\":7200000,\"totalMicroseconds\":7200000000,\"totalNanoseconds\":7200000000000,\"totalMinutes\":120,\"totalSeconds\":7200},\"agendamentoCancelado\":true,\"agendamentoConfirmado\":false,\"comandaDoAtendimento\":852,\"valorServicos\":120.0,\"cliente\":\"Fernanda Castro\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"Corte\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30},{\"id\":2,\"idDoServico\":102,\"descricaoServico\":\"Barba\",\"valor\":50.0,\"comissao\":10.0,\"tempo\":20}]},{\"id\":8,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-25\",\"horaInicioDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":10,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"horaFimDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":11,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":false,\"agendamentoConfirmado\":true,\"comandaDoAtendimento\":963,\"valorServicos\":75.0,\"cliente\":\"Mariana Almeida\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"Corte\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30},{\"id\":2,\"idDoServico\":102,\"descricaoServico\":\"Barba\",\"valor\":50.0,\"comissao\":10.0,\"tempo\":20}]},{\"id\":9,\"idDoParceiro\":456,\"dataAgendamento\":\"2023-07-26\",\"horaInicioDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":15,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"horaFimDoAgendamento\":{\"ticks\":0,\"days\":0,\"hours\":16,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0,\"totalHours\":0,\"totalMilliseconds\":0,\"totalMicroseconds\":0,\"totalNanoseconds\":0,\"totalMinutes\":0,\"totalSeconds\":0},\"tempo\":{\"ticks\":0,\"days\":0,\"hours\":1,\"milliseconds\":0,\"microseconds\":0,\"nanoseconds\":0,\"minutes\":0,\"seconds\":0,\"totalDays\":0.041666666666666664,\"totalHours\":1,\"totalMilliseconds\":3600000,\"totalMicroseconds\":3600000000,\"totalNanoseconds\":3600000000000,\"totalMinutes\":60,\"totalSeconds\":3600},\"agendamentoCancelado\":true,\"agendamentoConfirmado\":false,\"comandaDoAtendimento\":852,\"valorServicos\":95.0,\"cliente\":\"Paulo Costa\",\"servicos\":[{\"id\":1,\"idDoServico\":101,\"descricaoServico\":\"Corte\",\"valor\":80.0,\"comissao\":20.0,\"tempo\":30}]}]");
   /// holds light theme current palette color
   Color paletteColor = const Color.fromRGBO(0, 116, 227, 1);
 
@@ -174,7 +175,7 @@ var jsonencoded = jsonEncode("[{\"id\":123,\"idDoParceiro\":456,\"dataAgendament
   @override
   void initState() {
     events = _DataSource(_getAppointments());
-
+    jsonencoded =jsonencoded;
     super.initState();
   }
 
@@ -217,63 +218,57 @@ var jsonencoded = jsonEncode("[{\"id\":123,\"idDoParceiro\":456,\"dataAgendament
   /// Method that creates the collection the data source for calendar, with
   /// required information.
   List<Appointment> _getAppointments() {
-    final List<String> subjectCollection = <String>[];
-    subjectCollection.add('Jefferson');
-    subjectCollection.add('Elber');
-    subjectCollection.add('Christopher');
-    subjectCollection.add('Christopher');
-    subjectCollection.add('Christopher');
-    subjectCollection.add('Christopher');
-    subjectCollection.add('Consulting');
-    subjectCollection.add('Elber');
-    subjectCollection.add('Elber');
-    subjectCollection.add('Jefferson');
-    subjectCollection.add('Jefferson');
 
-    final List<Color> colorCollection = <Color>[];
-    colorCollection.add(const Color(0xFF0F8644));
-    colorCollection.add(const Color(0xFF8B1FA9));
-    colorCollection.add(const Color(0xFFD20100));
-    colorCollection.add(const Color(0xFFFC571D));
-    colorCollection.add(const Color(0xFF36B37B));
-    colorCollection.add(const Color(0xFF01A1EF));
-    colorCollection.add(const Color(0xFF3D4FB5));
-    colorCollection.add(const Color(0xFFE47C73));
-    colorCollection.add(const Color(0xFF636363));
-    colorCollection.add(const Color(0xFF0A8043));
+    final List<dynamic> subjectCollection = <dynamic>[];
+    final List<Agendamento> agendamentos = <Agendamento>[];
+    subjectCollection.addAll(jsonencoded);
 
-    final Random random = Random();
-    final DateTime rangeStartDate =
-        DateTime.now().add(const Duration(days: -(365 ~/ 2)));
-    final DateTime rangeEndDate = DateTime.now().add(const Duration(days: 365));
-    final List<Appointment> appointments = <Appointment>[];
-    for (DateTime i = rangeStartDate;
-        i.isBefore(rangeEndDate);
-        i = i.add(Duration(days: random.nextInt(10)))) {
-      final DateTime date = i;
-      final int count = 1 + random.nextInt(3);
-      for (int j = 0; j < count; j++) {
-        final DateTime startDate =
-            DateTime(date.year, date.month, date.day, 8 + random.nextInt(8));
-        appointments.add(Appointment(
-          subject: subjectCollection[random.nextInt(7)],
-          startTime: startDate,
-          endTime: startDate.add(Duration(hours: random.nextInt(3))),
-          color: colorCollection[random.nextInt(9)],
-        ));
-      }
+    for (int j = 0; j< subjectCollection.length; j++) {
+      agendamentos.add( Agendamento.fromJson(jsonencoded[j]));
     }
 
-    DateTime date = DateTime.now();
-    date = DateTime(date.year, date.month, date.day, 11);
-    // added recurrence appointment
-    appointments.add(Appointment(
-        subject: 'Nestor',
-        startTime: date,
-        endTime: date.add(const Duration(hours: 1)),
-        color: colorCollection[random.nextInt(9)],
-        recurrenceRule: 'FREQ=DAILY;INTERVAL=10'));
+    final List<Color> colorCollection = <Color>[];
+    colorCollection.add(const Color(0xFF0F8644).withOpacity(0.8));
+    colorCollection.add(const Color(0xFF8B1FA9).withOpacity(0.8));
+    colorCollection.add(const Color(0xFFD20100).withOpacity(0.8));
+    colorCollection.add(const Color(0xFFFC571D).withOpacity(0.8));
+    colorCollection.add(const Color(0xFF36B37B).withOpacity(0.8));
+    colorCollection.add(const Color(0xFF01A1EF).withOpacity(0.8));
+    colorCollection.add(const Color(0xFF3D4FB5).withOpacity(0.8));
+    colorCollection.add(const Color(0xFFE47C73).withOpacity(0.8));
+    colorCollection.add(const Color(0xFF636363).withOpacity(0.8));
+    colorCollection.add(const Color(0xFF0A8043).withOpacity(0.8));
+
+Random randon = Random();
+    final List<Appointment> appointments = <Appointment>[];
+    for (int j = 0; j< agendamentos.length; j++) {
+      appointments.add(Appointment(
+        subject: agendamentos[j].cliente.toString() + "                      "+agendamentos[j].servicos![0].descricaoServico! + "   R\$ "+agendamentos[j].valorServicos.toString() ,
+        notes: "R\$ "+agendamentos[j].valorServicos.toString() ,
+        startTime: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaInicioDoAgendamento!.hours!),
+        endTime: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaFimDoAgendamento!.hours!),
+        color: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaInicioDoAgendamento!.hours!).difference(DateTime.now()).inMinutes < 60 ?  colorCollection[3] :colorCollection[0],
+      ));
+    }
+
     return appointments;
+  }
+
+
+  DateTime criarDateTime(String data, int hora) {
+    // Transformar a dataAgendamento em objeto DateTime
+    final dataAgendamentoDateTime = DateFormat("yyyy-MM-dd").parse(data);
+
+    // Extrair a hora do objeto horaInicioDoAgendamento e criar um objeto DateTime
+    final horaInicioHours = hora;
+    final horaInicioDateTime = DateTime(
+      dataAgendamentoDateTime.year,
+      dataAgendamentoDateTime.month,
+      dataAgendamentoDateTime.day,
+      horaInicioHours,
+    );
+
+    return horaInicioDateTime;
   }
 
   @override

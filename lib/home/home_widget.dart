@@ -45,7 +45,8 @@ class _HomeWidgetState extends State<HomeWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: Column(
+        body: SingleChildScrollView(
+            child:Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               wrapWithModel(
@@ -107,7 +108,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                 ),
               ),
             ],
-          ),
+          )),
 
       ),
     );
