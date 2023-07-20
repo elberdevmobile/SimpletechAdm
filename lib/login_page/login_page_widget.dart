@@ -397,6 +397,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         r'''$.data.accessToken''',
                                       ).toString();
                                       FFAppState().user = _model.auth!;
+                                      FFAppState().logged = true;
+                                      FFAppState().login =
+                                          _model.emailAddressController.text;
+                                      FFAppState().senha =
+                                          _model.passwordController.text;
 
                                       context.pushNamed(
                                         'Home',
