@@ -300,47 +300,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // profile
   {
-    '8vwbsvss': {
-      'pt': 'Andrea Davis',
+    '9c1dgl3h': {
+      'pt': 'Nestor Nunes',
       'en': '',
       'es': '',
     },
-    '3u366sks': {
-      'pt': '\$24,421',
+    'vrrhoa0g': {
+      'pt': 'Agenda ativa',
       'en': '',
       'es': '',
     },
-    'vo4n1kna': {
-      'pt': 'Wallet Balance',
+    'n6fcbo6z': {
+      'pt': 'Seus Ganhos',
       'en': '',
       'es': '',
     },
-    '9s83mir3': {
-      'pt': 'Power User',
+    '8lhylhf8': {
+      'pt': 'Especialidades',
       'en': '',
       'es': '',
     },
-    '7e9e90un': {
-      'pt': 'Trade Assets',
+    'b7ypumln': {
+      'pt': 'Horário de atendimentos',
       'en': '',
       'es': '',
     },
-    'dfeu36jn': {
-      'pt': 'Buy Assets',
+    'utpczqcr': {
+      'pt': 'Sair',
       'en': '',
       'es': '',
     },
-    '0l2y1ls6': {
-      'pt': 'Account Settings',
-      'en': '',
-      'es': '',
-    },
-    'rb568qgn': {
-      'pt': 'Log Out',
-      'en': '',
-      'es': '',
-    },
-    'apq82dj1': {
+    '2xul43ms': {
       'pt': 'Perfil',
       'en': '',
       'es': '',
@@ -348,17 +338,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // qrcode
   {
-    'jhvxbxnz': {
+    'kaqql8fz': {
       'pt': 'Leitura de QR Code',
       'en': '',
       'es': '',
     },
-    'j82yy2fg': {
+    '61pqw90c': {
       'pt': 'Ler QR Code',
       'en': '',
       'es': '',
     },
-    'rjsgjyt4': {
+    'p704nk77': {
       'pt': 'Leitor',
       'en': '',
       'es': '',
@@ -366,67 +356,67 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // forgotpass
   {
-    'zb3tzkr7': {
+    'a6bvqnkb': {
       'pt': 'Crie a sua conta agora!',
       'en': '',
       'es': '',
     },
-    'zg963xa7': {
+    'v6r0d951': {
       'pt': 'Informe o seus dados para cadastro',
       'en': '',
       'es': '',
     },
-    'ombomioe': {
+    '8rd22ks4': {
       'pt': 'Seu email',
       'en': '',
       'es': '',
     },
-    'ilmdcyvh': {
+    'hwtfwa2d': {
       'pt': 'Informe o seu email',
       'en': '',
       'es': '',
     },
-    'v3lsrm7c': {
+    'sstsdfkz': {
       'pt': 'Sua senha anterior',
       'en': '',
       'es': '',
     },
-    '97bycntk': {
+    'ce4quc6s': {
       'pt': 'Informe o sua senha anterior',
       'en': '',
       'es': '',
     },
-    'd4gdxrrh': {
+    '8eo5gl6c': {
       'pt': 'Senha',
       'en': '',
       'es': '',
     },
-    'kvbr9omn': {
+    'aokirski': {
       'pt': 'Crie sua senha',
       'en': '',
       'es': '',
     },
-    'l56mzyk7': {
+    'd720nefo': {
       'pt': 'Confirme sua senha',
       'en': '',
       'es': '',
     },
-    'pychwp2j': {
+    'fg5ceavh': {
       'pt': 'Resetar senha',
       'en': '',
       'es': '',
     },
-    '17ytnmbe': {
+    'ull2j41a': {
       'pt': 'Lembrei minha senha!',
       'en': '',
       'es': '',
     },
-    'y4si786o': {
+    'vpgfmetq': {
       'pt': ' Entrar',
       'en': '',
       'es': '',
     },
-    '7sdptg7y': {
+    'moto425c': {
       'pt': 'Home',
       'en': '',
       'es': '',
@@ -434,43 +424,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // comanda
   {
-    'ew5y1he4': {
+    'd2qgleyf': {
       'pt': 'Suas Comandas',
       'en': '',
       'es': '',
     },
-    'ltabbgre': {
+    '2hm56xcf': {
       'pt':
           'Aqui você terá os detalhes do serviço a ser realizado para o seu cliente. ',
       'en': '',
       'es': '',
     },
-    'nszavxor': {
+    'iapzmxy4': {
       'pt': 'Nestor Nunes',
       'en': '',
       'es': '',
     },
-    'eocrhzsj': {
+    'jln9n3of': {
       'pt': 'Produtos',
       'en': '',
       'es': '',
     },
-    'twx9x4le': {
+    '2lkbdavd': {
       'pt': 'Adicionar',
       'en': '',
       'es': '',
     },
-    'xtx48oae': {
+    '7guoubmd': {
       'pt': 'Serviços',
       'en': '',
       'es': '',
     },
-    'w4sy6ro1': {
+    'u1vx39x4': {
       'pt': 'Adicionar',
       'en': '',
       'es': '',
     },
-    'myozd3ai': {
+    'ir4savwn': {
       'pt': 'Home',
       'en': '',
       'es': '',
