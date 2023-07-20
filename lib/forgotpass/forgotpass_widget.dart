@@ -101,7 +101,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                     0.0, 45.0, 18.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'ct1uup7z' /* Crie a sua conta agora! */,
+                                    'pn7f0khe' /* Crie a sua conta agora! */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -132,7 +132,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                     0.0, 0.0, 18.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'iledw419' /* Informe o seus dados para cada... */,
+                                    'je1pr010' /* Informe o seus dados para cada... */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
@@ -157,7 +157,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                 0.0, 16.0, 0.0, 8.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '2r9now3n' /* Seu email */,
+                                '1y1nyv0r' /* Seu email */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -206,7 +206,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                   labelStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
                                   hintText: FFLocalizations.of(context).getText(
-                                    'n80eyt2g' /* Informe o seu email */,
+                                    'n0ok4x80' /* Informe o seu email */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -292,7 +292,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                 0.0, 16.0, 0.0, 8.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'x8pn9zsh' /* Sua senha anterior */,
+                                '5ibhdz87' /* Sua senha anterior */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -335,7 +335,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                   labelStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
                                   hintText: FFLocalizations.of(context).getText(
-                                    'yb132xfd' /* Informe o sua senha anterior */,
+                                    'jdinn7cf' /* Informe o sua senha anterior */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -419,7 +419,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                 0.0, 16.0, 0.0, 8.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '1s52u3y2' /* Senha */,
+                                'lhlgg2hm' /* Senha */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -463,7 +463,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                   labelStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
                                   hintText: FFLocalizations.of(context).getText(
-                                    'kikv9szv' /* Crie sua senha */,
+                                    'ahl4odll' /* Crie sua senha */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -567,7 +567,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               hintText: FFLocalizations.of(context).getText(
-                                '4lrunvkr' /* Confirme sua senha */,
+                                'jfaob6cf' /* Confirme sua senha */,
                               ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -682,7 +682,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                           setState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
-                          'hvncfm0m' /* Resetar senha */,
+                          '7ymfakaj' /* Resetar senha */,
                         ),
                         options: FFButtonOptions(
                           width: 355.0,
@@ -718,7 +718,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                '6r3dvsqx' /* Lembrei minha senha! */,
+                                '5kkvuqh7' /* Lembrei minha senha! */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -747,7 +747,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                               },
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  '0maore9g' /*  Entrar */,
+                                  'iv25cgvq' /*  Entrar */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
