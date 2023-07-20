@@ -135,6 +135,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'forgotpass',
               path: 'forgotpass',
               builder: (context, params) => ForgotpassWidget(),
+            ),
+            FFRoute(
+              name: 'comanda',
+              path: 'comanda',
+              builder: (context, params) => ComandaWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

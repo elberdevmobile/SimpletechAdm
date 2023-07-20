@@ -300,47 +300,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // profile
   {
-    'pehja4ov': {
+    '8vwbsvss': {
       'pt': 'Andrea Davis',
       'en': '',
       'es': '',
     },
-    'gmaz6h3h': {
+    '3u366sks': {
       'pt': '\$24,421',
       'en': '',
       'es': '',
     },
-    '1d6a2aso': {
+    'vo4n1kna': {
       'pt': 'Wallet Balance',
       'en': '',
       'es': '',
     },
-    '3d9tojm9': {
+    '9s83mir3': {
       'pt': 'Power User',
       'en': '',
       'es': '',
     },
-    'vsxl6lp6': {
+    '7e9e90un': {
       'pt': 'Trade Assets',
       'en': '',
       'es': '',
     },
-    '8kk9x2z4': {
+    'dfeu36jn': {
       'pt': 'Buy Assets',
       'en': '',
       'es': '',
     },
-    'nwbaatn9': {
+    '0l2y1ls6': {
       'pt': 'Account Settings',
       'en': '',
       'es': '',
     },
-    'tvhzt8pm': {
+    'rb568qgn': {
       'pt': 'Log Out',
       'en': '',
       'es': '',
     },
-    '4nc49txb': {
+    'apq82dj1': {
       'pt': 'Perfil',
       'en': '',
       'es': '',
@@ -348,17 +348,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // qrcode
   {
-    'tvmkksdl': {
+    'jhvxbxnz': {
       'pt': 'Leitura de QR Code',
       'en': '',
       'es': '',
     },
-    'hq5whwqc': {
+    'j82yy2fg': {
       'pt': 'Ler QR Code',
       'en': '',
       'es': '',
     },
-    'g4upu00i': {
+    'rjsgjyt4': {
       'pt': 'Leitor',
       'en': '',
       'es': '',
@@ -366,67 +366,111 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // forgotpass
   {
-    'duhrpzkj': {
+    'zb3tzkr7': {
       'pt': 'Crie a sua conta agora!',
       'en': '',
       'es': '',
     },
-    'gw69fmcg': {
+    'zg963xa7': {
       'pt': 'Informe o seus dados para cadastro',
       'en': '',
       'es': '',
     },
-    'ay5myv2s': {
+    'ombomioe': {
       'pt': 'Seu email',
       'en': '',
       'es': '',
     },
-    '2vvusbry': {
+    'ilmdcyvh': {
       'pt': 'Informe o seu email',
       'en': '',
       'es': '',
     },
-    'b72vbbcr': {
+    'v3lsrm7c': {
       'pt': 'Sua senha anterior',
       'en': '',
       'es': '',
     },
-    'tgba9aq3': {
+    '97bycntk': {
       'pt': 'Informe o sua senha anterior',
       'en': '',
       'es': '',
     },
-    'jowg16fb': {
+    'd4gdxrrh': {
       'pt': 'Senha',
       'en': '',
       'es': '',
     },
-    'ech9u28o': {
+    'kvbr9omn': {
       'pt': 'Crie sua senha',
       'en': '',
       'es': '',
     },
-    'zjenbmmu': {
+    'l56mzyk7': {
       'pt': 'Confirme sua senha',
       'en': '',
       'es': '',
     },
-    'c12y119d': {
+    'pychwp2j': {
       'pt': 'Resetar senha',
       'en': '',
       'es': '',
     },
-    'cc2def3k': {
+    '17ytnmbe': {
       'pt': 'Lembrei minha senha!',
       'en': '',
       'es': '',
     },
-    'elpqxsb8': {
+    'y4si786o': {
       'pt': ' Entrar',
       'en': '',
       'es': '',
     },
-    'c2zduffg': {
+    '7sdptg7y': {
+      'pt': 'Home',
+      'en': '',
+      'es': '',
+    },
+  },
+  // comanda
+  {
+    'ew5y1he4': {
+      'pt': 'Suas Comandas',
+      'en': '',
+      'es': '',
+    },
+    'ltabbgre': {
+      'pt':
+          'Aqui você terá os detalhes do serviço a ser realizado para o seu cliente. ',
+      'en': '',
+      'es': '',
+    },
+    'nszavxor': {
+      'pt': 'Nestor Nunes',
+      'en': '',
+      'es': '',
+    },
+    'eocrhzsj': {
+      'pt': 'Produtos',
+      'en': '',
+      'es': '',
+    },
+    'twx9x4le': {
+      'pt': 'Adicionar',
+      'en': '',
+      'es': '',
+    },
+    'xtx48oae': {
+      'pt': 'Serviços',
+      'en': '',
+      'es': '',
+    },
+    'w4sy6ro1': {
+      'pt': 'Adicionar',
+      'en': '',
+      'es': '',
+    },
+    'myozd3ai': {
       'pt': 'Home',
       'en': '',
       'es': '',

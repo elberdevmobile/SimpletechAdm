@@ -100,12 +100,21 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                 ],
               ),
-              Container(
-                width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.6,
-                child: custom_widgets.Schedule(
+              InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('comanda');
+                },
+                child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 0.6,
+                  child: custom_widgets.Schedule(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: MediaQuery.sizeOf(context).height * 0.6,
+                  ),
                 ),
               ),
             ],

@@ -308,7 +308,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    'pehja4ov' /* Andrea Davis */,
+                    '8vwbsvss' /* Andrea Davis */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineSmall,
                 ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation1']!),
@@ -322,7 +322,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
               ).animateOnPageLoad(animationsMap['dividerOnPageLoadAnimation']!),
               Text(
                 FFLocalizations.of(context).getText(
-                  'gmaz6h3h' /* $24,421 */,
+                  '3u366sks' /* $24,421 */,
                 ),
                 style: FlutterFlowTheme.of(context).displayMedium,
               ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation2']!),
@@ -330,7 +330,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '1d6a2aso' /* Wallet Balance */,
+                    'vo4n1kna' /* Wallet Balance */,
                   ),
                   style: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Poppins',
@@ -373,7 +373,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             },
                             title: Text(
                               FFLocalizations.of(context).getText(
-                                '3d9tojm9' /* Power User */,
+                                '9s83mir3' /* Power User */,
                               ),
                               style: FlutterFlowTheme.of(context).bodyLarge,
                             ),
@@ -425,7 +425,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'vsxl6lp6' /* Trade Assets */,
+                              '7e9e90un' /* Trade Assets */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -468,7 +468,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '8kk9x2z4' /* Buy Assets */,
+                              'dfeu36jn' /* Buy Assets */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -511,7 +511,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'nwbaatn9' /* Account Settings */,
+                              '0l2y1ls6' /* Account Settings */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -533,7 +533,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                     context.goNamedAuth('HomePage', context.mounted);
                   },
                   text: FFLocalizations.of(context).getText(
-                    'tvhzt8pm' /* Log Out */,
+                    'rb568qgn' /* Log Out */,
                   ),
                   options: FFButtonOptions(
                     width: 150.0,
