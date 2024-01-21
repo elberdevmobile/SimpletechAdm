@@ -419,6 +419,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           _model.emailAddressController.text;
                                       FFAppState().senha =
                                           _model.passwordController.text;
+                                      FFAppState().nomeuser = getJsonField(
+                                        _model.auth,
+                                        r'''$.data.usuarioToken.nome''',
+                                      ).toString();
 
                                       context.pushNamed(
                                         'Home',

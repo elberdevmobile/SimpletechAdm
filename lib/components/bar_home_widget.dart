@@ -11,7 +11,12 @@ import 'bar_home_model.dart';
 export 'bar_home_model.dart';
 
 class BarHomeWidget extends StatefulWidget {
-  const BarHomeWidget({Key? key}) : super(key: key);
+  const BarHomeWidget({
+    Key? key,
+    required this.nome,
+  }) : super(key: key);
+
+  final String? nome;
 
   @override
   _BarHomeWidgetState createState() => _BarHomeWidgetState();
@@ -117,10 +122,10 @@ class _BarHomeWidgetState extends State<BarHomeWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Text(
-                                    getJsonField(
-                                      FFAppState().user,
-                                      r'''$.data.usuarioToken.nome''',
-                                    ).toString(),
+                                    valueOrDefault<String>(
+                                      widget.nome,
+                                      'Carregando...',
+                                    ),
                                     style: TextStyle(
                                       fontFamily: ' SF Pro Display',
                                       color: Colors.white,
