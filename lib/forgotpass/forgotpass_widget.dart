@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -29,9 +30,16 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
     _model = createModel(context, () => ForgotpassModel());
 
     _model.emailAddressController1 ??= TextEditingController();
+    _model.emailAddressFocusNode1 ??= FocusNode();
+
     _model.emailAddressController2 ??= TextEditingController();
+    _model.emailAddressFocusNode2 ??= FocusNode();
+
     _model.passController ??= TextEditingController();
+    _model.passFocusNode ??= FocusNode();
+
     _model.passconfirmController ??= TextEditingController();
+    _model.passconfirmFocusNode ??= FocusNode();
   }
 
   @override
@@ -43,10 +51,21 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
@@ -80,7 +99,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
               desktop: false,
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+              padding: EdgeInsets.all(12.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -101,7 +120,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                     0.0, 45.0, 18.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'a6bvqnkb' /* Crie a sua conta agora! */,
+                                    'iyg3389l' /* Crie a sua conta agora! */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -132,7 +151,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                     0.0, 0.0, 18.0, 24.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'v6r0d951' /* Informe o seus dados para cada... */,
+                                    'fkwr0y6w' /* Informe o seus dados para cada... */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
@@ -157,7 +176,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                 0.0, 16.0, 0.0, 8.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '8rd22ks4' /* Seu email */,
+                                'vgglht3w' /* Seu email */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -191,10 +210,10 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  3.0, 3.0, 3.0, 3.0),
+                              padding: EdgeInsets.all(3.0),
                               child: TextFormField(
                                 controller: _model.emailAddressController1,
+                                focusNode: _model.emailAddressFocusNode1,
                                 onChanged: (_) => EasyDebounce.debounce(
                                   '_model.emailAddressController1',
                                   Duration(milliseconds: 2000),
@@ -206,7 +225,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                   labelStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
                                   hintText: FFLocalizations.of(context).getText(
-                                    'hwtfwa2d' /* Informe o seu email */,
+                                    '6t69196c' /* Informe o seu email */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -292,7 +311,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                 0.0, 16.0, 0.0, 8.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'sstsdfkz' /* Sua senha anterior */,
+                                '4xlj3ufo' /* Sua senha anterior */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -326,16 +345,16 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  3.0, 3.0, 3.0, 3.0),
+                              padding: EdgeInsets.all(3.0),
                               child: TextFormField(
                                 controller: _model.emailAddressController2,
+                                focusNode: _model.emailAddressFocusNode2,
                                 obscureText: !_model.emailAddressVisibility,
                                 decoration: InputDecoration(
                                   labelStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
                                   hintText: FFLocalizations.of(context).getText(
-                                    'ce4quc6s' /* Informe o sua senha anterior */,
+                                    'mb97ukbc' /* Informe o sua senha anterior */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -419,7 +438,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                                 0.0, 16.0, 0.0, 8.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '8eo5gl6c' /* Senha */,
+                                'nrkdieg1' /* Senha */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -453,17 +472,17 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  3.0, 3.0, 3.0, 3.0),
+                              padding: EdgeInsets.all(3.0),
                               child: TextFormField(
                                 controller: _model.passController,
+                                focusNode: _model.passFocusNode,
                                 autofocus: true,
                                 obscureText: !_model.passVisibility,
                                 decoration: InputDecoration(
                                   labelStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
                                   hintText: FFLocalizations.of(context).getText(
-                                    'aokirski' /* Crie sua senha */,
+                                    'a4ae0126' /* Crie sua senha */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -557,17 +576,17 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              3.0, 3.0, 3.0, 3.0),
+                          padding: EdgeInsets.all(3.0),
                           child: TextFormField(
                             controller: _model.passconfirmController,
+                            focusNode: _model.passconfirmFocusNode,
                             autofocus: true,
                             obscureText: !_model.passconfirmVisibility,
                             decoration: InputDecoration(
                               labelStyle:
                                   FlutterFlowTheme.of(context).bodySmall,
                               hintText: FFLocalizations.of(context).getText(
-                                'd720nefo' /* Confirme sua senha */,
+                                'brg1li5r' /* Confirme sua senha */,
                               ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -682,7 +701,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                           setState(() {});
                         },
                         text: FFLocalizations.of(context).getText(
-                          'fg5ceavh' /* Resetar senha */,
+                          'dk3l07w6' /* Resetar senha */,
                         ),
                         options: FFButtonOptions(
                           width: 355.0,
@@ -718,7 +737,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                'ull2j41a' /* Lembrei minha senha! */,
+                                'yhw7x1pl' /* Lembrei minha senha! */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -747,7 +766,7 @@ class _ForgotpassWidgetState extends State<ForgotpassWidget> {
                               },
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'vpgfmetq' /*  Entrar */,
+                                  'q5ygys3y' /*  Entrar */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium

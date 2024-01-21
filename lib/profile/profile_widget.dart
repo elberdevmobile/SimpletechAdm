@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -204,10 +205,21 @@ class _ProfileWidgetState extends State<ProfileWidget>
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -250,7 +262,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 2.0, 2.0, 2.0),
+                  padding: EdgeInsets.all(2.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(60.0),
                     child: Image.network(
@@ -267,7 +279,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                 child: Text(
                   FFLocalizations.of(context).getText(
-                    '9c1dgl3h' /* Nestor Nunes */,
+                    'lxhef3pi' /* Nestor Nunes */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineSmall,
                 ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation']!),
@@ -288,7 +300,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                     borderRadius: BorderRadius.circular(12.0),
                   ),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -310,7 +322,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             },
                             title: Text(
                               FFLocalizations.of(context).getText(
-                                'vrrhoa0g' /* Agenda ativa */,
+                                'fgrpqmbz' /* Agenda ativa */,
                               ),
                               style: FlutterFlowTheme.of(context).bodyLarge,
                             ),
@@ -358,7 +370,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'n6fcbo6z' /* Seus Ganhos */,
+                              'fq6y6dzb' /* Seus Ganhos */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -397,7 +409,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              '8lhylhf8' /* Especialidades */,
+                              'cd7dqxs9' /* Especialidades */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -436,7 +448,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'b7ypumln' /* Horário de atendimentos */,
+                              'dlevdy8k' /* Horário de atendimentos */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyLarge,
                           ),
@@ -462,7 +474,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                     context.pushNamed('LoginPage');
                   },
                   text: FFLocalizations.of(context).getText(
-                    'utpczqcr' /* Sair */,
+                    'tznx09km' /* Sair */,
                   ),
                   options: FFButtonOptions(
                     width: 150.0,

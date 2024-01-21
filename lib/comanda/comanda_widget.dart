@@ -2,9 +2,11 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -90,10 +92,21 @@ class _ComandaWidgetState extends State<ComandaWidget>
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -151,7 +164,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                   0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'd2qgleyf' /* Suas Comandas */,
+                                  'f5o1u2at' /* Suas Comandas */,
                                 ),
                                 style: FlutterFlowTheme.of(context).titleLarge,
                               ),
@@ -161,7 +174,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                   0.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  '2hm56xcf' /* Aqui você terá os detalhes do ... */,
+                                  '371e22wk' /* Aqui você terá os detalhes do ... */,
                                 ),
                                 style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
@@ -234,7 +247,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'iapzmxy4' /* Nestor Nunes */,
+                                                    'qcf9cjn2' /* Nestor Nunes */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -335,7 +348,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                       16.0, 0.0, 0.0, 32.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      'jln9n3of' /* Produtos */,
+                                      'p6x962i5' /* Produtos */,
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyMedium,
@@ -373,7 +386,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                '2lkbdavd' /* Adicionar */,
+                                                '8341rlar' /* Adicionar */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -404,7 +417,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                       16.0, 0.0, 0.0, 32.0),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
-                                      '7guoubmd' /* Serviços */,
+                                      'gunelbfe' /* Serviços */,
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyMedium,
@@ -442,7 +455,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'u1vx39x4' /* Adicionar */,
+                                                'mo72ez5e' /* Adicionar */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)

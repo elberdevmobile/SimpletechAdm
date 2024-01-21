@@ -6,6 +6,7 @@ import '/actions/actions.dart' as action_blocks;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -44,7 +45,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     });
 
     _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressFocusNode ??= FocusNode();
+
     _model.passwordController ??= TextEditingController();
+    _model.passwordFocusNode ??= FocusNode();
   }
 
   @override
@@ -56,10 +60,21 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         body: Container(
@@ -143,6 +158,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       0.0, 32.0, 0.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.emailAddressController,
+                                    focusNode: _model.emailAddressFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.emailAddressController',
                                       Duration(milliseconds: 2000),
@@ -295,6 +311,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               Expanded(
                                 child: TextFormField(
                                   controller: _model.passwordController,
+                                  focusNode: _model.passwordFocusNode,
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
                                     labelText:
@@ -389,9 +406,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     );
                                     if (getJsonField(
                                           _model.auth,
-                                          r'''$.sucesso''',
-                                        ) ==
-                                        true) {
+                                          r'''$.data''',
+                                        ) !=
+                                        null) {
                                       FFAppState().token = getJsonField(
                                         _model.auth,
                                         r'''$.data.accessToken''',
