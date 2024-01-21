@@ -48,6 +48,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             r'''$.data.accessToken''',
           ).toString().toString();
           FFAppState().user = _model.auth!;
+          FFAppState().logged = true;
+          FFAppState().nomeuser = getJsonField(
+            _model.auth,
+            r'''$.data.usuarioToken.nome''',
+          ).toString().toString();
 
           context.pushNamed(
             'Home',
