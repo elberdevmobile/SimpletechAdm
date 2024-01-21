@@ -473,11 +473,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'es': '',
     },
-    'f7s0kr3m': {
-      'pt': 'Nestor Júnior',
-      'en': '',
-      'es': '',
-    },
     'u5tge4w8': {
       'pt': '1',
       'en': '',

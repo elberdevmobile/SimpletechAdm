@@ -40,6 +40,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _senha = prefs.getString('ff_senha') ?? _senha;
     });
+    _safeInit(() {
+      _nomeuser = prefs.getString('ff_nomeuser') ?? _nomeuser;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -82,6 +85,13 @@ class FFAppState extends ChangeNotifier {
   set senha(String _value) {
     _senha = _value;
     prefs.setString('ff_senha', _value);
+  }
+
+  String _nomeuser = '';
+  String get nomeuser => _nomeuser;
+  set nomeuser(String _value) {
+    _nomeuser = _value;
+    prefs.setString('ff_nomeuser', _value);
   }
 }
 

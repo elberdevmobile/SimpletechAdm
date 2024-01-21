@@ -66,7 +66,9 @@ class _HomeWidgetState extends State<HomeWidget> {
               wrapWithModel(
                 model: _model.barHomeModel,
                 updateCallback: () => setState(() {}),
-                child: BarHomeWidget(),
+                child: BarHomeWidget(
+                  nome: FFAppState().nomeuser,
+                ),
               ),
               Column(
                 mainAxisSize: MainAxisSize.max,
