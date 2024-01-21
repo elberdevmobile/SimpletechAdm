@@ -55,13 +55,14 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
     userStream = simpleAdmFirebaseUserStream()
       ..listen((user) => _appStateNotifier.update(user));
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      Duration(seconds: 1),
+      Duration(milliseconds: 1000),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -91,7 +92,10 @@ class _MyAppState extends State<MyApp> {
         Locale('en'),
         Locale('es'),
       ],
-      theme: ThemeData(brightness: Brightness.light),
+      theme: ThemeData(
+        brightness: Brightness.light,
+        scrollbarTheme: ScrollbarThemeData(),
+      ),
       themeMode: _themeMode,
       routerConfig: _router,
     );
@@ -162,7 +166,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.qr_code_scanner_outlined,
             ),
             label: FFLocalizations.of(context).getText(
-              'p704nk77' /* Leitor */,
+              '83rjx52d' /* Leitor */,
             ),
             tooltip: '',
           ),
@@ -172,7 +176,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
-              '2xul43ms' /* Perfil */,
+              '4oc1thc5' /* Perfil */,
             ),
             tooltip: '',
           )

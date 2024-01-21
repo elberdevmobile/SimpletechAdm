@@ -114,6 +114,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Começo',
     },
   },
+  // Logininit
+  {
+    '7u2qzlqu': {
+      'pt':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dignissim nunc, a vivamus blandit amet neque. Interdum facilisis euismod.',
+      'en': '',
+      'es': '',
+    },
+    'qiaefg50': {
+      'pt': 'Vamos lá ?',
+      'en': '',
+      'es': '',
+    },
+    '72l1wcjb': {
+      'pt': 'Home',
+      'en': '',
+      'es': '',
+    },
+  },
   // OnboardingLogin
   {
     '5vdf9hdx': {
@@ -161,25 +180,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1w4n3fab': {
       'pt': 'Concluir',
-      'en': '',
-      'es': '',
-    },
-  },
-  // Logininit
-  {
-    '7u2qzlqu': {
-      'pt':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dignissim nunc, a vivamus blandit amet neque. Interdum facilisis euismod.',
-      'en': '',
-      'es': '',
-    },
-    'qiaefg50': {
-      'pt': 'Vamos lá ?',
-      'en': '',
-      'es': '',
-    },
-    '72l1wcjb': {
-      'pt': 'Home',
       'en': '',
       'es': '',
     },
@@ -300,37 +300,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // profile
   {
-    '9c1dgl3h': {
+    'lxhef3pi': {
       'pt': 'Nestor Nunes',
       'en': '',
       'es': '',
     },
-    'vrrhoa0g': {
+    'fgrpqmbz': {
       'pt': 'Agenda ativa',
       'en': '',
       'es': '',
     },
-    'n6fcbo6z': {
+    'fq6y6dzb': {
       'pt': 'Seus Ganhos',
       'en': '',
       'es': '',
     },
-    '8lhylhf8': {
+    'cd7dqxs9': {
       'pt': 'Especialidades',
       'en': '',
       'es': '',
     },
-    'b7ypumln': {
+    'dlevdy8k': {
       'pt': 'Horário de atendimentos',
       'en': '',
       'es': '',
     },
-    'utpczqcr': {
+    'tznx09km': {
       'pt': 'Sair',
       'en': '',
       'es': '',
     },
-    '2xul43ms': {
+    '4oc1thc5': {
       'pt': 'Perfil',
       'en': '',
       'es': '',
@@ -338,17 +338,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // qrcode
   {
-    'kaqql8fz': {
+    'vrpwvra3': {
       'pt': 'Leitura de QR Code',
       'en': '',
       'es': '',
     },
-    '61pqw90c': {
+    'rjw36gui': {
       'pt': 'Ler QR Code',
       'en': '',
       'es': '',
     },
-    'p704nk77': {
+    '83rjx52d': {
       'pt': 'Leitor',
       'en': '',
       'es': '',
@@ -356,67 +356,67 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // forgotpass
   {
-    'a6bvqnkb': {
+    'iyg3389l': {
       'pt': 'Crie a sua conta agora!',
       'en': '',
       'es': '',
     },
-    'v6r0d951': {
+    'fkwr0y6w': {
       'pt': 'Informe o seus dados para cadastro',
       'en': '',
       'es': '',
     },
-    '8rd22ks4': {
+    'vgglht3w': {
       'pt': 'Seu email',
       'en': '',
       'es': '',
     },
-    'hwtfwa2d': {
+    '6t69196c': {
       'pt': 'Informe o seu email',
       'en': '',
       'es': '',
     },
-    'sstsdfkz': {
+    '4xlj3ufo': {
       'pt': 'Sua senha anterior',
       'en': '',
       'es': '',
     },
-    'ce4quc6s': {
+    'mb97ukbc': {
       'pt': 'Informe o sua senha anterior',
       'en': '',
       'es': '',
     },
-    '8eo5gl6c': {
+    'nrkdieg1': {
       'pt': 'Senha',
       'en': '',
       'es': '',
     },
-    'aokirski': {
+    'a4ae0126': {
       'pt': 'Crie sua senha',
       'en': '',
       'es': '',
     },
-    'd720nefo': {
+    'brg1li5r': {
       'pt': 'Confirme sua senha',
       'en': '',
       'es': '',
     },
-    'fg5ceavh': {
+    'dk3l07w6': {
       'pt': 'Resetar senha',
       'en': '',
       'es': '',
     },
-    'ull2j41a': {
+    'yhw7x1pl': {
       'pt': 'Lembrei minha senha!',
       'en': '',
       'es': '',
     },
-    'vpgfmetq': {
+    'q5ygys3y': {
       'pt': ' Entrar',
       'en': '',
       'es': '',
     },
-    'moto425c': {
+    'myj15rja': {
       'pt': 'Home',
       'en': '',
       'es': '',
@@ -424,43 +424,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // comanda
   {
-    'd2qgleyf': {
+    'f5o1u2at': {
       'pt': 'Suas Comandas',
       'en': '',
       'es': '',
     },
-    '2hm56xcf': {
+    '371e22wk': {
       'pt':
           'Aqui você terá os detalhes do serviço a ser realizado para o seu cliente. ',
       'en': '',
       'es': '',
     },
-    'iapzmxy4': {
+    'qcf9cjn2': {
       'pt': 'Nestor Nunes',
       'en': '',
       'es': '',
     },
-    'jln9n3of': {
+    'p6x962i5': {
       'pt': 'Produtos',
       'en': '',
       'es': '',
     },
-    '2lkbdavd': {
+    '8341rlar': {
       'pt': 'Adicionar',
       'en': '',
       'es': '',
     },
-    '7guoubmd': {
+    'gunelbfe': {
       'pt': 'Serviços',
       'en': '',
       'es': '',
     },
-    'u1vx39x4': {
+    'mo72ez5e': {
       'pt': 'Adicionar',
       'en': '',
       'es': '',
     },
-    'ir4savwn': {
+    'iiwmy1ar': {
       'pt': 'Home',
       'en': '',
       'es': '',
