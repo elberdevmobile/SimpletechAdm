@@ -184,6 +184,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
+  // Home
+  {
+    'hfkmfrfg': {
+      'pt': 'Home',
+      'en': '',
+      'es': '',
+    },
+  },
   // LoginPage
   {
     '107xsv0t': {
@@ -227,14 +235,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
     'kahc71du': {
-      'pt': 'Home',
-      'en': '',
-      'es': '',
-    },
-  },
-  // Home
-  {
-    'hfkmfrfg': {
       'pt': 'Home',
       'en': '',
       'es': '',
