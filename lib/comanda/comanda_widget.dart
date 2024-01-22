@@ -15,7 +15,12 @@ import 'comanda_model.dart';
 export 'comanda_model.dart';
 
 class ComandaWidget extends StatefulWidget {
-  const ComandaWidget({Key? key}) : super(key: key);
+  const ComandaWidget({
+    Key? key,
+    required this.agendamento,
+  }) : super(key: key);
+
+  final dynamic agendamento;
 
   @override
   _ComandaWidgetState createState() => _ComandaWidgetState();

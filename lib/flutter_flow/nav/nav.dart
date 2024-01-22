@@ -141,7 +141,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'comanda',
               path: 'comanda',
-              builder: (context, params) => ComandaWidget(),
+              builder: (context, params) => ComandaWidget(
+                agendamento: params.getParam('agendamento', ParamType.JSON),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
