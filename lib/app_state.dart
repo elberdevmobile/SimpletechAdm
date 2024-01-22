@@ -66,6 +66,13 @@ class FFAppState extends ChangeNotifier {
     prefs.setString('ff_user', jsonEncode(_value));
   }
 
+  dynamic _agenda;
+  dynamic get agenda => _agenda;
+  set agenda(dynamic _value) {
+    _agenda = _value;
+    prefs.setString('ff_agenda', jsonEncode(_value));
+  }
+
   bool _logged = false;
   bool get logged => _logged;
   set logged(bool _value) {

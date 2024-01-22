@@ -125,6 +125,7 @@ flutter:
     - assets/lottie_animations/
     - assets/rive_animations/
     - assets/pdfs/
+    - images/
   fonts:
     - family: ' SF Pro Display'
       fonts:

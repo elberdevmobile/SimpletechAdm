@@ -30,16 +30,10 @@
 @import path_provider_foundation;
 #endif
 
-#if __has_include(<qr_code_scanner/FlutterQrPlugin.h>)
-#import <qr_code_scanner/FlutterQrPlugin.h>
+#if __has_include(<shared_preferences_foundation/SharedPreferencesPlugin.h>)
+#import <shared_preferences_foundation/SharedPreferencesPlugin.h>
 #else
-@import qr_code_scanner;
-#endif
-
-#if __has_include(<shared_preferences_ios/FLTSharedPreferencesPlugin.h>)
-#import <shared_preferences_ios/FLTSharedPreferencesPlugin.h>
-#else
-@import shared_preferences_ios;
+@import shared_preferences_foundation;
 #endif
 
 #if __has_include(<sign_in_with_apple/SignInWithApplePlugin.h>)
@@ -67,8 +61,7 @@
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
   [FLTGoogleSignInPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTGoogleSignInPlugin"]];
   [PathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"PathProviderPlugin"]];
-  [FlutterQrPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterQrPlugin"]];
-  [FLTSharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTSharedPreferencesPlugin"]];
+  [SharedPreferencesPlugin registerWithRegistrar:[registry registrarForPlugin:@"SharedPreferencesPlugin"]];
   [SignInWithApplePlugin registerWithRegistrar:[registry registrarForPlugin:@"SignInWithApplePlugin"]];
   [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
   [FLTURLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTURLLauncherPlugin"]];

@@ -1,3 +1,4 @@
+import '../backend/api_requests/api_manager.dart';
 import '/components/bar_home_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -18,6 +19,7 @@ class HomeModel extends FlutterFlowModel<HomeWidget> {
   final unfocusNode = FocusNode();
   // Model for bar_home component.
   late BarHomeModel barHomeModel;
+  ApiCallResponse? agendamentos;
   // State field(s) for Calendar widget.
   DateTimeRange? calendarSelectedDay;
 

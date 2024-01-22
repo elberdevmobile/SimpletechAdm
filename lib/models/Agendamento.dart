@@ -2,13 +2,13 @@ class Agendamento {
   int? id;
   int? idDoParceiro;
   String? dataAgendamento;
-  HoraInicioDoAgendamento? horaInicioDoAgendamento;
-  HoraInicioDoAgendamento? horaFimDoAgendamento;
+  String? horaInicioDoAgendamento;
+  String? horaFimDoAgendamento;
   Tempo? tempo;
   bool? agendamentoCancelado;
   bool? agendamentoConfirmado;
   int? comandaDoAtendimento;
-  double? valorServicos;
+  int? valorServicos;
   String? cliente;
   List<Servicos>? servicos;
 
@@ -30,13 +30,8 @@ class Agendamento {
     id = json['id'];
     idDoParceiro = json['idDoParceiro'];
     dataAgendamento = json['dataAgendamento'];
-    horaInicioDoAgendamento = json['horaInicioDoAgendamento'] != null
-        ? new HoraInicioDoAgendamento.fromJson(json['horaInicioDoAgendamento'])
-        : null;
-    horaFimDoAgendamento = json['horaFimDoAgendamento'] != null
-        ? new HoraInicioDoAgendamento.fromJson(json['horaFimDoAgendamento'])
-        : null;
-    tempo = json['tempo'] != null ? new Tempo.fromJson(json['tempo']) : null;
+    horaInicioDoAgendamento = json['horaInicioDoAgendamento'];
+    horaFimDoAgendamento = json['horaFimDoAgendamento'];
     agendamentoCancelado = json['agendamentoCancelado'];
     agendamentoConfirmado = json['agendamentoConfirmado'];
     comandaDoAtendimento = json['comandaDoAtendimento'];
@@ -55,15 +50,9 @@ class Agendamento {
     data['id'] = this.id;
     data['idDoParceiro'] = this.idDoParceiro;
     data['dataAgendamento'] = this.dataAgendamento;
-    if (this.horaInicioDoAgendamento != null) {
-      data['horaInicioDoAgendamento'] = this.horaInicioDoAgendamento!.toJson();
-    }
-    if (this.horaFimDoAgendamento != null) {
-      data['horaFimDoAgendamento'] = this.horaFimDoAgendamento!.toJson();
-    }
-    if (this.tempo != null) {
-      data['tempo'] = this.tempo!.toJson();
-    }
+    data['horaInicioDoAgendamento'];
+    data['horaFimDoAgendamento'];
+
     data['agendamentoCancelado'] = this.agendamentoCancelado;
     data['agendamentoConfirmado'] = this.agendamentoConfirmado;
     data['comandaDoAtendimento'] = this.comandaDoAtendimento;
@@ -218,8 +207,8 @@ class Servicos {
   int? id;
   int? idDoServico;
   String? descricaoServico;
-  double? valor;
-  double? comissao;
+  int? valor;
+  int? comissao;
   int? tempo;
 
   Servicos(
