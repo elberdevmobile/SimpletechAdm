@@ -14,10 +14,10 @@ import 'home_model.dart';
 export 'home_model.dart';
 
 class HomeWidget extends StatefulWidget {
-  const HomeWidget({Key? key}) : super(key: key);
+  const HomeWidget({super.key});
 
   @override
-  _HomeWidgetState createState() => _HomeWidgetState();
+  State<HomeWidget> createState() => _HomeWidgetState();
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
@@ -115,12 +115,29 @@ class _HomeWidgetState extends State<HomeWidget> {
                   ),
                 ],
               ),
-              Container(
-                width: MediaQuery.sizeOf(context).width * 1.0,
-                height: MediaQuery.sizeOf(context).height * 0.6,
-                child: custom_widgets.Schedule(
+              InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(
+                    'comanda',
+                    queryParameters: {
+                      'agendamento': serializeParam(
+                        <String, dynamic>{},
+                        ParamType.JSON,
+                      ),
+                    }.withoutNulls,
+                  );
+                },
+                child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 0.6,
+                  child: custom_widgets.Schedule(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: MediaQuery.sizeOf(context).height * 0.6,
+                  ),
                 ),
               ),
             ],

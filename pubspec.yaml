@@ -28,6 +28,7 @@ dependencies:
   auto_size_text: 3.0.0
   badges: 2.0.2
   cached_network_image: 3.2.1
+  collection: 1.17.2
   easy_debounce: 2.0.1
   equatable: 2.0.5
   firebase_auth: 4.15.2

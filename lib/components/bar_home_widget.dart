@@ -12,14 +12,14 @@ export 'bar_home_model.dart';
 
 class BarHomeWidget extends StatefulWidget {
   const BarHomeWidget({
-    Key? key,
+    super.key,
     required this.nome,
-  }) : super(key: key);
+  });
 
   final String? nome;
 
   @override
-  _BarHomeWidgetState createState() => _BarHomeWidgetState();
+  State<BarHomeWidget> createState() => _BarHomeWidgetState();
 }
 
 class _BarHomeWidgetState extends State<BarHomeWidget> {

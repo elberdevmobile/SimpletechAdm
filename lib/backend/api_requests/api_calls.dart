@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
+import '../schema/structs/index.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
@@ -36,6 +37,7 @@ class SimpleTechCopyGroup {
       FinalizarAtendimentoCall();
   static ObterAgendamentosParceiroCall obterAgendamentosParceiroCall =
       ObterAgendamentosParceiroCall();
+  static ObterprodutosCall obterprodutosCall = ObterprodutosCall();
   static ObterGanhosParceiroCall obterGanhosParceiroCall =
       ObterGanhosParceiroCall();
   static ObterPorCelularCall obterPorCelularCall = ObterPorCelularCall();
@@ -448,6 +450,42 @@ class ObterAgendamentosParceiroCall {
       alwaysAllowBody: false,
     );
   }
+}
+
+class ObterprodutosCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuth = '',
+    int? filial,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "idFilial": ${filial},
+  "produto": null
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'obterprodutos',
+      apiUrl:
+          '${SimpleTechCopyGroup.baseUrl}/api/produtosparavendas/obter-produtos-para-vendas',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${bearerAuth}',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  dynamic? produtcs(dynamic response) => getJsonField(
+        response,
+        r'''$[:]''',
+      );
 }
 
 class ObterGanhosParceiroCall {
