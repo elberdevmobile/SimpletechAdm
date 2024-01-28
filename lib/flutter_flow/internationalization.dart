@@ -480,6 +480,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'es': '',
     },
+    'vbs12qvf': {
+      'pt': 'Button',
+      'en': '',
+      'es': '',
+    },
     'iiwmy1ar': {
       'pt': 'Home',
       'en': '',

@@ -35,8 +35,9 @@ class SimpleTechCopyGroup {
       ObterAtendimentoParaFinalizarCall();
   static FinalizarAtendimentoCall finalizarAtendimentoCall =
       FinalizarAtendimentoCall();
-  static ObterAgendamentosParceiroCall obterAgendamentosParceiroCall =
-      ObterAgendamentosParceiroCall();
+  static FecharpedidoCall fecharpedidoCall = FecharpedidoCall();
+  static ObterAgendamentosParceiroCopyCall obterAgendamentosParceiroCopyCall =
+      ObterAgendamentosParceiroCopyCall();
   static ObterprodutosCall obterprodutosCall = ObterprodutosCall();
   static ObterGanhosParceiroCall obterGanhosParceiroCall =
       ObterGanhosParceiroCall();
@@ -419,7 +420,57 @@ class FinalizarAtendimentoCall {
   }
 }
 
-class ObterAgendamentosParceiroCall {
+class FecharpedidoCall {
+  Future<ApiCallResponse> call({
+    String? bearerAuth = '',
+    String? inicial = '',
+    String? finaldate = '',
+    int? filial,
+  }) async {
+    final ffApiRequestBody = '''
+{
+    "id": 0,
+    "idDoAtendimento": 50,
+    "idDoCliente": 9,
+    "idDoParceiro": 9,
+    "idDaFilial": 3,
+    "percentualDescontoPedido": 0,
+    "produtos": [],
+    "servicos": [
+        {
+            "idDoServico": 6,
+            "quantidadeDoServico": 1,
+            "valorComissaoServico": 10,
+            "valorServico": 15
+        },
+        {
+            "idDoServico": 21,
+            "quantidadeDoServico": 3,
+            "valorComissaoServico": 10,
+            "valorServico": 55
+        }
+    ]
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'fecharpedido',
+      apiUrl: '${SimpleTechCopyGroup.baseUrl}/api/pedidos/novo-cadastro',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${bearerAuth}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class ObterAgendamentosParceiroCopyCall {
   Future<ApiCallResponse> call({
     String? bearerAuth = '',
     String? inicial = '',
@@ -433,7 +484,7 @@ class ObterAgendamentosParceiroCall {
   "idDaFilial": ${filial}
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'obter-agendamentos-parceiro',
+      callName: 'obter-agendamentos-parceiro Copy',
       apiUrl:
           '${SimpleTechCopyGroup.baseUrl}/api/agendamentos/obter-agendamentos-parceiro',
       callType: ApiCallType.POST,

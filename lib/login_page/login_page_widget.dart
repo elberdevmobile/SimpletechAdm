@@ -32,8 +32,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.agendamentos =
-          await SimpleTechCopyGroup.obterAgendamentosParceiroCall.call(
+      _model.agendamentos = await SimpleTechCopyGroup.fecharpedidoCall.call(
         bearerAuth: FFAppState().token,
         inicial: '2023-05-21',
         finaldate: '2023-07-30',
