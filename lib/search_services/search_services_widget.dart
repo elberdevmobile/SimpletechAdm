@@ -1,5 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
-import '/components/newmodule_widget.dart';
+import '/components/newmodule_services_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -176,7 +176,7 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                         itemBuilder: (context, produtossIndex) {
                           final produtossItem = produtoss[produtossIndex];
                           return wrapWithModel(
-                            model: _model.newmoduleModels.getModel(
+                            model: _model.newmoduleServicesModels.getModel(
                               getJsonField(
                                 produtossItem,
                                 r'''$.idDoServico''',
@@ -184,16 +184,16 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                               produtossIndex,
                             ),
                             updateCallback: () => setState(() {}),
-                            child: NewmoduleWidget(
+                            child: NewmoduleServicesWidget(
                               key: Key(
-                                'Keyjfg_${getJsonField(
+                                'Keyih6_${getJsonField(
                                   produtossItem,
                                   r'''$.idDoServico''',
                                 ).toString()}',
                               ),
                               name: getJsonField(
                                 produtossItem,
-                                r'''$.produto''',
+                                r'''$.descricao''',
                               ).toString(),
                               marca: getJsonField(
                                 produtossItem,
@@ -201,11 +201,11 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                               ).toString(),
                               value: getJsonField(
                                 produtossItem,
-                                r'''$.preco''',
+                                r'''$.valor''',
                               ),
                               link: getJsonField(
                                 produtossItem,
-                                r'''$.imagemProduto''',
+                                r'''$.imagem''',
                               ).toString(),
                               idDoServico: getJsonField(
                                 produtossItem,
