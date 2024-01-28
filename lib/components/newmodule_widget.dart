@@ -1,3 +1,4 @@
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -20,12 +21,16 @@ class NewmoduleWidget extends StatefulWidget {
     required this.marca,
     required this.value,
     required this.link,
+    required this.idDoServico,
+    required this.valorComissaoServico,
   });
 
   final String? name;
   final String? marca;
   final double? value;
   final String? link;
+  final int? idDoServico;
+  final double? valorComissaoServico;
 
   @override
   State<NewmoduleWidget> createState() => _NewmoduleWidgetState();
@@ -176,8 +181,17 @@ class _NewmoduleWidgetState extends State<NewmoduleWidget>
                           ),
                     ),
                     count: _model.countControllerValue ??= 0,
-                    updateCount: (count) =>
-                        setState(() => _model.countControllerValue = count),
+                    updateCount: (count) async {
+                      setState(() => _model.countControllerValue = count);
+                      setState(() {
+                        FFAppState().addToListaProd(ProdutospedidoStruct(
+                          idDoProduto: widget.idDoServico,
+                          quantidadeDoProduto: _model.countControllerValue,
+                          valorComissaoProduto: widget.valorComissaoServico,
+                          valorProduto: widget.value,
+                        ));
+                      });
+                    },
                     stepSize: 1,
                   ),
                 ),

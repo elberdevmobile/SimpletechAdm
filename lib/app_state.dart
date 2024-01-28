@@ -44,6 +44,37 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _nomeuser = prefs.getString('ff_nomeuser') ?? _nomeuser;
     });
+    _safeInit(() {
+      _listaProd = prefs
+              .getStringList('ff_listaProd')
+              ?.map((x) {
+                try {
+                  return ProdutospedidoStruct.fromSerializableMap(
+                      jsonDecode(x));
+                } catch (e) {
+                  print("Can't decode persisted data type. Error: $e.");
+                  return null;
+                }
+              })
+              .withoutNulls
+              .toList() ??
+          _listaProd;
+    });
+    _safeInit(() {
+      _listaservice = prefs
+              .getStringList('ff_listaservice')
+              ?.map((x) {
+                try {
+                  return ServiopedidoStruct.fromSerializableMap(jsonDecode(x));
+                } catch (e) {
+                  print("Can't decode persisted data type. Error: $e.");
+                  return null;
+                }
+              })
+              .withoutNulls
+              .toList() ??
+          _listaservice;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -93,6 +124,88 @@ class FFAppState extends ChangeNotifier {
   set nomeuser(String _value) {
     _nomeuser = _value;
     prefs.setString('ff_nomeuser', _value);
+  }
+
+  List<ProdutospedidoStruct> _listaProd = [];
+  List<ProdutospedidoStruct> get listaProd => _listaProd;
+  set listaProd(List<ProdutospedidoStruct> _value) {
+    _listaProd = _value;
+    prefs.setStringList(
+        'ff_listaProd', _value.map((x) => x.serialize()).toList());
+  }
+
+  void addToListaProd(ProdutospedidoStruct _value) {
+    _listaProd.add(_value);
+    prefs.setStringList(
+        'ff_listaProd', _listaProd.map((x) => x.serialize()).toList());
+  }
+
+  void removeFromListaProd(ProdutospedidoStruct _value) {
+    _listaProd.remove(_value);
+    prefs.setStringList(
+        'ff_listaProd', _listaProd.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromListaProd(int _index) {
+    _listaProd.removeAt(_index);
+    prefs.setStringList(
+        'ff_listaProd', _listaProd.map((x) => x.serialize()).toList());
+  }
+
+  void updateListaProdAtIndex(
+    int _index,
+    ProdutospedidoStruct Function(ProdutospedidoStruct) updateFn,
+  ) {
+    _listaProd[_index] = updateFn(_listaProd[_index]);
+    prefs.setStringList(
+        'ff_listaProd', _listaProd.map((x) => x.serialize()).toList());
+  }
+
+  void insertAtIndexInListaProd(int _index, ProdutospedidoStruct _value) {
+    _listaProd.insert(_index, _value);
+    prefs.setStringList(
+        'ff_listaProd', _listaProd.map((x) => x.serialize()).toList());
+  }
+
+  List<ServiopedidoStruct> _listaservice = [];
+  List<ServiopedidoStruct> get listaservice => _listaservice;
+  set listaservice(List<ServiopedidoStruct> _value) {
+    _listaservice = _value;
+    prefs.setStringList(
+        'ff_listaservice', _value.map((x) => x.serialize()).toList());
+  }
+
+  void addToListaservice(ServiopedidoStruct _value) {
+    _listaservice.add(_value);
+    prefs.setStringList(
+        'ff_listaservice', _listaservice.map((x) => x.serialize()).toList());
+  }
+
+  void removeFromListaservice(ServiopedidoStruct _value) {
+    _listaservice.remove(_value);
+    prefs.setStringList(
+        'ff_listaservice', _listaservice.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromListaservice(int _index) {
+    _listaservice.removeAt(_index);
+    prefs.setStringList(
+        'ff_listaservice', _listaservice.map((x) => x.serialize()).toList());
+  }
+
+  void updateListaserviceAtIndex(
+    int _index,
+    ServiopedidoStruct Function(ServiopedidoStruct) updateFn,
+  ) {
+    _listaservice[_index] = updateFn(_listaservice[_index]);
+    prefs.setStringList(
+        'ff_listaservice', _listaservice.map((x) => x.serialize()).toList());
+  }
+
+  void insertAtIndexInListaservice(int _index, ServiopedidoStruct _value) {
+    _listaservice.insert(_index, _value);
+    prefs.setStringList(
+        'ff_listaservice', _listaservice.map((x) => x.serialize()).toList());
   }
 }
 

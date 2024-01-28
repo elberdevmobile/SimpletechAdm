@@ -206,6 +206,14 @@ class _SearchproductsWidgetState extends State<SearchproductsWidget> {
                                 produtossItem,
                                 r'''$.imagemProduto''',
                               ).toString(),
+                              idDoServico: getJsonField(
+                                produtossItem,
+                                r'''$.idDoProduto''',
+                              ),
+                              valorComissaoServico: getJsonField(
+                                produtossItem,
+                                r'''$.valorComissaoProduto''',
+                              ),
                             ),
                           );
                         },
@@ -219,8 +227,8 @@ class _SearchproductsWidgetState extends State<SearchproductsWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                   child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      context.safePop();
                     },
                     text: FFLocalizations.of(context).getText(
                       '585xxm4z' /* Adicionar Produtos */,

@@ -179,7 +179,7 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                             model: _model.newmoduleModels.getModel(
                               getJsonField(
                                 produtossItem,
-                                r'''$.idDoProduto''',
+                                r'''$.idDoServico''',
                               ).toString(),
                               produtossIndex,
                             ),
@@ -188,7 +188,7 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                               key: Key(
                                 'Keyjfg_${getJsonField(
                                   produtossItem,
-                                  r'''$.idDoProduto''',
+                                  r'''$.idDoServico''',
                                 ).toString()}',
                               ),
                               name: getJsonField(
@@ -207,6 +207,14 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                                 produtossItem,
                                 r'''$.imagemProduto''',
                               ).toString(),
+                              idDoServico: getJsonField(
+                                produtossItem,
+                                r'''$.idDoServico''',
+                              ),
+                              valorComissaoServico: getJsonField(
+                                produtossItem,
+                                r'''$.comissao''',
+                              ),
                             ),
                           );
                         },
@@ -220,8 +228,8 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                   child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      context.safePop();
                     },
                     text: FFLocalizations.of(context).getText(
                       '1cqfx57b' /* Adicionar Serviçoes */,
