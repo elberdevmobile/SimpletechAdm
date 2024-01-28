@@ -11,10 +11,10 @@ import 'logininit_model.dart';
 export 'logininit_model.dart';
 
 class LogininitWidget extends StatefulWidget {
-  const LogininitWidget({Key? key}) : super(key: key);
+  const LogininitWidget({super.key});
 
   @override
-  _LogininitWidgetState createState() => _LogininitWidgetState();
+  State<LogininitWidget> createState() => _LogininitWidgetState();
 }
 
 class _LogininitWidgetState extends State<LogininitWidget> {

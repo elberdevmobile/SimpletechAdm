@@ -364,41 +364,58 @@ class _ComandaWidgetState extends State<ComandaWidget>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 32),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(5),
-                                  child: Container(
-                                    width: 242,
-                                    height: 55,
-                                    decoration: BoxDecoration(
-                                      color: Color(0x5100AEEF),
-                                      borderRadius: BorderRadius.circular(5),
-                                      border: Border.all(
-                                        color: Color(0xFF00AEEF),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'searchproducts',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType: PageTransitionType.fade,
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(5),
+                                    child: Container(
+                                      width: 242,
+                                      height: 55,
+                                      decoration: BoxDecoration(
+                                        color: Color(0x5100AEEF),
+                                        borderRadius: BorderRadius.circular(5),
+                                        border: Border.all(
+                                          color: Color(0xFF00AEEF),
+                                        ),
                                       ),
-                                    ),
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Icon(
-                                              Icons.add_circle,
-                                              color: Color(0xFF00AEEF),
-                                              size: 24,
-                                            ),
-                                            Text(
-                                              FFLocalizations.of(context).getText(
-                                                '8341rlar' /* Adicionar */,
-                                              ),
-                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                fontFamily: 'Mulish',
+                                      child: Align(
+                                        alignment: AlignmentDirectional(0, 0),
+                                        child: Padding(
+                                          padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.add_circle,
                                                 color: Color(0xFF00AEEF),
-                                                fontSize: 10,
+                                                size: 24,
                                               ),
-                                            ),
-                                          ],
+                                              Text(
+                                                FFLocalizations.of(context).getText(
+                                                  '8341rlar' /* Adicionar */,
+                                                ),
+                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                  fontFamily: 'Mulish',
+                                                  color: Color(0xFF00AEEF),
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -563,47 +580,65 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 32),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(5),
-                                    child: Container(
-                                      width: 242,
-                                      height: 55,
-                                      decoration: BoxDecoration(
-                                        color: Color(0x5100AEEF),
-                                        borderRadius: BorderRadius.circular(5),
-                                        border: Border.all(
-                                          color: Color(0xFF00AEEF),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context.pushNamed(
+                                        'searchServices',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType: PageTransitionType.fade,
+                                          ),
+                                        },
+                                      );
+                                    },
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(5),
+                                      child: Container(
+                                        width: 242,
+                                        height: 55,
+                                        decoration: BoxDecoration(
+                                          color: Color(0x5100AEEF),
+                                          borderRadius: BorderRadius.circular(5),
+                                          border: Border.all(
+                                            color: Color(0xFF00AEEF),
+                                          ),
                                         ),
-                                      ),
-                                      child: Align(
-                                        alignment: AlignmentDirectional(0, 0),
-                                        child: Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Icon(
-                                                Icons.add_circle,
-                                                color: Color(0xFF00AEEF),
-                                                size: 24,
-                                              ),
-                                              Text(
-                                                FFLocalizations.of(context).getText(
-                                                  'mo72ez5e' /* Adicionar */,
-                                                ),
-                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                  fontFamily: 'Mulish',
+                                        child: Align(
+                                          alignment: AlignmentDirectional(0, 0),
+                                          child: Padding(
+                                            padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Icon(
+                                                  Icons.add_circle,
                                                   color: Color(0xFF00AEEF),
-                                                  fontSize: 10,
+                                                  size: 24,
                                                 ),
-                                              ),
-                                            ],
+                                                Text(
+                                                  FFLocalizations.of(context).getText(
+                                                    'mo72ez5e' /* Adicionar */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                    fontFamily: 'Mulish',
+                                                    color: Color(0xFF00AEEF),
+                                                    fontSize: 10,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
+
                                 Builder(
                                   builder: (context) {
                                     final lista = widget.agendamento.servicos;

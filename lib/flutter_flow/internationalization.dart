@@ -450,6 +450,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'es': '',
     },
+    'afzxdzcl': {
+      'pt': 'R\$',
+      'en': '',
+      'es': '',
+    },
+    'n1ixmcfa': {
+      'pt': '10,00',
+      'en': '',
+      'es': '',
+    },
     'gunelbfe': {
       'pt': 'Serviços',
       'en': '',
@@ -460,7 +470,63 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'es': '',
     },
+    'ozmmcu3z': {
+      'pt': 'R\$',
+      'en': '',
+      'es': '',
+    },
+    '2m9r82ug': {
+      'pt': '10,00',
+      'en': '',
+      'es': '',
+    },
     'iiwmy1ar': {
+      'pt': 'Home',
+      'en': '',
+      'es': '',
+    },
+  },
+  // searchServices
+  {
+    '835un57s': {
+      'pt': 'Pesquise por serviços',
+      'en': '',
+      'es': '',
+    },
+    '1cqfx57b': {
+      'pt': 'Adicionar Serviçoes',
+      'en': '',
+      'es': '',
+    },
+    'g8rcr453': {
+      'pt': 'Serviços',
+      'en': '',
+      'es': '',
+    },
+    'e43aoas4': {
+      'pt': 'Home',
+      'en': '',
+      'es': '',
+    },
+  },
+  // searchproducts
+  {
+    'oc6uc7gz': {
+      'pt': 'Pesquise por produtos',
+      'en': '',
+      'es': '',
+    },
+    '585xxm4z': {
+      'pt': 'Adicionar Produtos',
+      'en': '',
+      'es': '',
+    },
+    '56sz0z49': {
+      'pt': 'Produtos',
+      'en': '',
+      'es': '',
+    },
+    'rdr234ws': {
       'pt': 'Home',
       'en': '',
       'es': '',

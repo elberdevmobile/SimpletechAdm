@@ -9,10 +9,10 @@ import 'hour_model.dart';
 export 'hour_model.dart';
 
 class HourWidget extends StatefulWidget {
-  const HourWidget({Key? key}) : super(key: key);
+  const HourWidget({super.key});
 
   @override
-  _HourWidgetState createState() => _HourWidgetState();
+  State<HourWidget> createState() => _HourWidgetState();
 }
 
 class _HourWidgetState extends State<HourWidget> {

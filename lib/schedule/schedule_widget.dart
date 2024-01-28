@@ -10,10 +10,10 @@ import 'schedule_model.dart';
 export 'schedule_model.dart';
 
 class ScheduleWidget extends StatefulWidget {
-  const ScheduleWidget({Key? key}) : super(key: key);
+  const ScheduleWidget({super.key});
 
   @override
-  _ScheduleWidgetState createState() => _ScheduleWidgetState();
+  State<ScheduleWidget> createState() => _ScheduleWidgetState();
 }
 
 class _ScheduleWidgetState extends State<ScheduleWidget> {

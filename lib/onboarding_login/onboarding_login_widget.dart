@@ -12,10 +12,10 @@ import 'onboarding_login_model.dart';
 export 'onboarding_login_model.dart';
 
 class OnboardingLoginWidget extends StatefulWidget {
-  const OnboardingLoginWidget({Key? key}) : super(key: key);
+  const OnboardingLoginWidget({super.key});
 
   @override
-  _OnboardingLoginWidgetState createState() => _OnboardingLoginWidgetState();
+  State<OnboardingLoginWidget> createState() => _OnboardingLoginWidgetState();
 }
 
 class _OnboardingLoginWidgetState extends State<OnboardingLoginWidget> {

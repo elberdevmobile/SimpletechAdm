@@ -6,6 +6,8 @@ import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/schema/structs/index.dart';
+
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
@@ -144,6 +146,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => ComandaWidget(
                 agendamento: params.getParam('agendamento', ParamType.object),
               ),
+            ),
+            FFRoute(
+              name: 'searchServices',
+              path: 'searchServices',
+              builder: (context, params) => SearchServicesWidget(),
+            ),
+            FFRoute(
+              name: 'searchproducts',
+              path: 'searchproducts',
+              builder: (context, params) => SearchproductsWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

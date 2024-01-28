@@ -10,10 +10,10 @@ import 'qrcode_model.dart';
 export 'qrcode_model.dart';
 
 class QrcodeWidget extends StatefulWidget {
-  const QrcodeWidget({Key? key}) : super(key: key);
+  const QrcodeWidget({super.key});
 
   @override
-  _QrcodeWidgetState createState() => _QrcodeWidgetState();
+  State<QrcodeWidget> createState() => _QrcodeWidgetState();
 }
 
 class _QrcodeWidgetState extends State<QrcodeWidget> {
