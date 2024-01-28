@@ -185,12 +185,14 @@ class _NewmoduleServicesWidgetState extends State<NewmoduleServicesWidget>
                     updateCount: (count) async {
                       setState(() => _model.countControllerValue = count);
                       setState(() {
-                        FFAppState().addToListaservice(ServiopedidoStruct(
-                          idDoServico: widget.idDoServico,
-                          quantidadeDoServico: _model.countControllerValue,
-                          valorComissaoServico: widget.valorComissaoServico,
-                          valorServico: widget.value,
-                        ));
+                        FFAppState().updateListaserviceAtIndex(
+                          widget.idDoServico!,
+                          (e) => e
+                            ..idDoServico = widget.idDoServico
+                            ..quantidadeDoServico = _model.countControllerValue
+                            ..valorComissaoServico = widget.valorComissaoServico
+                            ..valorServico = widget.value,
+                        );
                       });
                     },
                     stepSize: 1,

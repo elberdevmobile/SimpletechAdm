@@ -189,12 +189,15 @@ class _NewmoduleWidgetState extends State<NewmoduleWidget>
                     updateCount: (count) async {
                       setState(() => _model.countControllerValue = count);
                       setState(() {
-                        FFAppState().addToListaProd(ProdutospedidoStruct(
-                          idDoProduto: widget.idDoServico,
-                          quantidadeDoProduto: _model.countControllerValue,
-                          valorComissaoProduto: widget.valorComissaoServico,
-                          valorProduto: widget.value,
-                        ));
+                        FFAppState().updateListaProdAtIndex(
+                          widget.idDoServico!,
+                          (e) => e
+                            ..quantidadeDoProduto = _model.countControllerValue
+                            ..idDoProduto = widget.idDoServico
+                            ..valorProduto = widget.value
+                            ..valorComissaoProduto =
+                                widget.valorComissaoServico,
+                        );
                       });
                     },
                     stepSize: 1,
