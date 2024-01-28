@@ -8,7 +8,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 class AgendaStruct extends BaseStruct {
   AgendaStruct({
     String? ssss,
-  }) : _ssss = ssss;
+    List<String>? listaProdutospedido,
+  })  : _ssss = ssss,
+        _listaProdutospedido = listaProdutospedido;
 
   // "ssss" field.
   String? _ssss;
@@ -16,8 +18,17 @@ class AgendaStruct extends BaseStruct {
   set ssss(String? val) => _ssss = val;
   bool hasSsss() => _ssss != null;
 
+  // "listaProdutospedido" field.
+  List<String>? _listaProdutospedido;
+  List<String> get listaProdutospedido => _listaProdutospedido ?? const [];
+  set listaProdutospedido(List<String>? val) => _listaProdutospedido = val;
+  void updateListaProdutospedido(Function(List<String>) updateFn) =>
+      updateFn(_listaProdutospedido ??= []);
+  bool hasListaProdutospedido() => _listaProdutospedido != null;
+
   static AgendaStruct fromMap(Map<String, dynamic> data) => AgendaStruct(
         ssss: data['ssss'] as String?,
+        listaProdutospedido: getDataList(data['listaProdutospedido']),
       );
 
   static AgendaStruct? maybeFromMap(dynamic data) =>
@@ -25,6 +36,7 @@ class AgendaStruct extends BaseStruct {
 
   Map<String, dynamic> toMap() => {
         'ssss': _ssss,
+        'listaProdutospedido': _listaProdutospedido,
       }.withoutNulls;
 
   @override
@@ -32,6 +44,11 @@ class AgendaStruct extends BaseStruct {
         'ssss': serializeParam(
           _ssss,
           ParamType.String,
+        ),
+        'listaProdutospedido': serializeParam(
+          _listaProdutospedido,
+          ParamType.String,
+          true,
         ),
       }.withoutNulls;
 
@@ -42,6 +59,11 @@ class AgendaStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        listaProdutospedido: deserializeParam<String>(
+          data['listaProdutospedido'],
+          ParamType.String,
+          true,
+        ),
       );
 
   @override
@@ -49,11 +71,14 @@ class AgendaStruct extends BaseStruct {
 
   @override
   bool operator ==(Object other) {
-    return other is AgendaStruct && ssss == other.ssss;
+    const listEquality = ListEquality();
+    return other is AgendaStruct &&
+        ssss == other.ssss &&
+        listEquality.equals(listaProdutospedido, other.listaProdutospedido);
   }
 
   @override
-  int get hashCode => const ListEquality().hash([ssss]);
+  int get hashCode => const ListEquality().hash([ssss, listaProdutospedido]);
 }
 
 AgendaStruct createAgendaStruct({
