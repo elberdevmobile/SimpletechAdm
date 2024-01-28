@@ -142,7 +142,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'comanda',
               path: 'comanda',
               builder: (context, params) => ComandaWidget(
-                agendamento: params.getParam('agendamento', ParamType.JSON),
+                agendamento: params.getParam('agendamento', ParamType.object),
               ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),

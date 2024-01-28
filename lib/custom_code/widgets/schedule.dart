@@ -1,4 +1,6 @@
 // Automatic FlutterFlow imports
+import 'package:simple_adm/comanda/comanda_widget.dart';
+
 import '../../models/Agendamento.dart';
 import '/actions/actions.dart' as action_blocks;
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -252,10 +254,12 @@ Random randon = Random();
     final List<Appointment> appointments = <Appointment>[];
     for (int j = 0; j< agendamentos.length; j++) {
       appointments.add(Appointment(
-        subject: agendamentos[j].cliente.toString() + "                      "+agendamentos[j].servicos![0].descricaoServico! + "   R\$ "+agendamentos[j].valorServicos.toString() ,
+        subject: agendamentos[j].cliente.toString(),
         notes: "R\$ "+agendamentos[j].valorServicos.toString() ,
         startTime: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaInicioDoAgendamento!),
         endTime: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaFimDoAgendamento!),
+        location: agendamentos[j].comandaDoAtendimento.toString(),
+          id:agendamentos[j].id,
         color: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaInicioDoAgendamento!).difference(DateTime.now()).inMinutes < 60 ?  colorCollection[3] :colorCollection[0],
       ));
     }
@@ -371,7 +375,31 @@ Random randon = Random();
       allowDragAndDrop:true,
       dataSource: events,
       onLongPress: (CalendarLongPressDetails calendarTapDetails){
-        context.pushNamed('comanda');
+        List<Agendamento> agendamento = (jsonDecode(FFAppState().agenda) as List)
+            .map((json) => Agendamento.fromJson(json))
+            .toList();
+
+        Agendamento? agenda;
+
+        for (int i = 0; i < agendamento.length; i++) {
+          if (agendamento[i].id == calendarTapDetails.appointments!.first.id) {
+            agenda = agendamento[i];
+            break; // Se encontrou, podemos encerrar o loop
+          }
+        }
+
+        if (agenda != null) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ComandaWidget(agendamento: agenda!),
+            ),
+          );
+        } else {
+          // Lógica para lidar com o caso em que não há correspondência encontrada
+          print('Nenhum agendamento correspondente encontrado.');
+        }
+
       },
     );
   }

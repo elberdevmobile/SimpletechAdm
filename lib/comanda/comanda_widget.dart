@@ -1,3 +1,6 @@
+import 'package:simple_adm/models/Agendamento.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
+
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -20,16 +23,16 @@ class ComandaWidget extends StatefulWidget {
     required this.agendamento,
   }) : super(key: key);
 
-  final dynamic agendamento;
+  final Agendamento agendamento;
 
   @override
-  _ComandaWidgetState createState() => _ComandaWidgetState();
+  _ComandaWidgetState createState() => _ComandaWidgetState(this.agendamento);
 }
 
 class _ComandaWidgetState extends State<ComandaWidget>
     with TickerProviderStateMixin {
   late ComandaModel _model;
-
+  final Agendamento agendamento;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   final animationsMap = {
@@ -74,6 +77,8 @@ class _ComandaWidgetState extends State<ComandaWidget>
       ],
     ),
   };
+
+  _ComandaWidgetState(this.agendamento);
 
   @override
   void initState() {
@@ -250,10 +255,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'qcf9cjn2' /* Nestor Nunes */,
-                                                  ),
+                                                  agendamento.cliente!,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .headlineMedium
@@ -289,7 +291,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                                     12.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Comanda:  #0001',
+                                                          'Comanda:  #'+agendamento!.comandaDoAtendimento.toString(),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelLarge,
@@ -315,7 +317,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                                     12.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'R\$ 50,00',
+                                                          agendamento.valorServicos.toString(),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyLarge
@@ -344,134 +346,57 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                   'containerOnPageLoadAnimation']!),
                             ),
                           ),
+                          // Generated code for this Column Widget...
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: AlignmentDirectional(-1, 0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 0.0, 32.0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 32),
                                   child: Text(
                                     FFLocalizations.of(context).getText(
                                       'p6x962i5' /* Produtos */,
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context).bodyMedium,
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 32.0),
+                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 32),
                                 child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(5.0),
+                                  borderRadius: BorderRadius.circular(5),
                                   child: Container(
-                                    width: 242.0,
-                                    height: 55.0,
+                                    width: 242,
+                                    height: 55,
                                     decoration: BoxDecoration(
                                       color: Color(0x5100AEEF),
-                                      borderRadius: BorderRadius.circular(5.0),
+                                      borderRadius: BorderRadius.circular(5),
                                       border: Border.all(
                                         color: Color(0xFF00AEEF),
                                       ),
                                     ),
                                     child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0, 0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 8.0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Icon(
                                               Icons.add_circle,
                                               color: Color(0xFF00AEEF),
-                                              size: 24.0,
+                                              size: 24,
                                             ),
                                             Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
+                                              FFLocalizations.of(context).getText(
                                                 '8341rlar' /* Adicionar */,
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Mulish',
-                                                        color:
-                                                            Color(0xFF00AEEF),
-                                                        fontSize: 10.0,
-                                                      ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Align(
-                                alignment: AlignmentDirectional(-1.0, 0.0),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 0.0, 32.0),
-                                  child: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'gunelbfe' /* Serviços */,
-                                    ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 32.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(5.0),
-                                  child: Container(
-                                    width: 242.0,
-                                    height: 55.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0x5100AEEF),
-                                      borderRadius: BorderRadius.circular(5.0),
-                                      border: Border.all(
-                                        color: Color(0xFF00AEEF),
-                                      ),
-                                    ),
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 8.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Icon(
-                                              Icons.add_circle,
-                                              color: Color(0xFF00AEEF),
-                                              size: 24.0,
-                                            ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'mo72ez5e' /* Adicionar */,
+                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                fontFamily: 'Mulish',
+                                                color: Color(0xFF00AEEF),
+                                                fontSize: 10,
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Mulish',
-                                                        color:
-                                                            Color(0xFF00AEEF),
-                                                        fontSize: 10.0,
-                                                      ),
                                             ),
                                           ],
                                         ),
@@ -480,8 +405,342 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                   ),
                                 ),
                               ),
+                              Builder(
+                                builder: (context) {
+                                  final lista = [];
+                                  if (lista.isEmpty) {
+                                    return Center(
+                                      child: Image.asset(
+                                        'assets/images/no-results.png',
+                                        width: 100,
+                                        height: 100,
+                                      ),
+                                    );
+                                  }
+                                  return ListView.separated(
+                                    padding: EdgeInsets.symmetric(vertical: 8),
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.vertical,
+                                    itemCount: lista.length,
+                                    separatorBuilder: (_, __) => SizedBox(height: 8),
+                                    itemBuilder: (context, listaIndex) {
+                                      final listaItem = lista[listaIndex];
+                                      return Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                                        child: Container(
+                                          width: 100,
+                                          height: 100,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context).primaryBackground,
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(8),
+                                              bottomRight: Radius.circular(8),
+                                              topLeft: Radius.circular(8),
+                                              topRight: Radius.circular(8),
+                                            ),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional.fromSTEB(8, 8, 0, 8),
+                                                child: ClipRRect(
+                                                  borderRadius: BorderRadius.circular(8),
+                                                  child: Image.network(
+                                                    'https://images.unsplash.com/photo-1554519934-e32b1629d9ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw4fHxoYWlyfGVufDB8fHx8MTcwNjQxNjQ2Mnww&ixlib=rb-4.0.3&q=80&w=1080',
+                                                    width: 45,
+                                                    height: 45,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                              Flexible(
+                                                child: Align(
+                                                  alignment: AlignmentDirectional(-1, 0),
+                                                  child: Padding(
+                                                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                                                    child: Column(
+                                                      mainAxisSize: MainAxisSize.max,
+                                                      children: [
+                                                        Align(
+                                                          alignment: AlignmentDirectional(-1, 0),
+                                                          child: Padding(
+                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                8, 8, 8, 8),
+                                                            child: Text(
+                                                              listaItem.toString(),
+                                                              style: FlutterFlowTheme.of(context)
+                                                                  .bodyMedium,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Align(
+                                                          alignment: AlignmentDirectional(-1, 0),
+                                                          child: Padding(
+                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                8, 8, 8, 8),
+                                                            child: RichText(
+                                                              textScaleFactor: MediaQuery.of(context)
+                                                                  .textScaleFactor,
+                                                              text: TextSpan(
+                                                                children: [
+                                                                  TextSpan(
+                                                                    text: FFLocalizations.of(context)
+                                                                        .getText(
+                                                                      'afzxdzcl' /* R$ */,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                      fontFamily: 'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                          .success,
+                                                                      fontWeight: FontWeight.bold,
+                                                                    ),
+                                                                  ),
+                                                                  TextSpan(
+                                                                    text: FFLocalizations.of(context)
+                                                                        .getText(
+                                                                      'n1ixmcfa' /* 10,00 */,
+                                                                    ),
+                                                                    style: TextStyle(),
+                                                                  )
+                                                                ],
+                                                                style: FlutterFlowTheme.of(context)
+                                                                    .bodyMedium,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: Align(
+                                                  alignment: AlignmentDirectional(1, -1),
+                                                  child: Padding(
+                                                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                                                    child: Icon(
+                                                      Icons.remove_circle,
+                                                      color: FlutterFlowTheme.of(context).alternate,
+                                                      size: 35,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
+                              ),
                             ],
                           ),
+
+                          // Generated code for this Column Widget...
+                          SafeArea(
+                              bottom: true,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(-1, 0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 32),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'gunelbfe' /* Serviços */,
+                                      ),
+                                      style: FlutterFlowTheme.of(context).bodyMedium,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 32),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(5),
+                                    child: Container(
+                                      width: 242,
+                                      height: 55,
+                                      decoration: BoxDecoration(
+                                        color: Color(0x5100AEEF),
+                                        borderRadius: BorderRadius.circular(5),
+                                        border: Border.all(
+                                          color: Color(0xFF00AEEF),
+                                        ),
+                                      ),
+                                      child: Align(
+                                        alignment: AlignmentDirectional(0, 0),
+                                        child: Padding(
+                                          padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 8),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Icon(
+                                                Icons.add_circle,
+                                                color: Color(0xFF00AEEF),
+                                                size: 24,
+                                              ),
+                                              Text(
+                                                FFLocalizations.of(context).getText(
+                                                  'mo72ez5e' /* Adicionar */,
+                                                ),
+                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                  fontFamily: 'Mulish',
+                                                  color: Color(0xFF00AEEF),
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Builder(
+                                  builder: (context) {
+                                    final lista = widget.agendamento.servicos;
+                                    if (lista!.isEmpty) {
+                                      return Center(
+                                        child: Image.asset(
+                                          'assets/images/no-results.png',
+                                          width: 100,
+                                          height: 100,
+                                        ),
+                                      );
+                                    }
+                                    return ListView.separated(
+                                      padding: EdgeInsets.symmetric(vertical: 8),
+                                      shrinkWrap: true,
+                                      primary: true,
+                                      scrollDirection: Axis.vertical,
+                                      itemCount: lista.length,
+                                      separatorBuilder: (_, __) => SizedBox(height: 8),
+                                      itemBuilder: (context, listaIndex) {
+                                        final listaItem = lista[listaIndex];
+                                        return Padding(
+                                          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                                          child: Container(
+                                            width: 100,
+                                            height: 100,
+                                            decoration: BoxDecoration(
+                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(8),
+                                                bottomRight: Radius.circular(8),
+                                                topLeft: Radius.circular(8),
+                                                topRight: Radius.circular(8),
+                                              ),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional.fromSTEB(8, 8, 0, 8),
+                                                  child: ClipRRect(
+                                                    borderRadius: BorderRadius.circular(8),
+                                                    child: Image.network(
+                                                      'https://images.unsplash.com/photo-1554519934-e32b1629d9ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw4fHxoYWlyfGVufDB8fHx8MTcwNjQxNjQ2Mnww&ixlib=rb-4.0.3&q=80&w=1080',
+                                                      width: 45,
+                                                      height: 45,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Flexible(
+                                                  child: Align(
+                                                    alignment: AlignmentDirectional(-1, 0),
+                                                    child: Padding(
+                                                      padding:
+                                                      EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                                                      child: Column(
+                                                        mainAxisSize: MainAxisSize.max,
+                                                        children: [
+                                                          Align(
+                                                            alignment: AlignmentDirectional(-1, 0),
+                                                            child: Padding(
+                                                              padding: EdgeInsetsDirectional.fromSTEB(
+                                                                  8, 8, 8, 8),
+                                                              child: Text(
+                                                                listaItem.descricaoServico!,
+                                                                style: FlutterFlowTheme.of(context)
+                                                                    .bodyMedium,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Align(
+                                                            alignment: AlignmentDirectional(-1, 0),
+                                                            child: Padding(
+                                                              padding: EdgeInsetsDirectional.fromSTEB(
+                                                                  8, 8, 8, 8),
+                                                              child: RichText(
+                                                                textScaleFactor: MediaQuery.of(context)
+                                                                    .textScaleFactor,
+                                                                text: TextSpan(
+                                                                  children: [
+                                                                    TextSpan(
+                                                                      text: "R\$",
+                                                                      style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                        fontFamily: 'Poppins',
+                                                                        color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                            .success,
+                                                                        fontWeight: FontWeight.bold,
+                                                                      ),
+                                                                    ),
+                                                                    TextSpan(
+                                                                      text: listaItem!.valor!.toString(),
+                                                                      style: TextStyle(),
+                                                                    )
+                                                                  ],
+                                                                  style: FlutterFlowTheme.of(context)
+                                                                      .bodyMedium,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Expanded(
+                                                  child: Align(
+                                                    alignment: AlignmentDirectional(1, -1),
+                                                    child: Padding(
+                                                      padding:
+                                                      EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                                                      child: Icon(
+                                                        Icons.remove_circle,
+                                                        color: FlutterFlowTheme.of(context).alternate,
+                                                        size: 35,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+
                         ],
                       ),
                     ),
@@ -489,6 +748,22 @@ class _ComandaWidgetState extends State<ComandaWidget>
                 ),
               ],
             ),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+          },
+          backgroundColor: Colors.green,
+          elevation: 10,
+          isExtended: true,
+          enableFeedback: true,
+          mini: false,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50)
+                  .copyWith(topRight: Radius.circular(50))),
+          child: Icon(
+            Icons.navigate_next,
+            size: 26,
           ),
         ),
       ),

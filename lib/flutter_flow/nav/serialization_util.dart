@@ -143,6 +143,7 @@ enum ParamType {
   FFPlace,
   FFUploadedFile,
   JSON,
+  object
 }
 
 dynamic deserializeParam<T>(
@@ -193,6 +194,8 @@ dynamic deserializeParam<T>(
         return uploadedFileFromString(param);
       case ParamType.JSON:
         return json.decode(param);
+      case ParamType.object:
+          return param;
 
       default:
         return null;
