@@ -1,5 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
-import '/components/newmodule_widget.dart';
+import '/components/newmodule_services_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -33,7 +33,8 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.produtos = await SimpleTechCopyGroup.obterServicosPorParceiroCall.call(
+      _model.produtos = await SimpleTechCopyGroup.obterprodutosCall.call(
+        filial: 3,
         bearerAuth: FFAppState().token,
       );
       if ((_model.produtos?.succeeded ?? true)) {
@@ -175,7 +176,7 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                         itemBuilder: (context, produtossIndex) {
                           final produtossItem = produtoss[produtossIndex];
                           return wrapWithModel(
-                            model: _model.newmoduleModels.getModel(
+                            model: _model.newmoduleServicesModels.getModel(
                               getJsonField(
                                 produtossItem,
                                 r'''$.idDoServico''',
@@ -183,9 +184,9 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                               produtossIndex,
                             ),
                             updateCallback: () => setState(() {}),
-                            child: NewmoduleWidget(
+                            child: NewmoduleServicesWidget(
                               key: Key(
-                                'Keyjfg_${getJsonField(
+                                'Keyih6_${getJsonField(
                                   produtossItem,
                                   r'''$.idDoServico''',
                                 ).toString()}',
@@ -198,13 +199,13 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                                 produtossItem,
                                 r'''$.marca''',
                               ).toString(),
-                              value: double.parse(getJsonField(
+                              value: getJsonField(
                                 produtossItem,
                                 r'''$.valor''',
-                              ).toString()),
+                              ),
                               link: getJsonField(
                                 produtossItem,
-                                r'''$.imagemProduto''',
+                                r'''$.imagem''',
                               ).toString(),
                               idDoServico: getJsonField(
                                 produtossItem,

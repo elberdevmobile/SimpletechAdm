@@ -38,7 +38,7 @@ class _SearchproductsWidgetState extends State<SearchproductsWidget> {
         bearerAuth: FFAppState().token,
       );
       if ((_model.produtos?.succeeded ?? true)) {
-        setState(() {});
+        setState(() {_model.produtos =_model.produtos;});
       }
     });
 
@@ -163,11 +163,7 @@ class _SearchproductsWidgetState extends State<SearchproductsWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                   child: Builder(
                     builder: (context) {
-                      final produtoss = SimpleTechCopyGroup.obterprodutosCall
-                          .produtcs(
-                            (_model.produtos?.jsonBody ?? ''),
-                          )
-                          .toList();
+                      final produtoss = _model.produtos?.jsonBody  .toList();
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
@@ -213,7 +209,7 @@ class _SearchproductsWidgetState extends State<SearchproductsWidget> {
                               valorComissaoServico: getJsonField(
                                 produtossItem,
                                 r'''$.valorComissaoProduto''',
-                              ),
+                              ).toDouble(),
                             ),
                           );
                         },

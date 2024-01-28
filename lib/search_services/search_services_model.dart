@@ -1,5 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
-import '/components/newmodule_widget.dart';
+import '/components/newmodule_services_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -23,13 +23,14 @@ class SearchServicesModel extends FlutterFlowModel<SearchServicesWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // Models for newmodule dynamic component.
-  late FlutterFlowDynamicModels<NewmoduleModel> newmoduleModels;
+  // Models for newmoduleServices dynamic component.
+  late FlutterFlowDynamicModels<NewmoduleServicesModel> newmoduleServicesModels;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
-    newmoduleModels = FlutterFlowDynamicModels(() => NewmoduleModel());
+    newmoduleServicesModels =
+        FlutterFlowDynamicModels(() => NewmoduleServicesModel());
   }
 
   void dispose() {
@@ -37,7 +38,7 @@ class SearchServicesModel extends FlutterFlowModel<SearchServicesWidget> {
     textFieldFocusNode?.dispose();
     textController?.dispose();
 
-    newmoduleModels.dispose();
+    newmoduleServicesModels.dispose();
   }
 
   /// Action blocks are added here.
