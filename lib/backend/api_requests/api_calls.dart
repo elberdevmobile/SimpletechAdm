@@ -18,29 +18,28 @@ class SimpleTechCopyGroup {
   static AlterarSenhaCall alterarSenhaCall = AlterarSenhaCall();
   static AutenticarCall autenticarCall = AutenticarCall();
   static ObterFiliaisParceiroCall obterFiliaisParceiroCall =
-      ObterFiliaisParceiroCall();
+  ObterFiliaisParceiroCall();
   static AlterarImagemCall alterarImagemCall = AlterarImagemCall();
   static ObterServicosPorParceiroCall obterServicosPorParceiroCall =
-      ObterServicosPorParceiroCall();
+  ObterServicosPorParceiroCall();
   static ObterProdutosParaVendasCall obterProdutosParaVendasCall =
-      ObterProdutosParaVendasCall();
+  ObterProdutosParaVendasCall();
   static NovoCadastroCall novoCadastroCall = NovoCadastroCall();
   static ObterPorIdCall obterPorIdCall = ObterPorIdCall();
   static IniciarAtendimentoCall iniciarAtendimentoCall =
-      IniciarAtendimentoCall();
+  IniciarAtendimentoCall();
   static ObterAtendimentoCall obterAtendimentoCall = ObterAtendimentoCall();
   static ObterAtendimentosAvulsosCall obterAtendimentosAvulsosCall =
-      ObterAtendimentosAvulsosCall();
+  ObterAtendimentosAvulsosCall();
   static ObterAtendimentoParaFinalizarCall obterAtendimentoParaFinalizarCall =
-      ObterAtendimentoParaFinalizarCall();
+  ObterAtendimentoParaFinalizarCall();
   static FinalizarAtendimentoCall finalizarAtendimentoCall =
-      FinalizarAtendimentoCall();
-  static FecharpedidoCall fecharpedidoCall = FecharpedidoCall();
-  static ObterAgendamentosParceiroCopyCall obterAgendamentosParceiroCopyCall =
-      ObterAgendamentosParceiroCopyCall();
+  FinalizarAtendimentoCall();
+  static ObterAgendamentosParceiroCall obterAgendamentosParceiroCall =
+  ObterAgendamentosParceiroCall();
   static ObterprodutosCall obterprodutosCall = ObterprodutosCall();
   static ObterGanhosParceiroCall obterGanhosParceiroCall =
-      ObterGanhosParceiroCall();
+  ObterGanhosParceiroCall();
   static ObterPorCelularCall obterPorCelularCall = ObterPorCelularCall();
 }
 
@@ -101,7 +100,7 @@ class AlterarSenhaCall {
 class AutenticarCall {
   Future<ApiCallResponse> call({
     String? bearerAuth =
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBZG1pbmlzdHJhZG9yIjoiQWNlc3NvTWFuYWdlcixBY2Vzc29Vc3VhcmlvLENhZGFzdHJvVXN1YXJpbyxBbHRlcmFjYW9Vc3VhcmlvLEV4Y2x1c2FvVXN1YXJpbyxMaXN0YWdlbVVzdWFyaW8sTGlzdGFnZW1GaWxpYWxQYXJjZWlybyxMaXN0YWdlbUNvbWlzc2FvUGFyY2Vpcm8sTGlzdGFnZW1MaWNlbmNhLEFjZXNzb0ZpbGlhbCxDYWRhc3Ryb0ZpbGlhbCxBbHRlcmFjYW9GaWxpYWwsRXhjbHVzYW9GaWxpYWwsTGlzdGFnZW1GaWxpYWwsTGlzdGFnZW1BbWJpZW50ZXNQb3JDbGllbnRlLEFjZXNzb1NlcnZpY28sQ2FkYXN0cmFyU2VydmljbyxBbHRlcmFyU2VydmljbyxFeGNsdWlyU2VydmljbyxMaXN0YWdlbVNlcnZpY28sTGlzdGFnZW1TZXJ2aWNvc1BhcmNlaXJvLEFjZXNzb0NhdGVnb3JpYVByb2R1dG8sQ2FkYXN0cmFyQ2F0ZWdvcmlhUHJvZHV0byxBbHRlcmFyQ2F0ZWdvcmlhUHJvZHV0byxFeGNsdWlyQ2F0ZWdvcmlhUHJvZHV0byxMaXN0YWdlbUNhdGVnb3JpYVByb2R1dG8sQWNlc3NvTWFyY2FQcm9kdXRvLENhZGFzdHJhck1hcmNhUHJvZHV0byxBbHRlcmFyTWFyY2FQcm9kdXRvLEV4Y2x1aXJNYXJjYVByb2R1dG8sTGlzdGFnZW1NYXJjYVByb2R1dG8sQWNlc3NvQ2xhc3NlRGVJbXBvc3RvUHJvZHV0byxDYWRhc3RyYXJDbGFzc2VEZUltcG9zdG9Qcm9kdXRvLEFsdGVyYXJDbGFzc2VEZUltcG9zdG9Qcm9kdXRvLEV4Y2x1aXJDbGFzc2VEZUltcG9zdG9Qcm9kdXRvLExpc3RhZ2VtQ2xhc3NlRGVJbXBvc3RvUHJvZHV0byxBY2Vzc29Qcm9kdXRvLENhZGFzdHJhclByb2R1dG8sQWx0ZXJhclByb2R1dG8sRXhjbHVpclByb2R1dG8sTGlzdGFnZW1Qcm9kdXRvLEFjZXNzb1RhYmVsYURlUHJlY28sQ2FkYXN0cmFyVGFiZWxhRGVQcmVjbyxBbHRlcmFyVGFiZWxhRGVQcmVjbyxFeGNsdWlyVGFiZWxhRGVQcmVjbyxMaXN0YWdlbVRhYmVsYURlUHJlY28sQWNlc3NvUHJlY2lmaWNhY2FvUHJvZHV0byxDYWRhc3RyYXJQcmVjaWZpY2FjYW9Qcm9kdXRvLEFsdGVyYXJQcmVjaWZpY2FjYW9Qcm9kdXRvLEV4Y2x1aXJQcmVjaWZpY2FjYW9Qcm9kdXRvLExpc3RhZ2VtUHJlY2lmaWNhY2FvUHJvZHV0byxBY2Vzc29Db25maWdFc3RQcm9kLENhZGFzdHJhckNvbmZpZ0VzdFByb2QsQWx0ZXJhckNvbmZpZ0VzdFByb2QsRXhjbHVpckNvbmZpZ0VzdFByb2QsTGlzdGFnZW1Db25maWdFc3RQcm9kLEFwcm92YXJDb25maWdFc3RQcm9kLEFjZXNzb0NsaWVudGVzLENhZGFzdHJhckNsaWVudGVzLEFsdGVyYXJDbGllbnRlcyxFeGNsdWlyQ2xpZW50ZXMsTGlzdGFnZW1DbGllbnRlcyxDYWRhc3Ryb0NvbnRhLEFsdGVyYWNhb0NvbnRhLEV4Y2x1c2FvQ29udGEsTGlzdGFnZW1Db250YXMsQ2FkYXN0cm9Db250YVJlY2ViZXIsQWx0ZXJhY2FvQ29udGFSZWNlYmVyLEV4Y2x1c2FvQ29udGFSZWNlYmVyLExpc3RhZ2VtQ29udGFzUmVjZWJlcixBY2Vzc29BdGVuZGltZW50b3MsQ2FkYXN0cm9BdGVuZGltZW50byxBbHRlcmFjYW9BdGVuZGltZW50byxFeGNsdXNhb0F0ZW5kaW1lbnRvLExpc3RhZ2VtQXRlbmRpbWVudG9zLENhbmNlbGFyQXRlbmRpbWVudG8sSW5pY2lhckF0ZW5kaW1lbnRvLENhZGFzdHJvUGVkaWRvLEFsdGVyYWNhb0F0ZW5kaW1lbnRvLEV4Y2x1c2FvUGVkaWRvLExpc3RhZ2VtUGVkaWRvcyxDYWRhc3RyYXJBZ2VuZGFtZW50byxBbHRlcmFyQWdlbmRhbWVudG8sRXhjbHVpckFnZW5kYW1lbnRvLExpc3RhZ2VtQWdlbmRhbWVudG9zLEFjZXNzb1JlbGF0b3Jpb0VudHJhZGFTYWlkYSxBY2Vzc29SZWxhdG9yaW9BdGVuZGltZW50b3MsQWNlc3NvUmVsYXRvcmlvUmVzdW1vRGVSZW5kYSxBY2Vzc29SZWxhdG9yaW9WbENvbnRhc1BhZ2FyUG9yU2VtYW5hLEFjZXNzb1JlbGF0b3Jpb1ZsQ29udGFzUmVjZWJlclBvclNlbWFuYSxDYWRhc3RyYXJNZW5zYWdlbnNDbGllbnRlcyxBbHRlcmFyTWVuc2FnZW5zQ2xpZW50ZXMsRXhjbHVpck1lbnNhZ2Vuc0NsaWVudGVzLExpc3RhZ2VtTWVuc2FnZW5zQ2xpZW50ZXMsQWJyaXJDYWl4YSxGZWNoYXJDYWl4YSxDb25zdWx0YXJDYWl4YXMsQ29uc3VsdGFyVG9kb3NDYWl4YXMsUmVhYnJpckNhaXhhLENhZGFzdHJhclNhaWRhQ2FpeGEsQWx0ZXJhY2FvRXN0UHJvZFZlbmRhcyxMaXN0YWdlbUVzdFByb2RWZW5kYXMsTGlzdGFnZW1Qcm9kVmVuZGFzLExpc3RhZ2VtQXRlbmRBdnVsc29zLE9idGVyQXRlbmRpbWVudG8sT2J0ZXJHYW5ob3NQYXJjZWlybyxBbHRlcmFySW1hZ2VtUGVyZmlsIiwic3ViIjoiNzFjNjFiMWEtNDY1MC00NTQ2LTlkZTAtZjI0ZDdkYjUyYjA3IiwiZW1haWwiOiJ1c3VyZGV2QGdtYWlsLmNvbSIsImp0aSI6ImVmNDViNGY2LWNmNjYtNDViYi1iZDA0LWFiOTlhNjVlMmQ0ZSIsIm5iZiI6MTY4OTgwMTI0MCwiaWF0IjoxNjg5ODAxMjQwLCJpZFVzdWFyaW8iOiI0OCIsIm5vbWUiOiJVc3XDoXJpbyBBZG0gRGV2IiwibG9naW4iOiJpcm9uLnVzdXJhZG1kZXYiLCJ0aXBvRGVVc3VhcmlvIjoiQWRtaW5pc3RyYWRvciIsImltYWdlbSI6IiIsImFtYmllbnRlSWQiOiIzIiwiY2xpZW50ZUlkIjoiMyIsImNsaWVudGUiOiJJUk9OIE1BSURFTiIsImlkVXN1YXJpb051dmVtIjoiOSIsImV4cCI6MTY4OTgwODQ0MCwiaXNzIjoiQXBpSWRlbnRpZGFkZSIsImF1ZCI6Imh0dHBzOi8vYXBpLnNpbXBsZWJlYXV0eWFwcC5jb20uYnIifQ.TyhIBSNXy_RqKdq-K6R7HvleE2_itbF85RNolhrFREI',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBZG1pbmlzdHJhZG9yIjoiQWNlc3NvTWFuYWdlcixBY2Vzc29Vc3VhcmlvLENhZGFzdHJvVXN1YXJpbyxBbHRlcmFjYW9Vc3VhcmlvLEV4Y2x1c2FvVXN1YXJpbyxMaXN0YWdlbVVzdWFyaW8sTGlzdGFnZW1GaWxpYWxQYXJjZWlybyxMaXN0YWdlbUNvbWlzc2FvUGFyY2Vpcm8sTGlzdGFnZW1MaWNlbmNhLEFjZXNzb0ZpbGlhbCxDYWRhc3Ryb0ZpbGlhbCxBbHRlcmFjYW9GaWxpYWwsRXhjbHVzYW9GaWxpYWwsTGlzdGFnZW1GaWxpYWwsTGlzdGFnZW1BbWJpZW50ZXNQb3JDbGllbnRlLEFjZXNzb1NlcnZpY28sQ2FkYXN0cmFyU2VydmljbyxBbHRlcmFyU2VydmljbyxFeGNsdWlyU2VydmljbyxMaXN0YWdlbVNlcnZpY28sTGlzdGFnZW1TZXJ2aWNvc1BhcmNlaXJvLEFjZXNzb0NhdGVnb3JpYVByb2R1dG8sQ2FkYXN0cmFyQ2F0ZWdvcmlhUHJvZHV0byxBbHRlcmFyQ2F0ZWdvcmlhUHJvZHV0byxFeGNsdWlyQ2F0ZWdvcmlhUHJvZHV0byxMaXN0YWdlbUNhdGVnb3JpYVByb2R1dG8sQWNlc3NvTWFyY2FQcm9kdXRvLENhZGFzdHJhck1hcmNhUHJvZHV0byxBbHRlcmFyTWFyY2FQcm9kdXRvLEV4Y2x1aXJNYXJjYVByb2R1dG8sTGlzdGFnZW1NYXJjYVByb2R1dG8sQWNlc3NvQ2xhc3NlRGVJbXBvc3RvUHJvZHV0byxDYWRhc3RyYXJDbGFzc2VEZUltcG9zdG9Qcm9kdXRvLEFsdGVyYXJDbGFzc2VEZUltcG9zdG9Qcm9kdXRvLEV4Y2x1aXJDbGFzc2VEZUltcG9zdG9Qcm9kdXRvLExpc3RhZ2VtQ2xhc3NlRGVJbXBvc3RvUHJvZHV0byxBY2Vzc29Qcm9kdXRvLENhZGFzdHJhclByb2R1dG8sQWx0ZXJhclByb2R1dG8sRXhjbHVpclByb2R1dG8sTGlzdGFnZW1Qcm9kdXRvLEFjZXNzb1RhYmVsYURlUHJlY28sQ2FkYXN0cmFyVGFiZWxhRGVQcmVjbyxBbHRlcmFyVGFiZWxhRGVQcmVjbyxFeGNsdWlyVGFiZWxhRGVQcmVjbyxMaXN0YWdlbVRhYmVsYURlUHJlY28sQWNlc3NvUHJlY2lmaWNhY2FvUHJvZHV0byxDYWRhc3RyYXJQcmVjaWZpY2FjYW9Qcm9kdXRvLEFsdGVyYXJQcmVjaWZpY2FjYW9Qcm9kdXRvLEV4Y2x1aXJQcmVjaWZpY2FjYW9Qcm9kdXRvLExpc3RhZ2VtUHJlY2lmaWNhY2FvUHJvZHV0byxBY2Vzc29Db25maWdFc3RQcm9kLENhZGFzdHJhckNvbmZpZ0VzdFByb2QsQWx0ZXJhckNvbmZpZ0VzdFByb2QsRXhjbHVpckNvbmZpZ0VzdFByb2QsTGlzdGFnZW1Db25maWdFc3RQcm9kLEFwcm92YXJDb25maWdFc3RQcm9kLEFjZXNzb0NsaWVudGVzLENhZGFzdHJhckNsaWVudGVzLEFsdGVyYXJDbGllbnRlcyxFeGNsdWlyQ2xpZW50ZXMsTGlzdGFnZW1DbGllbnRlcyxDYWRhc3Ryb0NvbnRhLEFsdGVyYWNhb0NvbnRhLEV4Y2x1c2FvQ29udGEsTGlzdGFnZW1Db250YXMsQ2FkYXN0cm9Db250YVJlY2ViZXIsQWx0ZXJhY2FvQ29udGFSZWNlYmVyLEV4Y2x1c2FvQ29udGFSZWNlYmVyLExpc3RhZ2VtQ29udGFzUmVjZWJlcixBY2Vzc29BdGVuZGltZW50b3MsQ2FkYXN0cm9BdGVuZGltZW50byxBbHRlcmFjYW9BdGVuZGltZW50byxFeGNsdXNhb0F0ZW5kaW1lbnRvLExpc3RhZ2VtQXRlbmRpbWVudG9zLENhbmNlbGFyQXRlbmRpbWVudG8sSW5pY2lhckF0ZW5kaW1lbnRvLENhZGFzdHJvUGVkaWRvLEFsdGVyYWNhb0F0ZW5kaW1lbnRvLEV4Y2x1c2FvUGVkaWRvLExpc3RhZ2VtUGVkaWRvcyxDYWRhc3RyYXJBZ2VuZGFtZW50byxBbHRlcmFyQWdlbmRhbWVudG8sRXhjbHVpckFnZW5kYW1lbnRvLExpc3RhZ2VtQWdlbmRhbWVudG9zLEFjZXNzb1JlbGF0b3Jpb0VudHJhZGFTYWlkYSxBY2Vzc29SZWxhdG9yaW9BdGVuZGltZW50b3MsQWNlc3NvUmVsYXRvcmlvUmVzdW1vRGVSZW5kYSxBY2Vzc29SZWxhdG9yaW9WbENvbnRhc1BhZ2FyUG9yU2VtYW5hLEFjZXNzb1JlbGF0b3Jpb1ZsQ29udGFzUmVjZWJlclBvclNlbWFuYSxDYWRhc3RyYXJNZW5zYWdlbnNDbGllbnRlcyxBbHRlcmFyTWVuc2FnZW5zQ2xpZW50ZXMsRXhjbHVpck1lbnNhZ2Vuc0NsaWVudGVzLExpc3RhZ2VtTWVuc2FnZW5zQ2xpZW50ZXMsQWJyaXJDYWl4YSxGZWNoYXJDYWl4YSxDb25zdWx0YXJDYWl4YXMsQ29uc3VsdGFyVG9kb3NDYWl4YXMsUmVhYnJpckNhaXhhLENhZGFzdHJhclNhaWRhQ2FpeGEsQWx0ZXJhY2FvRXN0UHJvZFZlbmRhcyxMaXN0YWdlbUVzdFByb2RWZW5kYXMsTGlzdGFnZW1Qcm9kVmVuZGFzLExpc3RhZ2VtQXRlbmRBdnVsc29zLE9idGVyQXRlbmRpbWVudG8sT2J0ZXJHYW5ob3NQYXJjZWlybyxBbHRlcmFySW1hZ2VtUGVyZmlsIiwic3ViIjoiNzFjNjFiMWEtNDY1MC00NTQ2LTlkZTAtZjI0ZDdkYjUyYjA3IiwiZW1haWwiOiJ1c3VyZGV2QGdtYWlsLmNvbSIsImp0aSI6ImVmNDViNGY2LWNmNjYtNDViYi1iZDA0LWFiOTlhNjVlMmQ0ZSIsIm5iZiI6MTY4OTgwMTI0MCwiaWF0IjoxNjg5ODAxMjQwLCJpZFVzdWFyaW8iOiI0OCIsIm5vbWUiOiJVc3XDoXJpbyBBZG0gRGV2IiwibG9naW4iOiJpcm9uLnVzdXJhZG1kZXYiLCJ0aXBvRGVVc3VhcmlvIjoiQWRtaW5pc3RyYWRvciIsImltYWdlbSI6IiIsImFtYmllbnRlSWQiOiIzIiwiY2xpZW50ZUlkIjoiMyIsImNsaWVudGUiOiJJUk9OIE1BSURFTiIsImlkVXN1YXJpb051dmVtIjoiOSIsImV4cCI6MTY4OTgwODQ0MCwiaXNzIjoiQXBpSWRlbnRpZGFkZSIsImF1ZCI6Imh0dHBzOi8vYXBpLnNpbXBsZWJlYXV0eWFwcC5jb20uYnIifQ.TyhIBSNXy_RqKdq-K6R7HvleE2_itbF85RNolhrFREI',
     String? login = '',
     String? senha = '',
   }) async {
@@ -127,33 +126,33 @@ class AutenticarCall {
   }
 
   String? token(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.data.accessToken''',
-      ));
+    response,
+    r'''$.data.accessToken''',
+  ));
   String? idUsuario(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.data.usuarioToken.idUsuario''',
-      ));
+    response,
+    r'''$.data.usuarioToken.idUsuario''',
+  ));
   String? cdgcliente(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.data.usuarioToken.clienteId''',
-      ));
+    response,
+    r'''$.data.usuarioToken.clienteId''',
+  ));
   String? email(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.data.usuarioToken.email''',
-      ));
+    response,
+    r'''$.data.usuarioToken.email''',
+  ));
   String? nome(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.data.usuarioToken.nome''',
-      ));
+    response,
+    r'''$.data.usuarioToken.nome''',
+  ));
   bool? acessaParceiro(dynamic response) => castToType<bool>(getJsonField(
-        response,
-        r'''$.data.usuarioToken.podeAcessarAppParceiro''',
-      ));
+    response,
+    r'''$.data.usuarioToken.podeAcessarAppParceiro''',
+  ));
   bool? sucesso(dynamic response) => castToType<bool>(getJsonField(
-        response,
-        r'''$.success''',
-      ));
+    response,
+    r'''$.success''',
+  ));
 }
 
 class ObterFiliaisParceiroCall {
@@ -163,7 +162,7 @@ class ObterFiliaisParceiroCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obter-filiais-parceiro',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/parceiros/obter-filiais-parceiro',
+      '${SimpleTechCopyGroup.baseUrl}/api/parceiros/obter-filiais-parceiro',
       callType: ApiCallType.GET,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -207,7 +206,7 @@ class ObterServicosPorParceiroCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obter-servicos-por-parceiro',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/servicosporparceiros/obter-servicos-por-parceiro',
+      '${SimpleTechCopyGroup.baseUrl}/api/servicosporparceiros/obter-servicos-por-parceiro',
       callType: ApiCallType.GET,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -231,7 +230,7 @@ class ObterProdutosParaVendasCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obter-produtos-para-vendas',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/produtosparavendas/obter-produtos-para-vendas',
+      '${SimpleTechCopyGroup.baseUrl}/api/produtosparavendas/obter-produtos-para-vendas',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -303,7 +302,7 @@ class IniciarAtendimentoCall {
     return ApiManager.instance.makeApiCall(
       callName: 'iniciar-atendimento',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/iniciar-atendimento/4',
+      '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/iniciar-atendimento/4',
       callType: ApiCallType.PUT,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -329,7 +328,7 @@ class ObterAtendimentoCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obter-atendimento',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/obter-atendimento',
+      '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/obter-atendimento',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -355,7 +354,7 @@ class ObterAtendimentosAvulsosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obter-atendimentos-avulsos',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/obter-atendimentos-avulsos',
+      '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/obter-atendimentos-avulsos',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -379,7 +378,7 @@ class ObterAtendimentoParaFinalizarCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obter-atendimento-para-finalizar',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/obter-atendimento-para-finalizar/45/9',
+      '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/obter-atendimento-para-finalizar/45/9',
       callType: ApiCallType.GET,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -403,7 +402,7 @@ class FinalizarAtendimentoCall {
     return ApiManager.instance.makeApiCall(
       callName: 'finalizar-atendimento',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/finalizar-atendimento/4',
+      '${SimpleTechCopyGroup.baseUrl}/api/atendimentos/finalizar-atendimento/4',
       callType: ApiCallType.PUT,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -420,57 +419,7 @@ class FinalizarAtendimentoCall {
   }
 }
 
-class FecharpedidoCall {
-  Future<ApiCallResponse> call({
-    String? bearerAuth = '',
-    String? inicial = '',
-    String? finaldate = '',
-    int? filial,
-  }) async {
-    final ffApiRequestBody = '''
-{
-    "id": 0,
-    "idDoAtendimento": 50,
-    "idDoCliente": 9,
-    "idDoParceiro": 9,
-    "idDaFilial": 3,
-    "percentualDescontoPedido": 0,
-    "produtos": [],
-    "servicos": [
-        {
-            "idDoServico": 6,
-            "quantidadeDoServico": 1,
-            "valorComissaoServico": 10,
-            "valorServico": 15
-        },
-        {
-            "idDoServico": 21,
-            "quantidadeDoServico": 3,
-            "valorComissaoServico": 10,
-            "valorServico": 55
-        }
-    ]
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'fecharpedido',
-      apiUrl: '${SimpleTechCopyGroup.baseUrl}/api/pedidos/novo-cadastro',
-      callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer ${bearerAuth}',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
-class ObterAgendamentosParceiroCopyCall {
+class ObterAgendamentosParceiroCall {
   Future<ApiCallResponse> call({
     String? bearerAuth = '',
     String? inicial = '',
@@ -484,9 +433,9 @@ class ObterAgendamentosParceiroCopyCall {
   "idDaFilial": ${filial}
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'obter-agendamentos-parceiro Copy',
+      callName: 'obter-agendamentos-parceiro',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/agendamentos/obter-agendamentos-parceiro',
+      '${SimpleTechCopyGroup.baseUrl}/api/agendamentos/obter-agendamentos-parceiro',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -516,7 +465,7 @@ class ObterprodutosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obterprodutos',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/produtosparavendas/obter-produtos-para-vendas',
+      '${SimpleTechCopyGroup.baseUrl}/api/produtosparavendas/obter-produtos-para-vendas',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -534,9 +483,9 @@ class ObterprodutosCall {
   }
 
   dynamic? produtcs(dynamic response) => getJsonField(
-        response,
-        r'''$[:]''',
-      );
+    response,
+    r'''$[:]''',
+  );
 }
 
 
@@ -548,7 +497,7 @@ class ObterservicosCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obterprodutos',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/servicosporparceiros/obter-servicos-por-parceiro',
+      '${SimpleTechCopyGroup.baseUrl}/api/servicosporparceiros/obter-servicos-por-parceiro',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -565,9 +514,9 @@ class ObterservicosCall {
   }
 
   dynamic? produtcs(dynamic response) => getJsonField(
-        response,
-        r'''$[:]''',
-      );
+    response,
+    r'''$[:]''',
+  );
 }
 
 class ObterGanhosParceiroCall {
@@ -579,7 +528,7 @@ class ObterGanhosParceiroCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obter-ganhos-parceiro',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/ganhosparceiros/obter-ganhos-parceiro',
+      '${SimpleTechCopyGroup.baseUrl}/api/ganhosparceiros/obter-ganhos-parceiro',
       callType: ApiCallType.POST,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -603,7 +552,7 @@ class ObterPorCelularCall {
     return ApiManager.instance.makeApiCall(
       callName: 'obter-por-celular',
       apiUrl:
-          '${SimpleTechCopyGroup.baseUrl}/api/clientes/obter-por-celular/62991352281',
+      '${SimpleTechCopyGroup.baseUrl}/api/clientes/obter-por-celular/62991352281',
       callType: ApiCallType.GET,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
@@ -661,9 +610,9 @@ class AlterarsenhaCall {
   }
 
   dynamic sucesso(dynamic response) => getJsonField(
-        response,
-        r'''$.success''',
-      );
+    response,
+    r'''$.success''',
+  );
 }
 
 /// End identidade Group Code

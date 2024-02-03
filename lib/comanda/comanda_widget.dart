@@ -424,7 +424,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                               ),
                               Builder(
                                 builder: (context) {
-                                  final lista = [];
+                                  final lista =  FFAppState().listaProd;
                                   if (lista.isEmpty) {
                                     return Center(
                                       child: Image.asset(
@@ -486,7 +486,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                 8, 8, 8, 8),
                                                             child: Text(
-                                                              listaItem.toString(),
+                                                              listaItem.,
                                                               style: FlutterFlowTheme.of(context)
                                                                   .bodyMedium,
                                                             ),
