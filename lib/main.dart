@@ -1,3 +1,4 @@
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -159,18 +160,6 @@ class _NavBarPageState extends State<NavBarPage> {
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.qr_code_2,
-            ),
-            activeIcon: Icon(
-              Icons.qr_code_scanner_outlined,
-            ),
-            label: FFLocalizations.of(context).getText(
-              '83rjx52d' /* Leitor */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.userAlt,
               size: 24.0,
@@ -179,9 +168,38 @@ class _NavBarPageState extends State<NavBarPage> {
               '4oc1thc5' /* Perfil */,
             ),
             tooltip: '',
-          )
+          ),
         ],
       ),
+      floatingActionButton: SpeedDial(
+        icon: Icons.keyboard_double_arrow_up_sharp,
+        activeIcon: Icons.keyboard_double_arrow_down_sharp,
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color(0xFF1C4494),
+        overlayColor: Colors.white,
+        overlayOpacity: 0.5,
+        closeManually: false,
+        curve: Curves.easeInOut,
+        children: [
+          SpeedDialChild(
+            child: Icon(Icons.create),
+            backgroundColor: Colors.red,
+            label: 'Iniciar Atendimento Avulso',
+            onTap: () {
+              // Handle Camera button tap
+            },
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.search),
+            backgroundColor: Colors.green,
+            label: 'Consultar Atendimento Avulso',
+            onTap: () {
+              // Handle Gallery button tap
+            },
+          ),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

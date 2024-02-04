@@ -1,3 +1,5 @@
+import 'package:simple_adm/backend/schema/structs/index.dart';
+
 import '/backend/api_requests/api_calls.dart';
 import '/components/newmodule_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -224,6 +226,7 @@ class _SearchproductsWidgetState extends State<SearchproductsWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      print(FFAppState().listaProd.toString());
                       context.safePop();
                     },
                     text: FFLocalizations.of(context).getText(

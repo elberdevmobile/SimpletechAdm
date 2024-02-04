@@ -1,6 +1,6 @@
 import 'package:simple_adm/models/Agendamento.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
-
+import 'package:http/http.dart' as http;
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -82,6 +82,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
 
   @override
   void initState() {
+    startAtendimento(widget.agendamento.idDoAtendimento!,FFAppState().token);
     super.initState();
     _model = createModel(context, () => ComandaModel());
 
@@ -134,6 +135,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
               size: 30.0,
             ),
             onPressed: () async {
+              FFAppState().listaProd.clear();
               context.pop();
             },
           ),
@@ -274,32 +276,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                       DividerLineStyle.dashed,
                                                 ),
 
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 12.0, 0.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          'Comanda:  #'+agendamento!.comandaDoAtendimento.toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelLarge,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
+
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -422,7 +399,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                   ),
                                 ),
                               ),
-                              Builder(
+                              Container(height: 150,child:Builder(
                                 builder: (context) {
                                   final lista =  FFAppState().listaProd;
                                   if (lista.isEmpty) {
@@ -486,7 +463,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                             padding: EdgeInsetsDirectional.fromSTEB(
                                                                 8, 8, 8, 8),
                                                             child: Text(
-                                                              listaItem.,
+                                                              listaItem.nome,
                                                               style: FlutterFlowTheme.of(context)
                                                                   .bodyMedium,
                                                             ),
@@ -518,10 +495,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                                     ),
                                                                   ),
                                                                   TextSpan(
-                                                                    text: FFLocalizations.of(context)
-                                                                        .getText(
-                                                                      'n1ixmcfa' /* 10,00 */,
-                                                                    ),
+                                                                    text: listaItem.valorProduto.toString(),
                                                                     style: TextStyle(),
                                                                   )
                                                                 ],
@@ -536,7 +510,15 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                   ),
                                                 ),
                                               ),
-                                              Expanded(
+                                              GestureDetector(
+                                                  onTap: (){
+                                                    FFAppState().listaProd.remove(listaItem);
+                                                    setState(() {
+
+                                                    });
+                                                  },
+
+                                                  child:Expanded(
                                                 child: Align(
                                                   alignment: AlignmentDirectional(1, -1),
                                                   child: Padding(
@@ -548,7 +530,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              ),
+                                              )),
                                             ],
                                           ),
                                         ),
@@ -556,13 +538,13 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                     },
                                   );
                                 },
-                              ),
+                              )),
                             ],
                           ),
 
                           // Generated code for this Column Widget...
                           SafeArea(
-                              bottom: true,
+                              bottom: false,
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -639,7 +621,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                   ),
                                 ),
 
-                                Builder(
+                                Container(height: 200,child:Builder(
                                   builder: (context) {
                                     final lista = widget.agendamento.servicos;
                                     if (lista!.isEmpty) {
@@ -771,7 +753,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                       },
                                     );
                                   },
-                                ),
+                                )),
                               ],
                             ),
                           ),
@@ -781,53 +763,155 @@ class _ComandaWidgetState extends State<ComandaWidget>
                     ),
                   ],
                 ),
-                FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
-                  text: FFLocalizations.of(context).getText(
-                    'vbs12qvf' /* Button */,
-                  ),
-                  options: FFButtonOptions(
-                    height: 40.0,
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Poppins',
-                          color: Colors.white,
-                        ),
-                    elevation: 3.0,
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
               ],
             ),
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-          },
-          backgroundColor: Colors.green,
-          elevation: 10,
-          isExtended: true,
-          enableFeedback: true,
-          mini: false,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50)
-                  .copyWith(topRight: Radius.circular(50))),
-          child: Icon(
-            Icons.navigate_next,
-            size: 26,
-          ),
+        floatingActionButton:Stack(
+    children: [
+    // Outros widgets podem ser adicionados aqui
+    Positioned(
+    bottom: 16.0, // Ajuste conforme necessário
+    right: MediaQuery.of(context).size.width * 0.25, // Ajuste conforme necessário
+    child: ElevatedButton.icon(
+          onPressed: _isLoading ? null : _onSubmit,
+          style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(16.0),backgroundColor: Colors.green),
+          icon: _isLoading
+              ? Container(
+            width: 24,
+            height: 24,
+            padding: const EdgeInsets.all(2.0),
+            child: const CircularProgressIndicator(
+              color: Colors.white,
+              strokeWidth: 3,
+            ),
+          )
+              : const Icon(Icons.cloud_upload_rounded,color: Colors.white,),
+          label: const Text('Finalizar Atendimento',style: TextStyle(color: Colors.white),),
         ),
+
       ),
+        ]
+      ),
+      )
     );
   }
+
+  void _onSubmit() {
+    setState(() => _isLoading = true);
+    Future.delayed(
+      const Duration(seconds: 2),
+          () {
+            sendFlutterRequest();
+
+          }
+    );
+  }
+  void sendFlutterRequest() async {
+    const url = 'https://api.simplebeautyapp.com.br/parceiro-dev/api/pedidos/novo-cadastro';
+    final token = FFAppState().token;
+    final Map<String, dynamic> requestData = {
+
+      "idDoAtendimento": widget.agendamento.idDoAtendimento,
+      "idDoParceiro": widget.agendamento.idDoParceiro,
+      "idDaFilial": 3,
+      "idDoCliente": widget.agendamento.idDoCliente,
+      "percentualDescontoPedido": 0,
+      "produtos": FFAppState().listaProd .map((prod) => prod.toMap()).toList(),
+      "servicos": widget.agendamento.servicos?.toList().map((serv) => serv.toMap()).toList(),
+    };
+
+    final response = await http.post(
+      Uri.parse(url),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${token}',
+      },
+      body: jsonEncode(requestData),
+    );
+
+    if (response.statusCode == 200) {
+      setState(() => _isLoading = false);
+
+      await showDialog(
+        context: context,
+        builder: (alertDialogContext) {
+          return AlertDialog(
+            title: Text('Show!!'),
+            content: Text('Atendimento finalizado com sucesso!'),
+            actions: [
+              TextButton(
+                onPressed: ()
+          {
+            FFAppState().listaProd.clear();
+            context.pop();
+            context.goNamed("Home");
+
+          },
+                child: Text('Ok'),
+              ),
+            ],
+          );
+        },
+      );
+      print('Request successful');
+      print('Response: ${response.body}');
+    } else {
+      print('Request failed with status: ${response.statusCode}');
+      print('Response: ${response.body}');
+    }
+  }
+
+  void startAtendimento(int atendimentoId, String token) async {
+    final url = 'https://api.simplebeautyapp.com.br/parceiro-dev/api/atendimentos/iniciar-atendimento/$atendimentoId';
+
+    try {
+      final response = await http.put(
+        Uri.parse(url),
+        headers: {
+          'Authorization': 'Bearer $token',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        print('Atendimento started successfully');
+        print('Response: ${response.body}');
+      } else {
+        print('Failed to start atendimento. Status code: ${response.statusCode}');
+        print('Response: ${response.body}');
+      }
+    } catch (error) {
+      print('Error: $error');
+    }
+  }
+
+  void _showLoadingOverlay() {
+    setState(() {
+      _isLoading = true;
+      OverlayEntry overlayEntry;
+      overlayEntry = OverlayEntry(
+        builder: (context) => Positioned(
+          bottom: 80.0,
+          right: 16.0,
+          child: CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+          ),
+        ),
+      );
+      Overlay.of(context)!.insert(overlayEntry);
+
+      // Save overlay entry so we can remove it later
+      _overlayEntry = overlayEntry;
+    });
+  }
+
+  void _hideLoadingOverlay() {
+    setState(() {
+      _isLoading = false;
+      _overlayEntry?.remove();
+    });
+  }
+
+  OverlayEntry? _overlayEntry;
+  bool _isLoading = false;
 }

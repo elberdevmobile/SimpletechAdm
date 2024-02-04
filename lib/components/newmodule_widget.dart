@@ -85,17 +85,19 @@ class _NewmoduleWidgetState extends State<NewmoduleWidget>
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(40.0),
-                child: widget.link == "null"  ?  Image.network(
-                  'https://images.unsplash.com/photo-1554519934-e32b1629d9ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw4fHxoYWlyfGVufDB8fHx8MTcwNjQxNjQ2Mnww&ixlib=rb-4.0.3&q=80&w=1080',
-                  width: 45,
-                  height: 45,
-                  fit: BoxFit.cover,
-                ):Image.network(
-                  widget.link!,
-                  width: 60.0,
-                  height: 60.0,
-                  fit: BoxFit.cover,
-                ),
+                child: widget.link == "null"
+                    ? Image.network(
+                        'https://images.unsplash.com/photo-1554519934-e32b1629d9ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw4fHxoYWlyfGVufDB8fHx8MTcwNjQxNjQ2Mnww&ixlib=rb-4.0.3&q=80&w=1080',
+                        width: 45,
+                        height: 45,
+                        fit: BoxFit.cover,
+                      )
+                    : Image.network(
+                        widget.link!,
+                        width: 60.0,
+                        height: 60.0,
+                        fit: BoxFit.cover,
+                      ),
               ),
               Expanded(
                 child: Column(
@@ -113,39 +115,43 @@ class _NewmoduleWidgetState extends State<NewmoduleWidget>
                         style: FlutterFlowTheme.of(context).bodyLarge,
                       ),
                     ),
-                    widget.marca == "null" ? Center():Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
+                    widget.marca == "null"
+                        ? Center()
+                        : Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                4.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              valueOrDefault<String>(
-                                widget.marca,
-                                'marca',
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context).primary,
+                                0.0, 4.0, 0.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      4.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      widget.marca,
+                                      'marca',
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                        ),
                                   ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    'R\$ ${widget.value?.toString()}',
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelMedium,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'R\$ ${widget.value?.toString()}',
-                              style: FlutterFlowTheme.of(context).labelMedium,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -189,15 +195,29 @@ class _NewmoduleWidgetState extends State<NewmoduleWidget>
                     updateCount: (count) async {
                       setState(() => _model.countControllerValue = count);
                       setState(() {
-                        FFAppState().updateListaProdAtIndex(
-                          widget.idDoServico!,
-                          (e) => e
-                            ..quantidadeDoProduto = _model.countControllerValue
-                            ..idDoProduto = widget.idDoServico
-                            ..valorProduto = widget.value
-                            ..valorComissaoProduto =
-                                widget.valorComissaoServico,
-                        );
+                        if (FFAppState().listaProd.isEmpty) {
+                          FFAppState().addToListaProd(ProdutospedidoStruct(
+                            idDoProduto: widget.idDoServico!,
+                            quantidadeDoProduto: _model.countControllerValue,
+                            valorComissaoProduto: widget.valorComissaoServico,
+                            valorProduto: widget.value,
+                            nome: widget.name,
+                            marca: widget.marca
+                          ));
+                        } else {
+                          FFAppState().updateListaProdAtIndex(
+                            widget.idDoServico!,
+                            (e) =>e
+                          ..idDoProduto = widget.idDoServico
+                              ..quantidadeDoProduto =
+                                  _model.countControllerValue
+
+                              ..valorProduto = widget.value
+                              ..valorComissaoProduto =
+                                  widget.valorComissaoServico
+                          ..marca = widget.marca
+                          );
+                        }
                       });
                     },
                     stepSize: 1,

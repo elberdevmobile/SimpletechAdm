@@ -11,15 +11,26 @@ class ProdutospedidoStruct extends BaseStruct {
     int? quantidadeDoProduto,
     double? valorComissaoProduto,
     double? valorProduto,
+    String? nome,
+    String? marca
+
   })  : _idDoProduto = idDoProduto,
         _quantidadeDoProduto = quantidadeDoProduto,
         _valorComissaoProduto = valorComissaoProduto,
-        _valorProduto = valorProduto;
+        _valorProduto = valorProduto,
+        _nome = nome,
+  _marca = marca;
 
   // "idDoProduto" field.
   int? _idDoProduto;
   int get idDoProduto => _idDoProduto ?? 0;
+  String? _nome;
+  String get nome => _nome ?? "";
+  String? _marca;
+  set marca(String? val) => _marca = val;
+  String get marca => _marca ??"";
   set idDoProduto(int? val) => _idDoProduto = val;
+  set nome(String? val) => _nome = val;
   void incrementIdDoProduto(int amount) => _idDoProduto = idDoProduto + amount;
   bool hasIdDoProduto() => _idDoProduto != null;
 
@@ -53,6 +64,10 @@ class ProdutospedidoStruct extends BaseStruct {
         quantidadeDoProduto: castToType<int>(data['quantidadeDoProduto']),
         valorComissaoProduto: castToType<double>(data['valorComissaoProduto']),
         valorProduto: castToType<double>(data['valorProduto']),
+          nome: castToType<String>(data['nome']),
+          marca: castToType<String>(data['marca']),
+
+
       );
 
   static ProdutospedidoStruct? maybeFromMap(dynamic data) => data is Map
@@ -64,6 +79,8 @@ class ProdutospedidoStruct extends BaseStruct {
         'quantidadeDoProduto': _quantidadeDoProduto,
         'valorComissaoProduto': _valorComissaoProduto,
         'valorProduto': _valorProduto,
+    'nome': _nome,
+    'marca': _marca,
       }.withoutNulls;
 
   @override
@@ -83,6 +100,12 @@ class ProdutospedidoStruct extends BaseStruct {
         'valorProduto': serializeParam(
           _valorProduto,
           ParamType.double,
+        ),'nome': serializeParam(
+          _nome,
+          ParamType.String,
+        ),'marca': serializeParam(
+          _marca,
+          ParamType.String,
         ),
       }.withoutNulls;
 
@@ -107,6 +130,14 @@ class ProdutospedidoStruct extends BaseStruct {
           data['valorProduto'],
           ParamType.double,
           false,
+        ), nome: deserializeParam(
+          data['nome'],
+          ParamType.String,
+          false,
+        ), marca: deserializeParam(
+          data['marca'],
+          ParamType.String,
+          false,
         ),
       );
 
@@ -119,12 +150,14 @@ class ProdutospedidoStruct extends BaseStruct {
         idDoProduto == other.idDoProduto &&
         quantidadeDoProduto == other.quantidadeDoProduto &&
         valorComissaoProduto == other.valorComissaoProduto &&
-        valorProduto == other.valorProduto;
+        valorProduto == other.valorProduto &&
+    nome == other.nome &&
+    marca == other.marca;
   }
 
   @override
   int get hashCode => const ListEquality().hash(
-      [idDoProduto, quantidadeDoProduto, valorComissaoProduto, valorProduto]);
+      [idDoProduto, quantidadeDoProduto, valorComissaoProduto, valorProduto, nome,marca]);
 }
 
 ProdutospedidoStruct createProdutospedidoStruct({
@@ -132,10 +165,14 @@ ProdutospedidoStruct createProdutospedidoStruct({
   int? quantidadeDoProduto,
   double? valorComissaoProduto,
   double? valorProduto,
+  String? nome,
+  String? marca
 }) =>
     ProdutospedidoStruct(
       idDoProduto: idDoProduto,
       quantidadeDoProduto: quantidadeDoProduto,
       valorComissaoProduto: valorComissaoProduto,
       valorProduto: valorProduto,
+        nome: nome,
+        marca: marca
     );

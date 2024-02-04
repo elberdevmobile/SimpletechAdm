@@ -256,11 +256,11 @@ Random randon = Random();
       appointments.add(Appointment(
         subject: agendamentos[j].cliente.toString(),
         notes: "R\$ "+agendamentos[j].valorServicos.toString() ,
-        startTime: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaInicioDoAgendamento!),
-        endTime: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaFimDoAgendamento!),
+        startTime: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaInicioDoAgendamento ?? "00:00:00"),
+        endTime: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaFimDoAgendamento?? "00:00:00"),
         location: agendamentos[j].comandaDoAtendimento.toString(),
           id:agendamentos[j].id,
-        color: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaInicioDoAgendamento!).difference(DateTime.now()).inMinutes < 60 ?  colorCollection[3] :colorCollection[0],
+        color: criarDateTime(agendamentos[j].dataAgendamento!,agendamentos[j].horaInicioDoAgendamento?? "00:00"!).difference(DateTime.now()).inMinutes < 60 ?  colorCollection[3] :colorCollection[0],
       ));
     }
 

@@ -425,7 +425,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // comanda
   {
     'f5o1u2at': {
-      'pt': 'Suas Comandas',
+      'pt': 'Atendimento',
       'en': '',
       'es': '',
     },

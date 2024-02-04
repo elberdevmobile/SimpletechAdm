@@ -135,10 +135,10 @@ class FFAppState extends ChangeNotifier {
 
   List<ProdutospedidoStruct> _listaProd = [];
   List<ProdutospedidoStruct> get listaProd => _listaProd;
-  set listaProd(List<ProdutospedidoStruct> _value) {
-    _listaProd = _value;
+  set listaProd(List<ProdutospedidoStruct> value) {
+    _listaProd = value;
     prefs.setStringList(
-        'ff_listaProd', _value.map((x) => x.serialize()).toList());
+        'ff_listaProd', value.map((x) => x.serialize()).toList());
   }
 
   void addToListaProd(ProdutospedidoStruct _value) {

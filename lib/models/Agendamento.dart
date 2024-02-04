@@ -1,6 +1,8 @@
 class Agendamento {
   int? id;
   int? idDoParceiro;
+  int? idDoCliente;
+  int? idDoAtendimento; // Adicionado o campo idDoAtendimento
   String? dataAgendamento;
   String? horaInicioDoAgendamento;
   String? horaFimDoAgendamento;
@@ -8,40 +10,66 @@ class Agendamento {
   bool? agendamentoCancelado;
   bool? agendamentoConfirmado;
   int? comandaDoAtendimento;
-  int? valorServicos;
+  double? valorServicos;
   String? cliente;
   List<Servicos>? servicos;
 
-  Agendamento(
-      {this.id,
-        this.idDoParceiro,
-        this.dataAgendamento,
-        this.horaInicioDoAgendamento,
-        this.horaFimDoAgendamento,
-        this.tempo,
-        this.agendamentoCancelado,
-        this.agendamentoConfirmado,
-        this.comandaDoAtendimento,
-        this.valorServicos,
-        this.cliente,
-        this.servicos});
+  Agendamento({
+    this.id,
+    this.idDoParceiro,
+    this.idDoCliente,
+    this.idDoAtendimento, // Adicionado o campo idDoAtendimento
+    this.dataAgendamento,
+    this.horaInicioDoAgendamento,
+    this.horaFimDoAgendamento,
+    this.tempo,
+    this.agendamentoCancelado,
+    this.agendamentoConfirmado,
+    this.comandaDoAtendimento,
+    this.valorServicos,
+    this.cliente,
+    this.servicos,
+  });
 
   Agendamento.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    idDoParceiro = json['idDoParceiro'];
-    dataAgendamento = json['dataAgendamento'];
-    horaInicioDoAgendamento = json['horaInicioDoAgendamento'];
-    horaFimDoAgendamento = json['horaFimDoAgendamento'];
-    agendamentoCancelado = json['agendamentoCancelado'];
-    agendamentoConfirmado = json['agendamentoConfirmado'];
-    comandaDoAtendimento = json['comandaDoAtendimento'];
-    valorServicos = json['valorServicos'];
-    cliente = json['cliente'];
-    if (json['servicos'] != null) {
-      servicos = <Servicos>[];
-      json['servicos'].forEach((v) {
-        servicos!.add(new Servicos.fromJson(v));
-      });
+    try {
+      id = json['id'];
+      idDoParceiro = json['idDoParceiro'];
+      idDoCliente = json['idDoCliente'];
+      idDoAtendimento = json['idDoAtendimento']; // Adicionado o campo idDoAtendimento
+      dataAgendamento = json['dataAgendamento'];
+      horaInicioDoAgendamento = json['horaInicioDoAgendamento'];
+      horaFimDoAgendamento = json['horaFimDoAgendamento'];
+      agendamentoCancelado = json['agendamentoCancelado'];
+      agendamentoConfirmado = json['agendamentoConfirmado'];
+      comandaDoAtendimento = json['comandaDoAtendimento'];
+      valorServicos = json['valorServicos'];
+      cliente = json['cliente'];
+      if (json['servicos'] != null) {
+        servicos = <Servicos>[];
+        json['servicos'].forEach((v) {
+          servicos!.add(new Servicos.fromJson(v));
+        });
+      }
+    } catch (e) {
+      id = json['id'];
+      idDoParceiro = json['idDoParceiro'];
+      idDoCliente = json['idDoCliente'];
+      idDoAtendimento = json['idDoAtendimento']; // Adicionado o campo idDoAtendimento
+      dataAgendamento = json['dataAgendamento'];
+      horaInicioDoAgendamento = "00:00:00";
+      horaFimDoAgendamento = "00:00:00";
+      agendamentoCancelado = json['agendamentoCancelado'];
+      agendamentoConfirmado = json['agendamentoConfirmado'];
+      comandaDoAtendimento = json['comandaDoAtendimento'];
+      valorServicos = double.parse(json['valorServicos'].toString());
+      cliente = json['cliente'];
+      if (json['servicos'] != null) {
+        servicos = <Servicos>[];
+        json['servicos'].forEach((v) {
+          servicos!.add(new Servicos.fromJson(v));
+        });
+      }
     }
   }
 
@@ -49,9 +77,11 @@ class Agendamento {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['idDoParceiro'] = this.idDoParceiro;
+    data['idDoCliente'] = this.idDoCliente;
+    data['idDoAtendimento'] = this.idDoAtendimento; // Adicionado o campo idDoAtendimento
     data['dataAgendamento'] = this.dataAgendamento;
-    data['horaInicioDoAgendamento'];
-    data['horaFimDoAgendamento'];
+    data['horaInicioDoAgendamento'] = this.horaInicioDoAgendamento; // Corrigido o campo
+    data['horaFimDoAgendamento'] = this.horaFimDoAgendamento; // Corrigido o campo
 
     data['agendamentoCancelado'] = this.agendamentoCancelado;
     data['agendamentoConfirmado'] = this.agendamentoConfirmado;
@@ -64,6 +94,7 @@ class Agendamento {
     return data;
   }
 }
+
 
 class HoraInicioDoAgendamento {
   int? ticks;
@@ -207,8 +238,8 @@ class Servicos {
   int? id;
   int? idDoServico;
   String? descricaoServico;
-  int? valor;
-  int? comissao;
+  double? valor;
+  double? comissao;
   int? tempo;
 
   Servicos(
@@ -223,8 +254,8 @@ class Servicos {
     id = json['id'];
     idDoServico = json['idDoServico'];
     descricaoServico = json['descricaoServico'];
-    valor = json['valor'];
-    comissao = json['comissao'];
+    valor = double.parse(json['valor'].toString());
+    comissao = double.parse(json['comissao'].toString());
     tempo = json['tempo'];
   }
 
@@ -238,4 +269,9 @@ class Servicos {
     data['tempo'] = this.tempo;
     return data;
   }
+  // Adding a toMap method for consistency
+  Map<String, dynamic> toMap() {
+    return toJson();
+  }
+
 }
