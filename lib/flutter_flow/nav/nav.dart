@@ -156,6 +156,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'searchproducts',
               path: 'searchproducts',
               builder: (context, params) => SearchproductsWidget(),
+            ),
+            FFRoute(
+              name: 'comandaAvulsa',
+              path: 'comandaAvulsa',
+              builder: (context, params) => ComandaAvulsaWidget(
+                agendamento: params.getParam('agendamento', ParamType.JSON),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
