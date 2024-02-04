@@ -637,6 +637,42 @@ class AlterarsenhaCall {
 
 /// End identidade Group Code
 
+class ObteratendimentosavulsosCall {
+  static Future<ApiCallResponse> call({
+    String? bearerAuth = '',
+    String? telphone = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "idFilial": 3,
+  "pesquisaAtendimento": "${telphone}",
+  "cliente": ""
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'obteratendimentosavulsos',
+      apiUrl:
+          'https://api.simplebeautyapp.com.br/parceiro-dev/api/atendimentos/obter-atendimentos-avulsos',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${bearerAuth}',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static dynamic? listaAtendimento(dynamic response) => getJsonField(
+        response,
+        r'''$[:]''',
+      );
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

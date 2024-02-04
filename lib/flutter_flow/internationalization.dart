@@ -537,6 +537,75 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': '',
     },
   },
+  // comandaAvulsa
+  {
+    'jkjic8sg': {
+      'pt': 'Suas Comandas',
+      'en': '',
+      'es': '',
+    },
+    'q2eml1tf': {
+      'pt':
+          'Aqui você terá os detalhes do serviço a ser realizado para o seu cliente. ',
+      'en': '',
+      'es': '',
+    },
+    'rxuftlbt': {
+      'pt': 'Nestor Nunes',
+      'en': '',
+      'es': '',
+    },
+    'rfvy0o3p': {
+      'pt': 'Produtos',
+      'en': '',
+      'es': '',
+    },
+    'k88tthp4': {
+      'pt': 'Adicionar',
+      'en': '',
+      'es': '',
+    },
+    't8jwp0k3': {
+      'pt': 'R\$',
+      'en': '',
+      'es': '',
+    },
+    'yvx321da': {
+      'pt': '10,00',
+      'en': '',
+      'es': '',
+    },
+    'a3mgyqxt': {
+      'pt': 'Serviços',
+      'en': '',
+      'es': '',
+    },
+    'zj6kbuwg': {
+      'pt': 'Adicionar',
+      'en': '',
+      'es': '',
+    },
+    '5oupy1y2': {
+      'pt': 'R\$',
+      'en': '',
+      'es': '',
+    },
+    'swda26yq': {
+      'pt': '10,00',
+      'en': '',
+      'es': '',
+    },
+    's7e95tvw': {
+      'pt': 'Button',
+      'en': '',
+      'es': '',
+    },
+    '49gk3dmq': {
+      'pt': 'Home',
+      'en': '',
+      'es': '',
+    },
+  },
   // bar_home
   {
     'ti52udw3': {
@@ -546,6 +615,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'u5tge4w8': {
       'pt': '1',
+      'en': '',
+      'es': '',
+    },
+  },
+  // searchAvulso
+  {
+    '2tto7u1z': {
+      'pt': 'Atendimento Avulso',
+      'en': '',
+      'es': '',
+    },
+    'puhjv6af': {
+      'pt':
+          'Digite abaixo o número do telefone do cliente, para iniciar uma tendimento avulso.',
+      'en': '',
+      'es': '',
+    },
+    '8hdlkomx': {
+      'pt': 'Numero de telefone do cliente',
+      'en': '',
+      'es': '',
+    },
+    'ku2fij9t': {
+      'pt': 'Cancelar',
+      'en': '',
+      'es': '',
+    },
+    'irn1u7d7': {
+      'pt': 'Buscar',
       'en': '',
       'es': '',
     },

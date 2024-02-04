@@ -1,25 +1,23 @@
-import '/components/search_avulso_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'profile_widget.dart' show ProfileWidget;
+import 'comanda_avulsa_widget.dart' show ComandaAvulsaWidget;
+import 'package:styled_divider/styled_divider.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class ProfileModel extends FlutterFlowModel<ProfileWidget> {
+class ComandaAvulsaModel extends FlutterFlowModel<ComandaAvulsaWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for SwitchListTile widget.
-  bool? switchListTileValue;
 
   /// Initialization and disposal methods.
 
