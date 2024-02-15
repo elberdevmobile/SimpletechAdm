@@ -1,6 +1,7 @@
 import 'package:simple_adm/models/Agendamento.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:http/http.dart' as http;
+import '../backend/schema/structs/serviopedido_struct.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -86,6 +87,18 @@ class _ComandaWidgetState extends State<ComandaWidget>
     super.initState();
     _model = createModel(context, () => ComandaModel());
 
+    if (FFAppState().listaservice.isEmpty) {
+      for (int i = 0; i < widget.agendamento.servicos!.length; i++) {
+        FFAppState().addToListaservice(ServiopedidoStruct(
+          idDoServico: widget.agendamento.servicos![i]!.idDoServico,
+          quantidadeDoServico: 1,
+          descricaoServico: widget.agendamento.servicos![i]!.descricaoServico,
+          valorComissaoServico: widget.agendamento.servicos![i]!.comissao,
+          valorServico: widget.agendamento.servicos![i]!.valor,
+        ));
+      }
+    }
+
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -135,7 +148,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
               size: 30.0,
             ),
             onPressed: () async {
-              FFAppState().listaProd.clear();
+              FFAppState().listaProd.clear();FFAppState().listaservice.clear();
               context.pop();
             },
           ),
@@ -197,7 +210,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -623,8 +636,8 @@ class _ComandaWidgetState extends State<ComandaWidget>
 
                                 Container(height: 200,child:Builder(
                                   builder: (context) {
-                                    final lista = widget.agendamento.servicos;
-                                    if (lista!.isEmpty) {
+                                    final lista = FFAppState().listaservice;
+                                    if (FFAppState().listaservice == null || lista!.isEmpty ) {
                                       return Center(
                                         child: Image.asset(
                                           'assets/images/no-results.png',
@@ -638,7 +651,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                       shrinkWrap: true,
                                       primary: true,
                                       scrollDirection: Axis.vertical,
-                                      itemCount: lista.length,
+                                      itemCount: lista!.length,
                                       separatorBuilder: (_, __) => SizedBox(height: 8),
                                       itemBuilder: (context, listaIndex) {
                                         final listaItem = lista[listaIndex];
@@ -687,7 +700,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                               padding: EdgeInsetsDirectional.fromSTEB(
                                                                   8, 8, 8, 8),
                                                               child: Text(
-                                                                listaItem.descricaoServico!,
+                                                                listaItem!.descricaoServico ?? "",
                                                                 style: FlutterFlowTheme.of(context)
                                                                     .bodyMedium,
                                                               ),
@@ -717,7 +730,7 @@ class _ComandaWidgetState extends State<ComandaWidget>
                                                                       ),
                                                                     ),
                                                                     TextSpan(
-                                                                      text: listaItem!.valor!.toString(),
+                                                                      text: listaItem!.valorServico!.toString(),
                                                                       style: TextStyle(),
                                                                     )
                                                                   ],
@@ -813,12 +826,12 @@ class _ComandaWidgetState extends State<ComandaWidget>
     final Map<String, dynamic> requestData = {
 
       "idDoAtendimento": widget.agendamento.idDoAtendimento,
-      "idDoParceiro": widget.agendamento.idDoParceiro,
-      "idDaFilial": 3,
+      "idDoParceiro": FFAppState().idUsuarioNuvem ,
+      "idDaFilial": 1,
       "idDoCliente": widget.agendamento.idDoCliente,
       "percentualDescontoPedido": 0,
       "produtos": FFAppState().listaProd .map((prod) => prod.toMap()).toList(),
-      "servicos": widget.agendamento.servicos?.toList().map((serv) => serv.toMap()).toList(),
+      "servicos": FFAppState().listaservice?.toList().map((serv) => serv.toMap()).toList(),
     };
 
     final response = await http.post(
@@ -843,7 +856,8 @@ class _ComandaWidgetState extends State<ComandaWidget>
               TextButton(
                 onPressed: ()
           {
-            FFAppState().listaProd.clear();
+            FFAppState().listaProd.clear();FFAppState().listaservice.clear();
+            FFAppState().listaservice.clear();
             context.pop();
             context.goNamed("Home");
 

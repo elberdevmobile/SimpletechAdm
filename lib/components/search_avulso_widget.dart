@@ -1,3 +1,5 @@
+import '../comanda/comanda_widget.dart';
+import '../models/Agendamento.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -50,10 +52,10 @@ class _SearchAvulsoWidgetState extends State<SearchAvulsoWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 60.0),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 1.0,
-        height: MediaQuery.sizeOf(context).height * 0.8,
+        height: MediaQuery.sizeOf(context).height * 0.5,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           borderRadius: BorderRadius.only(
@@ -133,13 +135,12 @@ class _SearchAvulsoWidgetState extends State<SearchAvulsoWidget> {
                                       8.0, 0.0, 8.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.textController,
-                                    focusNode: _model.textFieldFocusNode,
                                     onChanged: (_) => EasyDebounce.debounce(
                                       '_model.textController',
                                       Duration(milliseconds: 2000),
                                       () => setState(() {}),
                                     ),
-                                    autofocus: true,
+                                    autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText:
@@ -289,7 +290,7 @@ class _SearchAvulsoWidgetState extends State<SearchAvulsoWidget> {
                   ),
                 ),
               ),
-              Container(
+              _model.avulsos?.jsonBody == null ? Center() :    Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 height: 200.0,
                 decoration: BoxDecoration(
@@ -297,9 +298,7 @@ class _SearchAvulsoWidgetState extends State<SearchAvulsoWidget> {
                 ),
                 child: Builder(
                   builder: (context) {
-                    final atend = ObteratendimentosavulsosCall.listaAtendimento(
-                      (_model.avulsos?.jsonBody ?? ''),
-                    ).toList();
+                    final atend = _model.avulsos?.jsonBody;
                     return ListView.builder(
                       padding: EdgeInsets.zero,
                       scrollDirection: Axis.vertical,
@@ -355,7 +354,13 @@ class _SearchAvulsoWidgetState extends State<SearchAvulsoWidget> {
                                       size: 12.0,
                                     ),
                                     onPressed: () {
-                                      print('IconButton pressed ...');
+
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => ComandaWidget(agendamento: Agendamento.fromJson(atendItem)!),
+                                        ),
+                                      );
                                     },
                                   ),
                                 ),

@@ -411,7 +411,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       FFAppState().token = getJsonField(
                                         _model.auth,
                                         r'''$.data.accessToken''',
-                                      ).toString();
+                                      ).toString(); FFAppState().idUsuarioNuvem = _model.auth['data']['usuarioToken']['claims']
+                                          .firstWhere((claim) => claim['type'] == 'idUsuarioNuvem', orElse: () => null)?
+                                      ['value'];
                                       FFAppState().user = _model.auth!;
                                       FFAppState().logged = true;
                                       FFAppState().login =
@@ -421,6 +423,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       FFAppState().nomeuser = getJsonField(
                                         _model.auth,
                                         r'''$.data.usuarioToken.nome''',
+                                      ).toString();
+                                      FFAppState().email = getJsonField(
+                                        _model.auth,
+                                        r'''$.data.usuarioToken.email''',
                                       ).toString();
 
                                       context.pushNamed(

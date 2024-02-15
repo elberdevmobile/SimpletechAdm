@@ -91,6 +91,14 @@ class FFAppState extends ChangeNotifier {
     prefs.setString('ff_token', _value);
   }
 
+
+  String _idUsuarioNuvem= '';
+  String get idUsuarioNuvem => _idUsuarioNuvem;
+  set idUsuarioNuvem(String _value) {
+    _idUsuarioNuvem = _value;
+    prefs.setString('ff_idUsuarioNuvem', _value);
+  }
+
   dynamic _user;
   dynamic get user => _user;
   set user(dynamic _value) {
@@ -131,6 +139,13 @@ class FFAppState extends ChangeNotifier {
   set nomeuser(String _value) {
     _nomeuser = _value;
     prefs.setString('ff_nomeuser', _value);
+  }
+
+  String _email = '';
+  String get email => _email;
+  set email(String _value) {
+    _email = _value;
+    prefs.setString('ff_email', _value);
   }
 
   List<ProdutospedidoStruct> _listaProd = [];

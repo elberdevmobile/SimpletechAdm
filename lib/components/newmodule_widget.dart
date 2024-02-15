@@ -195,7 +195,15 @@ class _NewmoduleWidgetState extends State<NewmoduleWidget>
                     updateCount: (count) async {
                       setState(() => _model.countControllerValue = count);
                       setState(() {
-                        if (FFAppState().listaProd.isEmpty) {
+                        if (FFAppState().listaProd.isEmpty|| !FFAppState().listaProd.contains(ProdutospedidoStruct(
+                            idDoProduto: widget.idDoServico!,
+                            quantidadeDoProduto: _model.countControllerValue,
+                            valorComissaoProduto: widget.valorComissaoServico,
+                            valorProduto: widget.value,
+                            nome: widget.name,
+                            marca: widget.marca
+                        ))) {
+                          try{
                           FFAppState().addToListaProd(ProdutospedidoStruct(
                             idDoProduto: widget.idDoServico!,
                             quantidadeDoProduto: _model.countControllerValue,
@@ -204,6 +212,20 @@ class _NewmoduleWidgetState extends State<NewmoduleWidget>
                             nome: widget.name,
                             marca: widget.marca
                           ));
+                        }catch(e){
+                            FFAppState().updateListaProdAtIndex(
+                                widget.idDoServico!,
+                                    (e) =>e
+                                  ..idDoProduto = widget.idDoServico
+                                  ..quantidadeDoProduto =
+                                      _model.countControllerValue
+
+                                  ..valorProduto = widget.value
+                                  ..valorComissaoProduto =
+                                      widget.valorComissaoServico
+                                  ..marca = widget.marca
+                            );
+    }
                         } else {
                           FFAppState().updateListaProdAtIndex(
                             widget.idDoServico!,

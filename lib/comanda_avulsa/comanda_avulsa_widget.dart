@@ -253,7 +253,7 @@ class _ComandaAvulsaWidgetState extends State<ComandaAvulsaWidget>
                                                 Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'rxuftlbt' /* Nestor Nunes */,
+                                                    'rxuftlbt' /* FFAppState().nomeuser */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)

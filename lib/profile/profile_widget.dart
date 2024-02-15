@@ -15,6 +15,10 @@ import 'package:provider/provider.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
 
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+
 class ProfileWidget extends StatefulWidget {
   const ProfileWidget({super.key});
 
@@ -278,10 +282,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                   animationsMap['containerOnPageLoadAnimation1']!),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                child: Text(
-                  FFLocalizations.of(context).getText(
-                    'lxhef3pi' /* Nestor Nunes */,
-                  ),
+                child: Text(FFAppState().nomeuser,
                   style: FlutterFlowTheme.of(context).headlineSmall,
                 ).animateOnPageLoad(animationsMap['textOnPageLoadAnimation']!),
               ),
@@ -318,6 +319,9 @@ class _ProfileWidgetState extends State<ProfileWidget>
                           child: SwitchListTile.adaptive(
                             value: _model.switchListTileValue ??= true,
                             onChanged: (newValue) async {
+
+                              alterarCadastroParceiro(2,newValue);
+
                               setState(
                                   () => _model.switchListTileValue = newValue!);
                             },
@@ -414,30 +418,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
-                                enableDrag: false,
-                                context: context,
-                                builder: (context) {
-                                  return GestureDetector(
-                                    onTap: () => _model
-                                            .unfocusNode.canRequestFocus
-                                        ? FocusScope.of(context)
-                                            .requestFocus(_model.unfocusNode)
-                                        : FocusScope.of(context).unfocus(),
-                                    child: Padding(
-                                      padding: MediaQuery.viewInsetsOf(context),
-                                      child: Container(
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                0.9,
-                                        child: SearchAvulsoWidget(),
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
+
                             },
                             child: Text(
                               FFLocalizations.of(context).getText(
@@ -531,5 +512,46 @@ class _ProfileWidgetState extends State<ProfileWidget>
         ),
       ),
     );
+  }
+
+  void alterarCadastroParceiro(int idParceiro,bool toogle) async {
+    // URL da API
+    String url = 'https://api.simplebeautyapp.com.br/manager-dev/api/parceiros/alterar-cadastro-parceiro/${FFAppState().idUsuarioNuvem}';
+
+    // Corpo da requisição
+    Map<String, dynamic> body = {
+      "nome": FFAppState().nomeuser,
+      "email":FFAppState().email,
+      "online": toogle,
+      "id":FFAppState().idUsuarioNuvem,
+      "filiaisDoParceiro":[
+        {
+          "id": 1,
+          "idDaFilial": 1,
+          "idDoParceiro": 1,
+          "razaoSocialDaFilial": "Filial DEV 1 (Ambiente 1)"
+        }
+      ]
+    };
+
+    // Codifica o corpo da requisição para JSON
+    String bodyJson = jsonEncode(body);
+
+    try {
+      // Realiza a chamada de API
+      final response = await http.put(Uri.parse(url), body: bodyJson, headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer  ${FFAppState().token}',
+      },);
+
+      // Verifica se a resposta foi bem sucedida (código de status 200)
+      if (response.statusCode == 200) {
+        print('Cadastro do parceiro alterado com sucesso.');
+      } else {
+        print('Erro ao alterar o cadastro do parceiro: ${response.statusCode}');
+      }
+    } catch (e) {
+      print('Erro ao realizar a chamada de API: $e');
+    }
   }
 }

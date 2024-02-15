@@ -37,7 +37,7 @@ class SimpleTechCopyGroup {
   FinalizarAtendimentoCall();
   static ObterAgendamentosParceiroCall obterAgendamentosParceiroCall =
   ObterAgendamentosParceiroCall();
-  static ObterprodutosCall obterprodutosCall = ObterprodutosCall();
+  static ObterprodutosCall obterprodutosCall = ObterprodutosCall();  static ObterservicosCall obterservicoscall = ObterservicosCall();
   static ObterGanhosParceiroCall obterGanhosParceiroCall =
   ObterGanhosParceiroCall();
   static ObterPorCelularCall obterPorCelularCall = ObterPorCelularCall();
@@ -498,7 +498,7 @@ class ObterservicosCall {
       callName: 'obterprodutos',
       apiUrl:
       '${SimpleTechCopyGroup.baseUrl}/api/servicosporparceiros/obter-servicos-por-parceiro',
-      callType: ApiCallType.POST,
+      callType: ApiCallType.GET,
       headers: {
         'Authorization': 'Bearer ${bearerAuth}',
         'Content-Type': 'application/json',
@@ -624,8 +624,8 @@ class ObteratendimentosavulsosCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "idFilial": 3,
-  "pesquisaAtendimento": "${telphone}",
+  "idFilial": 1,
+  "pesquisaAtendimento": "",
   "cliente": ""
 }''';
     return ApiManager.instance.makeApiCall(

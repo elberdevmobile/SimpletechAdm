@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '../../comanda/AtendimentoScreen.dart';
 import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
@@ -139,6 +141,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'forgotpass',
               path: 'forgotpass',
               builder: (context, params) => ForgotpassWidget(),
+            ),FFRoute(
+              name: 'AtendimentosFinalizadosScreen',
+              path: 'AtendimentosFinalizadosScreen',
+              builder: (context, params) => AtendimentosFinalizadosScreen(),
             ),
             FFRoute(
               name: 'comanda',
@@ -348,7 +354,7 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? Container(
                   color: Colors.transparent,
-                  child: Image.asset(
+                  child: SvgPicture.asset(
                     'assets/images/logologin.svg',
                     fit: BoxFit.cover,
                   ),

@@ -36,7 +36,7 @@ class _SearchproductsWidgetState extends State<SearchproductsWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.produtos = await SimpleTechCopyGroup.obterprodutosCall.call(
-        filial: 3,
+        filial: 1,
         bearerAuth: FFAppState().token,
       );
       if ((_model.produtos?.succeeded ?? true)) {
@@ -165,7 +165,7 @@ class _SearchproductsWidgetState extends State<SearchproductsWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                   child: Builder(
                     builder: (context) {
-                      final produtoss = _model.produtos?.jsonBody  .toList();
+                      final produtoss = _model.produtos?.jsonBody??[]  .toList();
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,

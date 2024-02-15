@@ -1,7 +1,6 @@
 // ignore_for_file: unnecessary_getters_setters
 
 import '/backend/schema/util/schema_util.dart';
-
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
@@ -11,10 +10,12 @@ class ServiopedidoStruct extends BaseStruct {
     int? quantidadeDoServico,
     double? valorComissaoServico,
     double? valorServico,
+    String? descricaoServico, // Adicionado o campo descricaoServico
   })  : _idDoServico = idDoServico,
         _quantidadeDoServico = quantidadeDoServico,
         _valorComissaoServico = valorComissaoServico,
-        _valorServico = valorServico;
+        _valorServico = valorServico,
+        _descricaoServico = descricaoServico;
 
   // "idDoServico" field.
   int? _idDoServico;
@@ -47,12 +48,19 @@ class ServiopedidoStruct extends BaseStruct {
       _valorServico = valorServico + amount;
   bool hasValorServico() => _valorServico != null;
 
+  // Adicionando "descricaoServico" field.
+  String? _descricaoServico;
+  String? get descricaoServico => _descricaoServico;
+  set descricaoServico(String? val) => _descricaoServico = val;
+  bool hasDescricaoServico() => _descricaoServico != null;
+
   static ServiopedidoStruct fromMap(Map<String, dynamic> data) =>
       ServiopedidoStruct(
         idDoServico: castToType<int>(data['idDoServico']),
         quantidadeDoServico: castToType<int>(data['quantidadeDoServico']),
         valorComissaoServico: castToType<double>(data['valorComissaoServico']),
         valorServico: castToType<double>(data['valorServico']),
+        descricaoServico: castToType<String>(data['descricaoServico']),
       );
 
   static ServiopedidoStruct? maybeFromMap(dynamic data) => data is Map
@@ -60,31 +68,36 @@ class ServiopedidoStruct extends BaseStruct {
       : null;
 
   Map<String, dynamic> toMap() => {
-        'idDoServico': _idDoServico,
-        'quantidadeDoServico': _quantidadeDoServico,
-        'valorComissaoServico': _valorComissaoServico,
-        'valorServico': _valorServico,
-      }.withoutNulls;
+    'idDoServico': _idDoServico,
+    'quantidadeDoServico': _quantidadeDoServico,
+    'valorComissaoServico': _valorComissaoServico,
+    'valorServico': _valorServico,
+    'descricaoServico': _descricaoServico, // Adicionando ao mapeamento
+  }.withoutNulls;
 
   @override
   Map<String, dynamic> toSerializableMap() => {
-        'idDoServico': serializeParam(
-          _idDoServico,
-          ParamType.int,
-        ),
-        'quantidadeDoServico': serializeParam(
-          _quantidadeDoServico,
-          ParamType.int,
-        ),
-        'valorComissaoServico': serializeParam(
-          _valorComissaoServico,
-          ParamType.double,
-        ),
-        'valorServico': serializeParam(
-          _valorServico,
-          ParamType.double,
-        ),
-      }.withoutNulls;
+    'idDoServico': serializeParam(
+      _idDoServico,
+      ParamType.int,
+    ),
+    'quantidadeDoServico': serializeParam(
+      _quantidadeDoServico,
+      ParamType.int,
+    ),
+    'valorComissaoServico': serializeParam(
+      _valorComissaoServico,
+      ParamType.double,
+    ),
+    'valorServico': serializeParam(
+      _valorServico,
+      ParamType.double,
+    ),
+    'descricaoServico': serializeParam(
+      _descricaoServico,
+      ParamType.String,
+    ), // Adicionando ao mapeamento
+  }.withoutNulls;
 
   static ServiopedidoStruct fromSerializableMap(Map<String, dynamic> data) =>
       ServiopedidoStruct(
@@ -108,6 +121,11 @@ class ServiopedidoStruct extends BaseStruct {
           ParamType.double,
           false,
         ),
+        descricaoServico: deserializeParam(
+          data['descricaoServico'],
+          ParamType.String,
+          false,
+        ), // Adicionando ao mapeamento
       );
 
   @override
@@ -119,12 +137,18 @@ class ServiopedidoStruct extends BaseStruct {
         idDoServico == other.idDoServico &&
         quantidadeDoServico == other.quantidadeDoServico &&
         valorComissaoServico == other.valorComissaoServico &&
-        valorServico == other.valorServico;
+        valorServico == other.valorServico &&
+        descricaoServico == other.descricaoServico; // Adicionando ao teste de igualdade
   }
 
   @override
-  int get hashCode => const ListEquality().hash(
-      [idDoServico, quantidadeDoServico, valorComissaoServico, valorServico]);
+  int get hashCode => const ListEquality().hash([
+    idDoServico,
+    quantidadeDoServico,
+    valorComissaoServico,
+    valorServico,
+    descricaoServico,
+  ]);
 }
 
 ServiopedidoStruct createServiopedidoStruct({
@@ -132,10 +156,12 @@ ServiopedidoStruct createServiopedidoStruct({
   int? quantidadeDoServico,
   double? valorComissaoServico,
   double? valorServico,
+  String? descricaoServico,
 }) =>
     ServiopedidoStruct(
       idDoServico: idDoServico,
       quantidadeDoServico: quantidadeDoServico,
       valorComissaoServico: valorComissaoServico,
       valorServico: valorServico,
+      descricaoServico: descricaoServico,
     );

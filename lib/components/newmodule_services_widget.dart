@@ -22,7 +22,7 @@ class NewmoduleServicesWidget extends StatefulWidget {
     required this.value,
     required this.link,
     required this.idDoServico,
-    required this.valorComissaoServico,
+    required this.valorComissaoServico,required this.descricaoServico,
   });
 
   final String? name;
@@ -30,7 +30,7 @@ class NewmoduleServicesWidget extends StatefulWidget {
   final double? value;
   final String? link;
   final int? idDoServico;
-  final double? valorComissaoServico;
+  final double? valorComissaoServico;final String? descricaoServico;
 
   @override
   State<NewmoduleServicesWidget> createState() =>
@@ -84,15 +84,7 @@ class _NewmoduleServicesWidgetState extends State<NewmoduleServicesWidget>
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(40.0),
-                child: Image.network(
-                  widget.link!,
-                  width: 60.0,
-                  height: 60.0,
-                  fit: BoxFit.cover,
-                ),
-              ),
+              Icon(Icons.no_accounts),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -119,10 +111,7 @@ class _NewmoduleServicesWidgetState extends State<NewmoduleServicesWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 4.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              valueOrDefault<String>(
-                                widget.marca,
-                                'marca',
-                              ),
+                              "",
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -185,14 +174,48 @@ class _NewmoduleServicesWidgetState extends State<NewmoduleServicesWidget>
                     updateCount: (count) async {
                       setState(() => _model.countControllerValue = count);
                       setState(() {
-                        FFAppState().updateListaserviceAtIndex(
+
+                        if (FFAppState().listaservice.isEmpty || !FFAppState().listaservice.contains(ServiopedidoStruct(
+                            idDoServico: widget.idDoServico!,
+                            quantidadeDoServico: _model
+                                .countControllerValue,
+                            valorComissaoServico: widget
+                                .valorComissaoServico,
+                            valorServico: widget.value,
+                            descricaoServico: widget.descricaoServico
+                        ))) {
+                          try {
+                            FFAppState().addToListaservice(ServiopedidoStruct(
+                                idDoServico: widget.idDoServico!,
+                                quantidadeDoServico: _model
+                                    .countControllerValue,
+                                valorComissaoServico: widget
+                                    .valorComissaoServico,
+                                valorServico: widget.value,
+                                descricaoServico: widget.descricaoServico
+                            ));
+                          }catch(e){
+                            FFAppState().updateListaserviceAtIndex(
+                              widget.idDoServico!,
+                                  (e) => e
+                                ..idDoServico = widget.idDoServico
+                                ..quantidadeDoServico = _model.countControllerValue
+                                ..valorComissaoServico = widget.valorComissaoServico
+                                ..descricaoServico = widget.descricaoServico
+                                ..valorServico = widget.value,
+                            );
+                          }
+                        } else { FFAppState().updateListaserviceAtIndex(
                           widget.idDoServico!,
-                          (e) => e
+                              (e) => e
                             ..idDoServico = widget.idDoServico
                             ..quantidadeDoServico = _model.countControllerValue
                             ..valorComissaoServico = widget.valorComissaoServico
+                            ..descricaoServico = widget.descricaoServico
                             ..valorServico = widget.value,
                         );
+                        }
+
                       });
                     },
                     stepSize: 1,

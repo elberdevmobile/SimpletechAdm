@@ -33,8 +33,7 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.produtos = await SimpleTechCopyGroup.obterprodutosCall.call(
-        filial: 3,
+      _model.produtos = await SimpleTechCopyGroup.obterservicoscall.call(
         bearerAuth: FFAppState().token,
       );
       if ((_model.produtos?.succeeded ?? true)) {
@@ -163,11 +162,7 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
                   child: Builder(
                     builder: (context) {
-                      final produtoss = SimpleTechCopyGroup.obterprodutosCall
-                          .produtcs(
-                            (_model.produtos?.jsonBody ?? ''),
-                          )
-                          .toList();
+                      final produtoss = _model.produtos?.jsonBody ?? [] .toList();
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         shrinkWrap: true,
@@ -199,10 +194,10 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                                 produtossItem,
                                 r'''$.marca''',
                               ).toString(),
-                              value: getJsonField(
+                              value: double.parse(getJsonField(
                                 produtossItem,
                                 r'''$.valor''',
-                              ),
+                              ).toString()),
                               link: getJsonField(
                                 produtossItem,
                                 r'''$.imagem''',
@@ -211,10 +206,15 @@ class _SearchServicesWidgetState extends State<SearchServicesWidget> {
                                 produtossItem,
                                 r'''$.idDoServico''',
                               ),
-                              valorComissaoServico: getJsonField(
+                              descricaoServico: getJsonField(
                                 produtossItem,
-                                r'''$.comissao''',
+                                r'''$.descricao''',
                               ),
+                              valorComissaoServico:
+                              double.parse(getJsonField(
+                          produtossItem,
+                          r'''$.comissao''',
+                          ).toString()),
                             ),
                           );
                         },

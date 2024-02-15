@@ -37,7 +37,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         bearerAuth: FFAppState().token,
         inicial: formatarDataAtual(),
         finaldate: formatarDataAtualMais7Dias(),
-        filial: 3,
+        filial: 1,
       );
       if ((_model.agendamentos?.succeeded ?? true) &&
           jsonEncode(_model.agendamentos!.jsonBody).isNotEmpty) {

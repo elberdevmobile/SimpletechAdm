@@ -10,6 +10,7 @@ import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
 
 import 'backend/firebase/firebase_config.dart';
+import 'components/search_avulso_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
@@ -128,7 +129,6 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'Home': HomeWidget(),
-      'qrcode': QrcodeWidget(),
       'profile': ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -184,8 +184,25 @@ class _NavBarPageState extends State<NavBarPage> {
             child: Icon(Icons.create),
             backgroundColor: Colors.red,
             label: 'Iniciar Atendimento Avulso',
-            onTap: () {
-              // Handle Camera button tap
+            onTap: () async {
+
+              await showModalBottomSheet(
+              isScrollControlled: true,
+                showDragHandle:true,
+              backgroundColor: Colors.transparent,
+              enableDrag: true,
+              useSafeArea: false,
+              context: context,
+              builder: (context) {
+                return Padding(
+                    padding: MediaQuery.viewInsetsOf(context),
+                    child: Container(
+                      child: SearchAvulsoWidget(),
+                    ),
+                );
+              },
+              ).then((value) => safeSetState(() {}));
+
             },
           ),
           SpeedDialChild(
@@ -193,7 +210,7 @@ class _NavBarPageState extends State<NavBarPage> {
             backgroundColor: Colors.green,
             label: 'Consultar Atendimento Avulso',
             onTap: () {
-              // Handle Gallery button tap
+             context.pushNamed("AtendimentosFinalizadosScreen");
             },
           ),
         ],
