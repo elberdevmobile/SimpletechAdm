@@ -356,7 +356,7 @@ class FFRoute {
                   color: Colors.transparent,
                   child: SvgPicture.asset(
                     'assets/images/logologin.svg',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.scaleDown,
                   ),
                 )
               : page;
